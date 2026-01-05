@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NESTED LIST</title>
+        <link rel="stylesheet" href="../liststyle.css">
+    </head>
+    <body>
+        <h1>NESTED LIST</h1>
+
+        <div>
+            <pre>
+    <b>📘DEFINATION :</b>
+            Nested Lists are lists inside list items (&lt;li&gt;) of another list — allowing creation of multi-level lists (like categories and subcategories).
+
+        You can nest:
+        &lt;ul&gt; inside &lt;ul&gt;
+        &lt;ol&gt; inside &lt;ol&gt;
+        Or even <b>mix</b> them (e.g., &lt;ol&gt; inside &lt;ul&gt;)
+ </pre>
+        </div>
+
+        <div>
+            <table width="95%">
+                <tr>
+                    <th width="33%">
+                        SYNTAX
+                    </th>
+                    <th width="33%">
+                        EXAMPLE
+                    </th>
+                    <th>
+                        OUTPUT
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre>
+    &lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Subitem 2.1&lt;/li&gt;
+      &lt;li&gt;Subitem 2.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+                        </pre>
+                    </td>
+                    <td>
+                        <pre>
+    &lt;h3&gt;Web Technologies&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Frontend
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+      &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backend&lt;/li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Node.js&lt;/li&gt;
+      &lt;li&gt;Java&lt;/li&gt;
+      &lt;li&gt;Python&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+                        
+                        </pre>
+                    </td>
+                    <td>
+                        <h3>Web Technologies</h3>
+<ul>
+  <li>Frontend
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </li>
+  <li>Backend
+    <ul>
+      <li>Node.js</li>
+      <li>Java</li>
+      <li>Python</li>
+    </ul>
+  </li>
+</ul>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <h2>🛠️ Customizing with CSS :</h2>
+<pre>   you can Customizing using this <mark>Nested List</mark> CSS styles <hr>
+        ul {
+            list-style-type: disc;
+        }
+        ul ul {
+            list-style-type: circle; <i>/* Nested list */</i>
+        }
+        ol {
+            list-style-type: decimal;
+        }
+        ol ul {
+            list-style-type: square; <i>/* Mixed nested list */</i>
+        } <hr>
+</pre>
+
+            <h3>
+                <mark> Practice Task - Course Outline:</mark>
+            </h3>
+            <table width="90%">
+                <tr>
+                    <th width="45%">Practice Task EX.</th>
+                    <th>Output</th>
+            
+    
+                </tr>
+                <tr>
+                    <td>
+                        &lt;h3>Full Stack Web Development&gt;
+                    &lt;ol&gt;
+                    &lt;li&gt;Frontend
+                        &lt;ul&gt;
+                        &lt;li&gt;HTML&lt;/li&gt;
+                        &lt;li&gt;CSS&lt;/li&gt;
+                        &lt;li&gt;JavaScript&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Backend
+                        &lt;ul&gt;
+                        &lt;li&gt;Node.js&lt;/li&gt;
+                        &lt;li&gt;Express&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Database
+                        &lt;ul&gt;
+                        &lt;li&gt;MongoDB&lt;/li&gt;
+                        &lt;li&gt;MySQL&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;/ol&gt;
+
+                    </td>
+                    <td>
+                        <h3>Full Stack Web Development</h3>
+<ol>
+  <li>Frontend
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </li>
+  <li>Backend
+    <ul>
+      <li>Node.js</li>
+      <li>Express</li>
+    </ul>
+  </li>
+  <li>Database
+    <ul>
+      <li>MongoDB</li>
+      <li>MySQL</li>
+    </ul>
+  </li>
+</ol>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

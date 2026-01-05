@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Property</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root{
+            --wid : 200px;
+            --hei : 200px;
+            --br : 50%;
+            --box : 40px;
+            --p : 20px;
+            --ten : 10px;
+        }
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+            font-family: verdana;
+        }
+        .backarrow{
+            background-color: white;
+            border-radius: var(--br); 
+            width: var(--box); 
+            height: var(--box);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .backarrow:hover{
+            color: white;
+            background-color: rgb(255, 93, 93);
+        }
+        h1{
+            background-color: rgba(255, 255, 255, 0.692);
+            padding: var(--p);
+            display: flex;
+            justify-content: center;
+            border-radius: var(--ten);
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.692);
+            padding: var(--p);
+            border-radius: var(--ten);
+        }
+        .syntax{
+            background-color: rgba(255, 255, 255, 0.637);
+            margin: var(--ten);
+            padding: var(--ten);
+            border-radius: var(--ten);
+        }
+        .syntax1{
+            background-color: rgba(255, 255, 255, 0.637);
+            padding: var(--ten);
+            margin: 0px 80px;
+            border-radius: var(--ten);
+        }
+        .rotation-box {
+            width: var(--wid);
+            height: var(--hei);
+            border-radius: var(--br);
+            padding: 20px;
+            margin: 50px auto;
+            background: #ff5722;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: verdana;
+
+           animation: 
+                color-change 2s linear infinite,
+                bounce 2s linear infinite;
+        }
+        .rotation-box1 {
+            width: var(--wid);
+            height: var(--hei);
+            border-radius: var(--br);
+            padding: 20px;
+            margin: 50px auto;
+            background: #ff5722;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: verdana;
+
+           animation: 
+                rotate 2s linear infinite,
+                color-change 2s linear infinite;
+        }
+        .rotation-box2 {
+            width: var(--wid);
+            height: var(--hei);
+            border-radius: var(--br);
+            padding: 20px;
+            margin: 50px auto;
+            background: #ff5722;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: verdana;
+
+           animation: 
+                bouncerotate 2s linear infinite;
+        }
+        
+        @keyframes bouncerotate {
+            0%,
+            20%,
+            50%,
+            80%,
+            100%{
+                transform: translateY(0), rotate(0deg);
+            }
+            40%{
+                transform: translateY(-60px) rotate(180deg);
+            }
+            60%{
+                transform: translateY(-30px) rotate(270deg);
+            }
+            100%{
+                transform: translateY(-15px) rotate(360deg);
+            }
+        }
+        @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg); 
+        }
+      }
+        @keyframes color-change{
+            0%{
+                background-color: rgb(255, 255, 255);
+            }
+            20%{
+                background-color: rgb(255, 0, 0);
+            }
+            40%{
+                background-color: rgb(255, 68, 0);
+            }
+            60%{
+                background-color: rgb(238, 255, 0);
+            }
+            80%{
+                background-color: rgb(0, 247, 255);
+            }
+            100%{
+                background-color: rgb(0, 17, 255);
+            }
+        }
+        @keyframes bounce {
+            0%, 
+            20%, 
+            50%, 
+            80%, 
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        .description{
+            background-color: rgba(255, 255, 255, 0.653);
+            height: auto;
+            border-radius: 10px;
+        }
+        h2{
+            margin: 10px;
+            padding: 10px;
+        }
+        pre{
+            font-family: verdana;
+        }
+    </style>
+</head>
+<body>
+    <h1>Full stack Development</h1>
+    <div class="container">
+         <div class="backarrow">
+            <a href="./Animation.html"><i class="fa-solid fa-arrow-left"></i></i></a>
+        </div>
+        <h2>Chaining Animation</h2>
+        <div class="description">
+            <h2>Syntax : Bounce + Color Change</h2>
+            <pre>
+                @keyframes bounce {
+                    0%, 
+                    20%, 
+                    50%, 
+                    80%, 
+                    100% {
+                        transform: translateY(0);
+                    }
+                    40% {
+                        transform: translateY(-30px);
+                    }
+                    60% {
+                        transform: translateY(-15px);
+                    }
+                }
+
+                @keyframes color-change{
+                    0%{
+                        background-color: rgb(255, 255, 255);
+                    }
+                    20%{
+                        background-color: rgb(255, 0, 0);
+                    }
+                    40%{
+                        background-color: rgb(255, 68, 0);
+                    }
+                    60%{
+                        background-color: rgb(238, 255, 0);
+                    }
+                    80%{
+                        background-color: rgb(0, 247, 255);
+                    }
+                    100%{
+                        background-color: rgb(0, 17, 255);
+                    }
+                }
+            </pre>
+        </div>
+        <div class="rotation-box">animation: bounce 2s linear infinte;</div>
+
+        <div class="description">
+            <h2>Syntax : Rotate + Color Change</h2>
+            <pre>
+                @keyframes rotate {
+                        from {
+                        transform: rorate(0deg);
+                        }
+                        to {
+                        transform: rotate(360deg); 
+                        }
+                    }
+
+                @keyframes color-change{
+                        0%{
+                            background-color: rgb(255, 255, 255);
+                        }
+                        20%{
+                            background-color: rgb(255, 0, 0);
+                        }
+                        40%{
+                            background-color: rgb(255, 68, 0);
+                        }
+                        60%{
+                            background-color: rgb(238, 255, 0);
+                        }
+                        80%{
+                            background-color: rgb(0, 247, 255);
+                        }
+                        100%{
+                            background-color: rgb(0, 17, 255);
+                        }
+                    }
+            </pre>
+        </div>
+        <div class="rotation-box1">animation: color-change 2s linear infinte;</div>
+
+        <div class="description">
+            <h2>Syntax : Rotate + Bounce</h2>
+            <pre>
+                @keyframes bouncerotate {
+                    0%,
+                    20%,
+                    50%,
+                    80%,
+                    100%{
+                        transform: translateY(0), rotate(0deg);
+                    }
+                    40%{
+                        transform: translateY(-60px) rotate(180deg);
+                    }
+                    60%{
+                        transform: translateY(-30px) rotate(270deg);
+                    }
+                    100%{
+                        transform: translateY(-15px) rotate(360deg);
+                    }
+                }
+            </pre>
+        </div>
+        <div class="rotation-box2">animation: bounce 2s linear infinte;</div>
+    </div>
+</body>
+</html>

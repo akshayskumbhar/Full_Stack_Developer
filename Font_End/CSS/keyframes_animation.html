@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Property</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+            font-family: verdana;
+        }
+        .backarrow{
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-radius: 50%;
+        }
+        .backarrow:hover{
+            background-color: rgb(255, 174, 0);
+            color: white;
+        }
+        h1{
+            background-color: rgba(255, 255, 255, 0.692);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.692);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .syntax{
+            background-color: rgba(255, 255, 255, 0.637);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .syntax1{
+            background-color: rgba(255, 255, 255, 0.637);
+            padding: 10px;
+            margin: 0px 80px;
+            border-radius: 10px;
+        }
+
+        .syntax2{
+            background-color: rgba(255, 255, 255, 0.637);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        table{
+            width: auto;
+        }
+
+        @keyframes fadeInUp {
+        0% {
+          transform: translateY(100px);
+          opacity: 0; /* invisible */
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1; /* fully visible */
+        }
+      }
+        @keyframes fadeInDown {
+        0% {
+          transform: translateY(0);
+          opacity: 0; /* invisible */
+        }
+        100% {
+          transform: translateY(-50px);
+          opacity: 1; /* fully visible */
+        }
+      }
+
+      .animate-box {
+        width: 350px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInUp 1s ease-out forwards;
+      }
+      .easei{
+        width: 150px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInUp 1s ease-in;
+      }
+      .easeo{
+        width: 150px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInUp 1s ease-out;
+      }
+      .easeio{
+        width: 150px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInUp 1s ease-in-out;
+      }
+      .easein{
+        width: 100px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInDown 1s ease-in forwards;
+      }
+      .easeou{
+        width: 100px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInUp 1s ease-in backwards;
+      }
+      .easeinp{
+        width: 100px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInDown 1s ease-out forwards;
+      }
+      .easeout{
+        width: 100px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInUp 1s ease-out backwards;
+      }
+      .easeinput{
+        width: 100px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInDown 1s ease-in-out forwards;
+      }
+      .easeoutput{
+        width: 100px;
+        padding: 20px;
+        margin: 50px auto;
+        background-color: rgb(22, 255, 119);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+        text-align: center;
+        font-size: 16px;
+        animation: fadeInUp 1s ease-in-out backwards;
+      }
+    </style>
+</head>
+<body>
+    <h1>Full stack Development</h1>
+    <div class="container">
+        <div class="backarrow">
+            <a href="../CSS/CSS_Topics.html"><i class="fa-solid fa-arrow-left"></i></i></a>
+            
+        </div>
+        <h2>@Keyframes Property</h2>
+        <div class="syntax">
+            <pre>
+<b>Defination: </b>CSS Animations allow elements to animate using keyframes, which specify multiple
+            states over a duration. Animations can loop, reverse, pause, or run automatically
+
+                <h2 style="padding: 10px;">Syntax: </h2>
+                <div class="syntax1">
+    <b>@keyframes slideUp {
+                        0% { 
+                            transform: translateY(100px); 
+                            opacity: 0; 
+                            }
+                        100% { 
+                            transform: translateY(0); 
+                            opacity: 1; 
+                            }
+                        }
+    </b>
+                </div>
+            </pre>
+            <h2 style="padding: 10px;">Output: </h2>
+                <div class="syntax1">
+                  <div class="animate-box">animation: fadeInUp 1s ease-out forwards;</div>
+                </div>
+        </div>
+        <h2>Difference Between <b style="color: rgb(17, 0, 255);">Ease-in</b> Vs <b style="color: rgb(17, 0, 255);">Ease-out</b></h2>
+        <div class="syntax2">  
+        <table border="1" style="width: 100%;">
+            <tr>
+                <th>Ease-in</th>
+                <th>Ease-out</th>
+                <th>Ease-in-out</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="easei">
+                        animation: Easei 1s ease-in forwards;
+                    </div>
+                </td>
+                <td>
+                    <div class="easeo">
+                        animation: Easeo 1s ease-out forwards;
+                    </div>
+                </td>
+                <td>
+                    <div class="easeio">
+                        animation: Easeo 1s ease-in-out forwards;
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </div>
+        <h2>Difference Between <b style="color: rgb(17, 0, 255);">Forword</b> Vs <b style="color: rgb(17, 0, 255);">Backword</b></h2>
+        <div class="syntax2">  
+        <table border="1" style="width: 100%;">
+            <tr>
+                <th>Ease-in Forword</th>
+                <th>Ease-in Backword</th>
+                <th>Ease-out Forword</th>
+                <th>Ease-out Backword</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="easein">
+                        animation: easein 1s ease-in forwards;
+                    </div>
+                </td>
+                <td>
+                    <div class="easeou">
+                        animation: easeou 1s ease-out backword;
+                    </div>
+                </td>
+                <td>
+                    <div class="easeinp">
+                        animation: easein 1s ease-in forwards;
+                    </div>
+                </td>
+                <td>
+                    <div class="easeout">
+                        animation: easeou 1s ease-out backword;
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table border="1" style="width: 100%;">
+            <tr>
+                <th colspan="4"> Ease-in-out for forwards and Backword</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="easeinput">
+                        animation: easein 1s ease-in-out forwards;
+                    </div>
+                </td>
+                <td>
+                    <div class="easeoutput">
+                        animation: easein 1s ease-in-out backword;
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

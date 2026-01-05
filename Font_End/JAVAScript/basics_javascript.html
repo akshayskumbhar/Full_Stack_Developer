@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Basics of javascript</title>
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            background-color: rgba(255, 255, 255, 0.795);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: verdana;
+        }
+        .container{
+            background-color: white;
+            margin: 50px;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        
+        h2{
+            color: white;
+            font-family: verdana;
+            margin-left: 40px;
+            margin-top: 30px;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .combo{
+            margin-left: 50px;
+            width: 100;
+        }
+
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .backarrow:hover{
+            color: white;
+            background-color: rgb(255, 93, 93);
+        }
+
+        /* here is css comment */
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+        <div class="combo">
+                <div class="backarrow"><a id="back" href="../JAVAScript/js_Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+        </div>
+    <h2>Internal JavaScript</h2>
+    <div class="container">
+        <pre>
+    <b style="font-size: 20px;">SYNTAX:</b>
+
+    <mark>&lt;script&gt;</mark>
+        console.log("Hello Internal JS!");
+    <mark>&lt;/script&gt;</mark> 
+        </pre>
+    </div>
+
+    <h2>External JavaScript</h2>
+    <div class="container">
+        <pre>
+    <b style="font-size: 20px;">SYNTAX:</b>
+
+    &lt;script src="<mark>/script.js</mark>"&gt;&lt;/script&gt; 
+
+        </pre>
+    </div>
+
+    <h2>Inline JavaScript</h2>
+    <div class="container">
+        <pre>
+    <b style="font-size: 20px;">SYNTAX:</b>
+
+    &lt;button <mark>onClick="myFunction()"</mark>&gt;Click me&lt;/button&gt;
+        </pre>
+    </div>
+    <script>
+        console.log("Hello Internal JS!");
+    </script> 
+
+</body>
+</html>

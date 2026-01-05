@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root{
+            --bodycolor : linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+
+            --mpbr : 10px;
+            --trbcolor : rgba(255, 255, 255, 0.712);
+            --h2color : white;
+            --hyt : 40px;
+            --wid : 250px;
+            --oto : auto;
+            --mar : 100px
+        }
+        body{
+            background: var(--bodycolor);
+        }
+        h1{
+            background-color: var(--trbcolor);
+            display: flex;
+            justify-content: center;
+            margin: var(--mpbr);
+            padding: var(--mpbr);
+            border-radius: var(--mpbr);
+        }
+        h2{
+            background-color: var(--trbcolor);
+            height: var(--hyt);
+            width: var(--wid);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--mpbr);
+        }
+        .container{
+            background-color: var(--trbcolor);
+            border-radius: var(--mpbr);
+            margin: var(--mpbr);
+            justify-content: center;
+            width: var(--oto);
+            height: var(--oto);
+        }
+        pre{
+            margin: var(--mpbr);
+            background-color: var(--trbcolor);
+            margin: var(--mar);
+        }
+        .h22{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+        }
+        .backarrow:hover{
+            background-color: rgb(255, 128, 25);
+        }
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+    
+    <section>
+        <div class="container">
+            <div class="combo">
+                <div class="backarrow"><a href="./CSS_Topics.html"><i style="color: black;" class="fa-solid fa-arrow-left"></i></a></div>
+                <div class="h22"><h2>CSS Variables</h2></div>
+            </div>
+            <pre>
+                :root{
+                    --bodycolor : linear-gradient(to left, red, blue);
+                    --mpbr : 10px;
+                    --trbcolor : rgba(255, 255, 255, 0.712);
+                    --h2color : white;
+                    --hyt : 40px;
+                    --wid : 250px;
+                    --oto : auto;
+                }
+            </pre>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1] CSS BASICS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.671);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        h2{
+            margin: 10px;
+            padding: 10px;
+            background-color: white;
+            width: 200px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h3{
+            background-color: black;
+            margin: 20px; 
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+        }
+
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .backarrow:hover{
+            color: white;
+            background-color: rgb(255, 93, 93);
+        }
+
+        #back:hover{
+            color: white;
+        }
+        .syntax{
+            background-color: rgba(255, 255, 255, 0.671);
+            color: black;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Full Stack Developer</h1>
+    <div class="combo">
+            <div class="backarrow"><a id="back" href="../CSS/CSS_Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <h2 style="margin: 0 20px;">CSS Basics</h2>
+        </div>
+    
+    <hr>
+    <h3>Three Types Of CSS</h3>
+    <hr>
+
+    <h3>        
+        1] Inline CSS : 
+        <i style="color: red;">
+            Used for Specific Element From the Web-Page.
+        </i>
+        <div class="syntax">
+            Syntax:
+            <pre>
+            <mark>index.html</mark>
+
+                &lt;div style="color: black; margin: 10;"&gt;&lt;/div&gt;
+            </pre>
+        </div>
+    </h3>
+    <h3>
+        2] Internal CSS :
+        <i>
+            Used for Single Web-Page.
+        </i>
+        <div class="syntax">
+            Syntax:
+            <pre>
+            <mark>index.html</mark>
+
+                &lt;style&gt; 
+                    color: black; 
+                    margin: 10;
+                    padding: 10px;
+                &lt;/style&gt;
+            </pre>
+        </div>
+    </h3>
+    <h3>
+        3] External CSS : 
+        <i>Used for Multiple Web-Pages.</i>
+        <div class="syntax">
+            Syntax:
+            <pre>
+                <mark>style.css</mark>
+
+                .body{
+                    background: linear-gradient(to left, red, blue)
+                }
+                div{
+                    margin: 10px;
+                    padding: 10px;
+                    border: 5px solid black;
+                }
+            </pre>
+        </div>
+    </h3>
+    <hr>
+</body>
+</html>

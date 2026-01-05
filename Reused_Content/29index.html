@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM</title>
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.795);
+            padding: 10px;
+            border-radius: 8px;
+
+        }
+        section{
+            background-color: white;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        button{
+            margin: 10px;
+            padding: 15px;
+        }
+        .box, .box1, .box2, .box3, .box4, .box5, .node1, .node2, .node3, .node4{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Javascript DOM Content Manipulation</h1>
+
+    <section> 
+    <h3>1] innerHTML</h3>
+    <p><b>Definition: </b>innerHTML is used to get or set the HTML Content inside an element including tags</p>
+
+    <pre>
+        Syntax: 
+                element.innerHTML //get
+                element.innerHTML = value //get
+    </pre>
+
+    <button onclick="run1()">innerHTML</button>
+    <div id="box"><b id="box">Hello</b>World!</div>
+    </section>
+    <script>
+        function run1()
+        {
+            let a = document.getElementById("box");
+
+            //get
+            console.log(a.innerHTML);
+            //set
+            a.innerHTML = `<h1 style="color: green;">Here is Updated</h1>`
+        }
+    </script>
+
+    <section> 
+    <h3>2] innerText</h3>
+    <p><b>Definition: </b>innerText returns only the visible text inside an element.</p>
+
+    <pre>
+        Syntax: 
+                element.innerText //get
+                element.innerText = value //get
+    </pre>
+
+    <button onclick="run2()">innerText</button>
+    <div id="box1"><b id="box1">Hello</b>World Myself Akshay <b style="display: none;">Kumbhar</b>!</div>
+    </section>
+    <script>
+        function run2()
+        {
+            let b = document.getElementById("box1");
+            console.log(b.innerText);
+            b.innerText = "Text Updated By innerText";
+        }
+        
+    </script>
+
+
+<section> 
+    <h3>3] textContent</h3>
+    <p><b>Definition: </b>terxtContent returns all text, including hidden elements.</p>
+
+    <pre>
+        Syntax: 
+                element.textContent //get
+                element.textContent = value //get
+    </pre>
+
+    <button onclick="run3()">textContent</button>
+    <div id="box3"><b id="box3">Hello </b> World!</div>
+
+    </section>
+    <script>
+        function run3()
+        {
+            let c = document.getElementById("box3");
+            //get
+            console.log(c.textContent);
+            //hello hidden word
+            c.textContent = "New Text Content";
+        }
+    </script>
+
+
+<section> 
+    <h3>4] outerHTML</h3>
+    <p><b>Definition: </b>outerHTML gets or replaces the entire element including itself.</p>
+
+    <pre>
+        Syntax: 
+                element.outHTML //get
+                element.outerHTML = value //get
+    </pre>
+
+    <button onclick="run4()">outerHTML</button>
+    <div id="box4"><b id="box4">Original Element Box</div>
+
+    </section>
+    <script>
+        function run4()
+        {
+            let d = document.getElementById("box4");
+            //get
+            console.log(d.outerHTML);
+            //hello hidden word
+            d.outerHTML = "<h1>New Element</h1>";
+        }
+    </script>
+
+
+<section> 
+    <h3>5] outerText </h3>
+    <p><b>Definition: </b>outerText replaces the entire element with plain text.</p>
+
+    <pre>
+        Syntax: 
+                element.outerText = value //get
+    </pre>
+
+    <button onclick="run5()">outerText</button>
+    <div id="box5"><b id="box5">Hello Element Box</div>
+
+    </section>
+    <script>
+        function run5()
+        {
+            let e = document.getElementById("box5");
+            e.outerText = "Element Removed";
+            console.log(e.outerText);
+        }
+    </script>
+
+    <section> 
+    <h3>6] value Property</h3>
+    <p><b>Definition: </b>values is used to get input fiels data.</p>
+
+    <pre>
+        Syntax: 
+                element.value
+                element.value = value
+    </pre>
+
+    <input type="text" id="name" value="Akshay">
+    <button onclick="show()">show</button>
+    
+    </section>
+    <script>
+        function show()
+        {
+            let input = document.getElementById("name");
+            alert(input.value);
+            input.value="Updated Name";
+            console.log(input.value);
+        }
+    </script>
+
+    <section> 
+    <h3>7] nodeValue </h3>
+    <p><b>Definition: </b>nodeValue gets or sets the value of a text node.</p>
+
+    <pre>
+        Syntax: 
+                element.nodeValue
+                element.nodeValue = value
+    </pre>
+
+    <p id="p">Hello</p>
+    <button onclick="node1()">show</button>
+    
+    </section>
+    <script>
+        function node1()
+        {
+            let p = document.getElementById("p");
+            let textNode = p.firstChild;
+
+            // GET
+            console.log(textNode.nodeValue);
+
+            // SET
+            textNode.nodeValue = "Changed Text";
+
+        }
+    </script>
+
+    <section> 
+    <h3>8] data Property </h3>
+    <p><b>Definition: </b>data is an alias of nodeValue</p>
+
+    <pre>
+        Syntax: 
+                text.Node.data
+                textNode.data = value
+    </pre>
+
+    <p id="p">Hello</p>
+    <button onclick="node2()">show</button>
+    
+    </section>
+    <script>
+        function node2()
+        {
+            let u = document.getElementById("u");
+            let textNode = u.firstChild;
+
+            // GET
+            console.log(textNode.data);
+
+            // SET
+            textNode.data = "Updated using dxata";
+
+
+        }
+    </script>
+
+
+<section> 
+    <h3>9] getAttribute()</h3>
+    <p><b>Definition: </b>getAttribute() reads the value of an HTML attribute.</p>
+
+    <pre>
+        Syntax: 
+                element.getAttribute(attributeName) //attributeName → string
+    </pre>
+
+    <img id="img" src="images.png" alt="Sample">
+    <button onclick="node3()">show</button>
+    
+    </section>
+    <script>
+        function node3()
+        {
+            let img = document.getElementById("img");
+            console.log(img.getAttribute("src"));
+        }
+    </script>
+
+
+<section> 
+    <h3>10] setAttribute()</h3>
+    <p><b>Definition: </b>setAttribute() sets or updates an attribute.</p>
+
+    <pre>
+        Syntax: 
+                element.setAttribute(attributeName) //attributeName → string
+    </pre>
+
+    <img id="img1" src="images.png" alt="Sample">
+    <button onclick="node4()">show</button>
+    
+    </section>
+    <script>
+        function node4()
+        {
+           let img = document.getElementById("img1");
+            // SET
+            img.setAttribute("src", "new.png");
+            img.setAttribute("alt", "New Image");
+        }
+    </script>
+</body>
+</html>

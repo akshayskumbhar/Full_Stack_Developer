@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturday Test - 03-01-2026</title>
+    <style>
+        *{
+            font-family: verdana;
+        }
+        body{
+            background: linear-gradient(to left, rgb(49, 49, 49), rgb(110, 110, 110));
+        }
+        h3{
+            background-color: rgba(255, 255, 255, 0.596);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #greet{
+            background-color: white;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        fieldset{
+            color: white;
+            margin: 10px;
+            padding: 15px;
+        }
+        #out{
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>Q1 Write a Program For Greeeting</h3>
+    <button onclick="run()" id="greet">Greetings</button>
+    <div id="out"></div>
+
+    <script>
+        function run()
+        {
+            function msg()
+            {
+                return "Hello Developer, It's Q1 Succesfully";
+            }
+            document.getElementById("out").textContent = msg();
+            console.log(msg());
+        }
+    </script>
+
+<!--Q2 -->
+<h3>Q2 Write a Program Even odd using nested if</h3>
+    <fieldset>
+        <legend>Even or Odd</legend>
+            <form action="#">
+                <label>Enter No.</label>
+                <input id="in1" type="number">
+                <button type="submit" onclick="eo()">Submit</button>
+                <label for="abc" id="output"></label>
+    </fieldset>
+    <script>
+        function eo()
+        {
+            let x = document.getElementById("in1").value;
+                if(x % 2 == 0)
+                    {
+                        if(x < 0)
+                    {
+                        console.log("You Enter 'Navative' value");
+                    }
+                    else{
+                        console.log("You Enter 'Positive' value");
+                    }
+                        console.log("Enter No : "+x+" is Even");
+                        
+                    }
+                else
+                    {
+                        console.log("Enter No : "+x+" is odd");
+                    }
+                
+        }
+    </script>
+</body>
+</html>

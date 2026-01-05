@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Property</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+            font-family: verdana;
+        }
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .backarrow:hover{
+            color: white;
+            background-color: rgb(255, 93, 93);
+        }
+        h1{
+            background-color: rgba(255, 255, 255, 0.692);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.692);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .syntax{
+            background-color: rgba(255, 255, 255, 0.637);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .syntax1{
+            background-color: rgba(255, 255, 255, 0.637);
+            padding: 10px;
+            margin: 0px 80px;
+            border-radius: 10px;
+        }
+        .slide-box {
+        width: 200px;
+        padding: 20px;
+        margin: 50px auto;
+        background: #9c27b0;
+        color: white;
+        text-align: center;
+
+        animation: slideInLeft 1s ease-out infinite;
+      }
+
+      .slide-box2 {
+        width: 200px;
+        padding: 20px;
+        margin: 50px auto;
+        background: #9c27b0;
+        color: white;
+        text-align: center;
+
+        animation: slideInRight 1s ease-out infinite;
+      }
+
+      .slide-box3 {
+        width: 200px;
+        padding: 20px;
+        margin: 50px auto;
+        background: #9c27b0;
+        color: white;
+        text-align: center;
+
+        animation: slideInLeftRight 2s ease-out infinite;
+      }
+        @keyframes slideInLeft {
+        0% {
+          transform: translateX(-100%); /* start outside left */
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInRight {
+        0% {
+          transform: translateX(0%); /* start inside left */
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+
+      @keyframes slideInLeftRight {
+        0% {
+          transform: translateX(0%); /* start outside left */
+          opacity: 0;
+        }
+        40% {
+          transform: translateX(50%); /* start inside center */
+          opacity: 1;
+        }
+        50% {
+          transform: translateX(50%); /* start inside center */
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100%); /* start exit right */
+          opacity: 0;
+        }
+      }
+        .description{
+            background-color: rgba(255, 255, 255, 0.653);
+            height: auto;
+            border-radius: 10px;
+        }
+        h2{
+            margin: 10px;
+            padding: 10px;
+        }
+        pre{
+            font-family: verdana;
+        }
+        table{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Full stack Development</h1>
+    <div class="container">
+         <div class="backarrow">
+            <a href="./Animation.html"><i class="fa-solid fa-arrow-left"></i></i></a>
+        </div>
+        <h2>Difference Between <b style="color: blue;">Left/Right</b> Animation</h2>
+        <div>
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <th>Slide Left</th>
+                    <th>Slide Right</th>
+                    <th>Slide Both</th>
+                </tr>
+                <tr>
+                    <td><div class="slide-box">animation: slideInLeft 1s ease-out infinite;</div></td>
+                    <td><div class="slide-box2">animation: slideInLeft 1s ease-out infinite;</div></td>
+                    <td><div class="slide-box3">animation: slideInLeftRight 2s ease-out infinite;</div></td>
+                </tr>
+            </table>
+        </div>
+        <h2>Slide <b style="color: blue;">Left</b> Animation</h2>
+        <div class="description">
+            <h2>Syntax</h2>
+            <pre>
+                @keyframes slideInLeft {
+                        0% {
+                        transform: translateX(-100%); /* start outside left */
+                        opacity: 0;
+                        }
+                        100% {
+                        transform: translateX(0);
+                        opacity: 1;
+                        }
+                    }
+            </pre>
+        </div>
+        <div class="slide-box">animation: slideInLeft 1s ease-out infinite;</div>
+        <h2>Slide <b style="color: blue;">Right</b> Animation</h2>
+        <div class="description">
+            <h2>Syntax</h2>
+            <pre>
+                @keyframes slideInRight {
+                        0% {
+                        transform: translateX(0%); /* start inside left */
+                        opacity: 1;
+                        }
+                        100% {
+                        transform: translateX(100%);
+                        opacity: 0;
+                        }
+                    }
+            </pre>
+        </div>
+        <div class="slide-box2">animation: slideInLeft 1s ease-out infinite;</div>
+        <h2>Slide <b style="color: blue;">Right And Left</b> (<b style="color: orangered;">Loop</b>) Animation</h2>
+        <div class="description">
+            <h2>Syntax</h2>
+            <pre>
+               @keyframes slideInLeftRight {
+                        0% {
+                        transform: translateX(0%); /* start outside left */
+                        opacity: 0;
+                        }
+                        40% {
+                        transform: translateX(50%); /* start inside center */
+                        opacity: 1;
+                        }
+                        50% {
+                        transform: translateX(50%); /* start inside center */
+                        opacity: 1;
+                        }
+                        100% {
+                        transform: translateX(100%); /* start exit right */
+                        opacity: 0;
+                        }
+                    }
+            </pre>
+        </div>
+        <div class="slide-box3">animation: slideInLeftRight 2s ease-out infinite;</div>
+    </div>
+    
+</body>
+</html>

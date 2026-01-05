@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+            font-family: verdana;   
+        }
+        h1{
+            color: black;
+            background-color: rgba(255, 255, 255, 0.63);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-family: verdana; 
+        }
+        h2{
+            color: white;
+            font-family: verdana;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            margin: 0px;
+            width: 500px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.336);
+            border-left: 6px solid black;
+        }
+        
+        h3{
+            color: rgb(0, 0, 0);
+            margin: 10px;
+            padding: 10px;
+        }
+        div{
+            margin: 15px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0);
+            
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.63);
+            margin: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        .anime1{
+            background-color: rgba(255, 255, 255, 0.61);
+            margin: 30px;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box{
+            background-color: rgb(255, 180, 180);
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            justify-content: center;
+            transition-property: background-color, transform; /* Animate bg + scale */
+            transition-duration: 0.3s; /* 300ms */
+            transition-timing-function: ease-in-out; /* Smooth start/end */
+            transition-delay: 0s; /* Start immediately */
+        }
+
+        .box:hover{
+            background-color: rgb(255, 0, 0);
+            color: white;
+
+        }
+
+        .box1{
+            background-color: rgb(255, 180, 180);
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box1:hover{
+            background-color: rgb(252, 28, 28);
+            color: white;
+            transition: background 0.5s ease, transform 0.35s;
+        }
+        .box, .box2{
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+        }
+        .backarrow:hover{
+            background-color: rgb(255, 128, 25);
+        }
+        i:hover{
+            color: white;
+        }
+        pre{
+            background-color: white;
+            border-radius: 5px;
+            align-items: center;
+            justify-content: center;
+            margin: 30px;
+            padding: 10px;
+        }
+        .contain{
+            margin: 30px;
+        }
+        button{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease; 
+        }
+        button:hover{
+            background-color: red;
+            border-radius: 10px;
+            transform: scale(1.2);
+        }
+        .anime2{
+            border: 1px solid black;
+            display: flex;
+            padding: 30px;
+            justify-content: space-around;
+        }
+        .circle1{
+            border-radius: 50%;
+        }
+        .circle1:hover{
+            border-radius: 50%;
+        }
+        .anime3{
+            display: flex;
+            border: 1px solid black;
+            justify-content: center;
+        }
+        .square2{
+            margin: 30px;
+            border-radius: 10px;
+            transition-duration: 0.7s;
+        }
+        .circle2{
+            margin: 30px;
+            border-radius: 50%;
+            transition-duration: 0.7s;
+
+        }
+        .circle2:hover{
+            background-color: red;
+            border-radius: 50%;
+        }
+        .square2:hover{
+            background-color: red;
+            border-radius: 10px;
+            transform: scale(1.2);
+        }
+        /*Output Linear*/
+        .anime4{
+            display: flex;
+            border: 1px solid black;
+            justify-content: center;
+        }
+        .square3{
+            margin: 30px;
+            border-radius: 10px;
+            transition-timing-function: linear;
+            transition-duration: 0.7s;
+        }
+        .circle3{
+            margin: 30px;
+            border-radius: 50%;
+            transition-timing-function: linear;
+            transition-duration: 0.7s;
+
+        }
+        .circle3:hover{
+            background-color: red;
+            border-radius: 50%;
+            transform: scale(1.2);
+        }
+        .square3:hover{
+            background-color: red;
+            border-radius: 10px;
+            transform: scale(1.2);
+        }
+        /*Output Ease*/
+        .anime5{
+            display: flex;
+            border: 1px solid black;
+            justify-content: center;
+        }
+        .square4{
+            margin: 30px;
+            border-radius: 10px;
+            transition-timing-function: ease;
+            transition-duration: 0.7s;
+        }
+        .circle4{
+            margin: 30px;
+            border-radius: 50%;
+            transition-timing-function: ease;
+            transition-duration: 0.7s;
+
+        }
+        .circle4:hover{
+            background-color: red;
+            border-radius: 50%;
+            transform: scale(1.2);
+        }
+        .square4:hover{
+            background-color: red;
+            border-radius: 10px;
+            transform: scale(1.2);
+        }
+        /*Output Ease-in*/
+        .anime6{
+            display: flex;
+            border: 1px solid black;
+            justify-content: center;
+        }
+        .square5{
+            margin: 30px;
+            border-radius: 10px;
+            transition-timing-function: ease-in;
+            transition-duration: 0.7s;
+        }
+        .circle5{
+            margin: 30px;
+            border-radius: 50%;
+            transition-timing-function: ease-in;
+            transition-duration: 0.7s;
+
+        }
+        .circle5:hover{
+            background-color: red;
+            border-radius: 50%;
+            transform: scale(1.2);
+        }
+        .square5:hover{
+            background-color: red;
+            border-radius: 10px;
+            transform: scale(1.2);
+        }
+        /*Output Ease-out*/
+        .anime7{
+            display: flex;
+            border: 1px solid black;
+            justify-content: center;
+        }
+        .square6{
+            margin: 30px;
+            border-radius: 10px;
+            transition-timing-function: ease-out;
+            transition-duration: 0.7s;
+        }
+        .circle6{
+            margin: 30px;
+            border-radius: 50%;
+            transition-timing-function: ease-out;
+            transition-duration: 0.7s;
+
+        }
+        .circle6:hover{
+            background-color: red;
+            border-radius: 50%;
+            transform: scale(1.2);
+        }
+        .square6:hover{
+            background-color: red;
+            border-radius: 10px;
+            transform: scale(1.2);
+        }
+        /*Output ease-in-out*/
+        .anime8{
+            display: flex;
+            border: 1px solid black;
+            justify-content: center;
+        }
+        .square7{
+            margin: 30px;
+            border-radius: 10px;
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.7s;
+        }
+        .circle7{
+            margin: 30px;
+            border-radius: 50%;
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.7s;
+
+        }
+        .circle7:hover{
+            background-color: red;
+            border-radius: 50%;
+            transform: scale(1.2);
+        }
+        .square7:hover{
+            background-color: red;
+            border-radius: 10px;
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+    
+    <div class="container">
+        <div class="combo">
+            <div class="backarrow"><a href="./CSS_Topics.html"><i style="color: black;" class="fa-solid fa-arrow-left"></i></a></div>
+            <h2 style="margin: 0 20px;">CSS Transition</h2>
+        </div>
+        <div class="decription" style="background-color: rgba(255, 255, 255, 0.521); border-radius: 5px;" >
+            <h3>1] Animation: Hover Effect with Smooth Transition </h3>
+        <div class="contain">
+            
+        <h4>Defination:</h4>
+        <p>CSS Transitions allow properties to change smoothly when a state change occurs (like <b>hover, focus, click</b>).</p>
+        <div>
+            <ol>
+                <li>Animates only when a state change occurs</li>
+                <li>Needs transition-property and transition-duration at minimum</li>
+                <li>Works best with properties like transform, color, background-color, opacity.</li>
+                <li>Triggered by pseudo-classes like :hover, :focus, :active</li>
+                <li>Lightweight and widely supported across all browsers</li>
+            </ol>
+        </div>
+        </div>
+            <h4>Syntax</h4>
+            <pre>
+        selector {
+                transition-property: background-color, transform; 
+                transition-duration: 0.3;
+                transition-timing-function: ease-in-out;
+                transition-delay: 0s;
+                }
+        .box:hover {
+                background-color: royalblue; /* Color change on hover */
+                transform: scale(1.2); /* Slight zoom */
+                }
+
+            </pre>
+        </div>
+        <h4>Output</h4>
+        <div class="anime1">
+            <div class="box"><b>BOX 1</b></div>
+            <div class="box1"><b>Circle 1</b></div>
+    </div>
+    <div class="decription1" style="background-color: rgba(255, 255, 255, 0.521); border-radius: 5px;">
+        <h3>1.1] transition-property </h3>
+        <div class="contain1">
+            
+        <h4>Defination:</h4>
+        <p>transition-property specifies which CSS properties should be animated when their values change</p>
+        <div>
+            <ol>
+                <li>You must specify at least one property to animate</li>
+                <li>Works with animatable properties such as color, transform, opacity, width, etc</li>
+                <li>Accepts multiple properties separated by commas.</li>
+                <li>Can use the keyword all to animate every animatable change</li>
+                <li>Avoid animating heavy properties like width or height for performance reasons</li>
+            </ol>
+        </div>
+    </div>
+            <h4>Syntax</h4>
+            <pre>
+        button {
+        padding: 12px 30px;
+        font-size: 18px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin: 50px auto;
+
+        transition: background-color 0.3s ease, transform 0.2s ease; 
+      }
+
+      button:hover {
+        background-color: #007bff; /* Smooth color change */
+        transform: scale(1.25); /* Slight zoom */
+      }
+            </pre>
+        </div>
+        <h4>Output</h4>
+        <div class="anime2">
+            <button class="square1">Box1</button>
+            <button class="circle1">Box2</button>
+        </div>
+        <div class="decription1" style="background-color: rgba(255, 255, 255, 0.521); border-radius: 5px;">
+        <h3>1.2] Transition-Duration</h3>
+        <div class="contain1">
+            
+        <h4>Defination:</h4>
+        <p>Specifies <b>how long</b> the transition animation should take to complete</p>
+        <div>
+            <ol>
+                <li>Time is defined in seconds (<b>s</b>) or milliseconds (<b>ms</b>)</li>
+                <li>Every <b>transition-property</b> must have a matching duration</li>
+                <li>Longer durations create <b>slower, smoother</b> animations</li>
+                <li>Short durations are best for <b>snappy UI</b> interactions</li>
+                <li>Can assign <b>multiple duration values</b> for multiple properties</li>
+            </ol>
+        </div>
+    </div>
+            <h4>Syntax</h4>
+            <pre>
+        <b>transition-duration: 0.7;</b>
+            </pre>
+        </div>
+        <h4>Output</h4>
+        <div class="anime3">
+            <button class="square2">Box1</button>
+            <button class="circle2">Box2</button>
+        </div>
+        <div class="decription1" style="background-color: rgba(255, 255, 255, 0.521); border-radius: 5px;">
+        <h3>1.3] Transition-Timing-Function</h3>
+        <div class="contain1">
+            
+        <h4>Defination:</h4>
+        <p>Controls the <b>speed curve</b> of the animation — <b>how fast or slow</b> the transition progresses</p>
+        <div>
+            <ol>
+                <li>Defines <b>acceleration</b> or <b>deceleration</b> effects</li>
+                <li><b>ease-in-out</b> is the most natural for UI</li>
+                <li>Custom timing curves are possible using <b>cubic-bezier()</b>.</li>
+                <li><b>Affects feel</b> of motion, not duration. Can use different timing functions for multiple properties</li>
+            </ol>
+        </div>
+    </div>
+            <h4>Syntax</h4>
+            <pre>
+<b>transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier();</b>
+            </pre>
+        </div>
+        <h4>Output: Linear</h4>
+        <div class="anime4">
+            <button class="square3">Box1</button>
+            <button class="circle3">Box2</button>
+        </div>
+        <h4>Output: Ease</h4>
+        <div class="anime5">
+            <button class="square4">Box1</button>
+            <button class="circle4">Box2</button>
+        </div>
+        <h4>Output: Ease-in</h4>
+        <div class="anime6">
+            <button class="square5">Box1</button>
+            <button class="circle5">Box2</button>
+        </div>
+        <h4>Output: Ease-out</h4>
+        <div class="anime7">
+            <button class="square6">Box1</button>
+            <button class="circle6">Box2</button>
+        </div>
+        <h4>Output: Ease-in-out</h4>
+        <div class="anime8">
+            <button class="square7">Box1</button>
+            <button class="circle7">Box2</button>
+        </div>
+</body>
+</html>

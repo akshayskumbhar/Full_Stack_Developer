@@ -1,0 +1,86 @@
+ body{
+    background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+}
+a{text-decoration: none;}
+button{
+    height: 30px;
+    width: 100px;
+    margin: 8px;
+    border-radius: 3px;
+}
+
+.backarrow{
+    background-color: white;
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.backarrow:hover{
+    background-color: rgb(255, 127, 127);
+    color: white;
+}
+
+.combo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+li{
+    font-size: 22px;
+}
+
+h1{
+    font-size: 50px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    margin: 15px 10px;
+    padding: 15px;
+    border-radius: 5px;
+}
+h2{
+    font-size: 35px;
+    color: darkred;
+    margin-bottom: 0px;
+}
+h3{
+    font-size: 30px;
+    color:crimson;
+    margin-left: 30px;
+
+}
+div{
+    margin: 25px 50px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+pre{
+    font-size: 20px;
+}
+b,th{
+    font-size: 22px;
+    color: rgb(255, 38, 38);
+    line-height: 2em;
+}
+
+table,th,td{
+    border: 2px inset gray;
+    border-radius: 3px;
+}
+table{margin: auto;}
+
+#style1, dl , dt, dd{
+  border-left: 4px solid #0d6efd;
+  padding-left: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  margin-left: 20px;
+  color: #555;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .backarrow:hover{
+            background-color: rgb(255, 127, 127);
+            color: white;
+        }
+
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>iframe Tag</h1>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="../HTML/Media_Tag_files/images.html" data-section="images">Images</a></li>
+                <li><a href="./Media_Tag_files/videos.html" data-section="videos">Videos</a></li>
+                <li><a href="./Media_Tag_files/audio.html" data-section="audio">Audio</a></li>
+                <li><a href="./Media_Tag_files/map.html" data-section="map">Map</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="combo">
+            <div class="backarrow"><a href="./Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+             <h2 style="margin: 0 20px; background-color: rgba(255, 255, 255, 0.788); margin: 10px; padding: 10px; border-radius: 10px;">iFrame tag</h2>
+        </div>
+    <main class="main-content">
+        
+        <p>
+            <b>What is an iFrame?</b><br>
+                An iFrame (inline frame) is an HTML element that allows you to embed another HTML document within the current HTML document. This is done using the &lt;iframe&gt; tag. iFrames are commonly used to embed content such as videos, advertisements, maps, or other interactive elements from external sources into a web page. <br>
+            <b>How to Use iFrame</b><br>
+                To use an iFrame, you need to include the &lt;iframe&gt; tag in your HTML document and specify the source (src) attribute, which is the URL of the content you want to embed. Here is a basic example of an iFrame embedding a YouTube video:
+                <div class="syntax">
+                    <b style="font-size: 20px;">Syntax :- </b>
+                    <br><br><b>&lt;iframe src="../HTML/Media_Tag_files/images.html" width="90%" height="400px"&gt;&lt;/iframe&gt;</b>
+                </div>
+                <div class="output">
+                    <b style="font-size: 20px;">Output :- </b>
+                    <br><br>
+                    <iframe src="../HTML/Media_Tag_files/images.html" frameborder="5" style="width: 90%; height: 400px; margin: 10px; padding: 10px;"></iframe>
+                </div>
+        </p>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Media Gallery. All rights reserved.</p>
+    </footer>
+</body>
+</html>

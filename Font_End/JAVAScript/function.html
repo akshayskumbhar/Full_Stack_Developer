@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: verdana;
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            background-color: rgba(255, 255, 255, 0.699);
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        h2{
+            margin: 20px;
+        }
+        .output{
+            background-color: white;
+            border-radius: 8px;
+            border: 2px solid green;
+            margin: 10px;
+            padding: 10px;
+            height: auto;
+        }
+        button{
+            background-color: green;
+            margin: 10px;
+            width: 80px;
+            height: 40px;
+            border-radius: 8px;
+            color: white;
+            font-size: 20px;
+        }
+        button:active{
+            background-color: white;
+            color: black;
+            border: 1px solid gray;
+        }
+        section{
+            background-color: rgba(255, 255, 255, 0.699);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px;
+        }
+        pre{
+            font-size: 20px;
+        }
+        mark{
+            border-radius: 5px;
+            margin: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+    <h2>JavaScript Function Concepts</h2><hr>
+    <section>
+    <h3>1] What is a Function?</h3>
+    <ol>
+        <li>A function is block of reusable code that performs a task.</li>
+        <li>Follow DRY principle -> Don't Repeat Yourself.</li>
+        <li>Can be called multiple times with different inputs.</li>
+    </ol>
+    <button class="btn-run" onclick="run1()">RUN</button>
+    <div class="output" id="out1"></div>
+    <div class="output" id="cd">
+        <pre>
+            function <mark>run1()</mark>
+            {
+                function  <mark>msg()</mark>
+                {
+                    <mark>return "Here is Simple Message"</mark>;
+                }
+                document.getElementById(<mark>"out1"</mark>).textContent <mark>= msg()</mark>;
+                console.log(<mark>msg()</mark>);
+            }
+        </pre>
+    </div>
+
+    <script>
+        function run1()
+        {
+            function  msg()
+            {
+                return "Here is Simple Message";
+            }
+            document.getElementById("out1").textContent = msg();
+            document.getElementById("cd").style.display = "block";
+            console.log(msg());
+            
+        }
+        
+    </script>
+    </section>
+
+    <section>
+    <h3>2] Fuction Declaration vs Function Expression</h3>
+    <ol>
+        <li>Declaration: Hoisted -> can be called before defined</li>
+        <li>Expression: Stored in variable, not hoisted</li>
+    </ol>
+    <button class="btn-run" onclick="run2()">RUN</button>
+    <div class="output" id="out2"></div>
+    <div class="output" id="cd">
+        <pre>
+            function <mark>run2()</mark>
+            {
+                function  <mark>addDec(a,b)</mark> 
+                {
+                    <mark>return a+b;</mark>
+                }
+                const <mark>addExp = function(a, b)</mark> 
+                {
+                    return <mark>a + b;</mark>
+                };
+                <mark>let</mark> result = "Declaration: "<mark>+addDec(5,3)+</mark>"|Expression: "<mark>+addExp(5,3)</mark>;
+
+                document.getElementById(<mark>"out2"</mark>).textContent = <mark>result</mark>;
+                console.log(<mark>result</mark>);
+            }
+        </pre>
+    </div>
+
+    <script>
+        function run2()
+        {
+            function  addDec(a,b) 
+            {
+                return a+b;
+            }
+            const addExp = function(a, b) 
+            {
+                return a + b;
+            };
+            let result = "Declaration: " + addDec(5,3) +" | Expression: " + addExp(5,3);
+
+            document.getElementById("out2").textContent = result;
+            console.log(result);
+        }
+    </script>
+    </section>
+
+    <section>
+    <h3>3] Parameter Vs Arguments</h3>
+    <ol>
+        <li>Parameters: Variables listed in function definition.</li>
+        <li>Arguments: Actual Values passed during function call.</li>
+    </ol>
+    <button class="btn-run" onclick="run3()">RUN</button>
+    <div class="output" id="out3"></div>
+    <div class="output" id="cd">
+        <pre>
+            function <mark>run3()</mark>
+            {
+                function  <mark>mul(x1, x2)</mark>
+                {
+                    return <mark>x1*x2</mark>;
+                }
+                let <mark>m1</mark> = <mark>mul(12,5)</mark>;
+
+                document.getElementById(<mark>"out3"</mark>).textContent = "multiply Result: "<mark>+m1</mark>;
+                console.log("Multiply result "<mark>+ m1</mark>);
+            }
+        </pre>
+    </div>
+
+    <script>
+        function run3()
+        {
+            function  mul(x1, x2)
+            {
+                return x1*x2;
+            }
+            let m1 = mul(12,5);
+
+            document.getElementById("out3").textContent = "multiply Result: "+m1;
+            console.log("Multiply result "+ m1);
+        }
+    </script>
+    </section>
+
+    <section>
+    <h3>4] Return Statements</h3>
+    <ol>
+        <li>return sends value back to caller.</li>
+        <li>Without return, function gives undefined.</li>
+    </ol>
+    <button class="btn-run" onclick="run4()">RUN</button>
+    <div class="output" id="out4"></div>
+    <div class="output" id="cd">
+        <pre>
+            function <mark>run4()</mark>
+            {
+                function  <mark>square(num)</mark>
+                {
+                    return <mark>num * num</mark>;
+                }
+                let result = <mark>square(7)</mark>;
+
+                document.getElementById(<mark>"out4"</mark>).textContent = "Square of : 7 = "<mark>+result</mark>;
+                console.log("Square of : 6 = " <mark>+result</mark>);
+            }
+        </pre>
+    </div>
+
+    <script>
+        function run4()
+        {
+            function  square(num)
+            {
+                return num * num;
+            }
+            let result = square(7);
+
+            document.getElementById("out4").textContent = "Square of : 7 = "+result;
+            console.log("Square of : 6 = " +result);
+        }
+    </script>
+    </section>
+
+    <section>
+    <h3>5] Arrow Function (ES6)</h3>
+    <ol>
+        <li>Introduced in ES6 for clearer syntax.</li>
+        <li>Shorter than traditional functions.</li>
+        <li>Usedful for callbacks and small tasks</li>
+    </ol>
+    <button class="btn-run" onclick="run5()">RUN</button>
+    <div class="output" id="out5"></div>
+    <div class="output" id="cd">
+        <pre>
+            function <mark>run5()</mark>
+            {
+                <mark>const greet = (name) => `Hello, ${name}!`</mark>;
+                <mark>const square = x => x * x;</mark>
+
+                <mark>let result = greet("Akshay") + " | Square of 5: " +square(5);</mark>
+
+                document.getElementById(<mark>"out5"</mark>).textContent = <mark>result</mark>;
+                console.log(<mark>result</mark>);
+            }
+        </pre>
+    </div>
+
+    <script>
+        function run5()
+        {
+            const greet = (name) => `Hello, ${name}!`;
+            const square = x => x * x;
+
+            let result = greet("Akshay") + " | Square of 5: " +square(5);
+
+            document.getElementById("out5").textContent = result;
+            console.log(result);
+        }
+    </script>
+    </section>
+
+    <section>
+    <h3>6] Anonymous & Callback Functions</h3>
+    <ol>
+        <li>Anonymous Function: Function without a name (often used inline).</li>
+        <li>Callback Function: Passed as an argument to another function.</li>
+    </ol>
+    <button class="btn-run" onclick="run6()">RUN</button>
+    <div class="output" id="out6"></div>
+    <div class="output" id="cd">
+        <pre>
+            function runExample6() 
+            {
+                <mark>// Anonymous Function with setTimeout</mark>
+                setTimeout(function() 
+                {
+                console.log("Executed after 2 seconds (Anonymous Function)");
+                }, 2000);
+
+                <mark>// Callback Function</mark>
+                function greetUser(name, callback) 
+                {
+                let msg = "Hello, " + name;
+                console.log(msg);
+                callback();
+                return msg;
+                }
+
+                let result = greetUser("Alice", function() 
+                {
+                console.log("Callback executed!");
+                });
+
+                document.getElementById("output6").textContent = result + " (check console)";
+            }
+
+        </pre>
+    </div>
+
+    <script>
+          function run6() {
+            // Anonymous Function with setTimeout
+            setTimeout(function() {
+            console.log("Executed after 2 seconds (Anonymous Function)");
+            }, 2000);
+
+            // Callback Function
+            function greetUser(name, callback) {
+            let msg = "Hello, " + name;
+            console.log(msg);
+            callback();
+            return msg;
+            }
+
+            let result = greetUser("Alice", function() {
+            console.log("Callback executed!");
+            });
+
+            document.getElementById("out6").textContent = result + " (check console)";
+  }
+
+    </script>
+    </section>
+
+
+    <section>
+    <h3>7] Variable Scope</h3>
+    <ol>
+        <li>Global Scope: Accessible everywhere</li>
+        <li>Local Scope: Accessible only inside functions</li>
+    </ol>
+    <button class="btn-run" onclick="run7()">RUN</button>
+    <div class="output" id="out7"></div>
+    <div class="output" id="cd">
+        <pre>
+            function runExample7() 
+            {
+            let globalVar = "I am Global";
+
+            function testScope() 
+            {
+                let localVar = "I am Local";
+                console.log(globalVar); <mark>// Accessible</mark>
+                console.log(localVar);  <mark>// Accessible</mark>
+                return globalVar + " | " + localVar;
+            }
+
+            let output = testScope();
+            document.getElementById("output7").textContent = output;
+
+            console.log(globalVar); // Accessible
+            <mark>// console.log(localVar); // ❌ Error</mark>
+        }
+    </pre>
+    </div>
+
+    <script>
+          function run7() 
+          {
+            let globalVar = "I am Global";
+
+            function testScope() 
+            {
+            let localVar = "I am Local";
+            console.log(globalVar); // Accessible
+            console.log(localVar);  // Accessible
+            return globalVar + " | " + localVar;
+            }
+
+            let output = testScope();
+            document.getElementById("out7").textContent = output;
+
+            console.log(globalVar); // Accessible
+            // console.log(localVar); // ❌ Error
+        }
+
+    </script>
+    </section>
+
+
+    <section>
+    <h3>8] Lexical Scoping & Closures</h3>
+    <ol>
+        <li>Lexical Scope: Inner functions can access outer variables.</li>
+        <li>Closure: Function remembers variables even after outer function ends</li>
+    </ol>
+    <button class="btn-run" onclick="run8()">RUN</button>
+    <div class="output" id="out8"></div>
+    <div class="output" id="cd">
+        <pre>
+    function run8() 
+    {
+        function outer() 
+        {
+            let outerVar = "I am outside!";
+            function inner() {
+                return outerVar;
+        }
+    return inner;
+    }
+
+    const closureFunc = outer();
+    document.getElementById("output8").textContent = closureFunc();
+
+    console.log(closureFunc()); <mark>// "I am outside!"</mark>
+    }
+    </pre>
+    </div>
+
+    <script>
+          function run8() 
+          {
+            function outer() 
+            {
+            let outerVar = "I am outside!";
+                function inner() 
+                {
+                    return outerVar;
+                }
+            return inner;
+            }
+
+            const closureFunc = outer();
+            document.getElementById("out8").textContent = closureFunc();
+
+            console.log(closureFunc()); // "I am outside!"
+        }
+
+
+    </script>
+    </section>
+
+
+    <section>
+    <h3>9]  Default Parameters</h3>
+    <ol>
+        <li>Lexical Scope: Inner functions can access outer variables.</li>
+        <li>Closure: Function remembers variables even after outer function ends</li>
+    </ol>
+    <button class="btn-run" onclick="run9()">RUN</button>
+    <div class="output" id="out9"></div>
+    <div class="output" id="cd">
+        <pre>
+      function run9() 
+      {
+        function greet(name = "Guest") 
+        {
+        return `Hello, ${name}!`;
+        }
+
+        let result = greet("Alice") + " | " + greet();
+        document.getElementById("out9").textContent = result;
+
+        console.log(greet("Alice")); // Hello, Alice!
+        console.log(greet());        // Hello, Guest!
+    }
+    </pre>
+    </div>
+
+    <script>
+            function run9() 
+            {
+                function greet(name = "Guest") 
+                {
+                return `Hello, ${name}!`;
+                }
+
+            let result = greet("Alice") + " | " + greet();
+            document.getElementById("out9").textContent = result;
+
+            console.log(greet("Alice")); // Hello, Alice!
+            console.log(greet());        // Hello, Guest!
+        }
+
+
+
+    </script>
+    </section>
+</body>
+</html>

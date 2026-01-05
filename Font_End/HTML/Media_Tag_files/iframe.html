@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe View</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .content-row {
+            display: flex;
+            flex: 1;
+        }
+        .content-section {
+            flex: 1;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-content">
+        <div class="content-row">
+            <section id="images" class="content-section">
+                <iframe src="./images.html" title="Images"></iframe>
+            </section>
+            <section id="videos" class="content-section">
+                <iframe src="./videos.html" title="Videos"></iframe>
+            </section>
+        </div>
+        <div class="content-row">
+            <section id="audio" class="content-section">
+                <iframe src="./audio.html" title="Audio"></iframe>
+            </section>
+            <section id="map" class="content-section">
+                <iframe src="./map.html" title="Map"></iframe>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

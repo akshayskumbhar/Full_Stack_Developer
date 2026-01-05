@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1] CSS COLORS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            background-color: white;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        h2{
+            background-color: white;
+            width: 350px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            justify-content: center;
+        }
+        .h22{
+            display: flex;
+            justify-content: center;
+        }
+        section{
+            background-color: rgba(255, 255, 255, 0.747);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        table{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+        }
+
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .backarrow:hover{
+            color: white;
+            background-color: rgb(255, 93, 93);
+        }
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+    <div class="combo">
+            <div class="backarrow"><a id="back" href="../CSS/CSS_Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <h2 style="margin: 0 20px;">CSS Colors</h2>
+        </div>
+    <section>
+        <ol>
+            <li>
+                <b>CSS</b> <i>supports a wide range of colors</i> that can be <b>used to style web pages</b>.
+            </li>
+            <li>
+                These colors can be <i>Specified using</i> <b>color names, hexadecimal values, or RGB values</b>.
+            </li>
+            <li>
+                Following are the <b>Different ways to specify colors</b> in CSS.
+            </li>
+        </ol>
+    </section>
+    
+    <section>
+        <div class="h22">
+            <h2>1] By : <q>COLOR-NAME</q> Values</h2>
+        </div>
+                <ol>
+            <li>
+                <b>CSS</b> provides <b><mark>140 color names</mark></b> that are supported by <i>all modern browsers</i>.
+            </li>
+            <li>
+                These names are <b>case-insensitive</b>.
+            </li>
+            <li>
+                <b>Color Names</b> can be used directly in your CSS code.
+            </li>
+            <li>
+                <b>Example : </b>
+            </li>
+        </ol>
+        <table border="1">
+            <tr>
+                <th style="background-color: AliceBlue;">1] AliceBlue</th>
+                <th style="background-color: AntiqueWhite;">2] AntiqueWhite</th>
+                <th style="background-color: Aqua;">3] Aqua</th>
+                <th style="background-color: Aquamarine;">4] Aquamarine</th>
+            </tr>
+            <tr>
+                <th style="background-color: Azure;">5] Azure</th>
+                <th style="background-color: Beige;">6] Beige</th>
+                <th style="background-color: Black;color: white;">7] Black</th>
+                <th style="background-color: Blue;color: white;">8] Blue</th>
+            </tr>
+        </table>
+        <p>
+            <b>140 CSS color names</b> :<br>
+            1. AliceBlue
+            2. AntiqueWhite
+            3. Aqua
+            4. Aquamarine
+            5. Azure
+            6. Beige
+            7. Bisque
+            8. Black
+            9. BlanchedAlmond
+            10. Blue
+            11. BlueViolet
+            12. Brown
+            13. BurlyWood
+            14. CadetBlue
+            15. Chartreuse
+            16. Chocolate
+            17. Coral
+            18. CornflowerBlue
+            19. Cornsilk
+            20. Crimson
+            21. Cyan
+            22. DarkBlue
+            23. DarkCyan
+            24. DarkGoldenRod
+            25. DarkGray
+            26. DarkGrey
+            27. DarkGreen
+            28. DarkKhaki
+            29. DarkMagenta
+            30. DarkOliveGreen
+            31. DarkOrange
+            32. DarkOrchid
+            33. DarkRed
+            34. DarkSalmon
+            35. DarkSeaGreen
+            36. DarkSlateBlue
+            37. DarkSlateGray
+            38. DarkSlateGrey
+            39. DarkTurquoise
+            40. DarkViolet
+            41. DeepPink
+            42. DeepSkyBlue
+            43. DimGray
+            44. DimGrey
+            45. DodgerBlue
+            46. FireBrick
+            47. FloralWhite
+            48. ForestGreen
+            49. Fuchsia
+            50. Gainsboro
+            51. GhostWhite
+            52. Gold
+            53. GoldenRod
+            54. Gray
+            55. Grey
+            56. Green
+            57. GreenYellow
+            58. HoneyDew
+            59. HotPink
+            60. IndianRed
+            61. Indigo
+            62. Ivory
+            63. Khaki
+            64. Lavender
+            65. LavenderBlush
+            66. LawnGreen
+            67. LemonChiffon
+            68. LightBlue
+            69. LightCoral
+            70. LightCyan
+            71. LightGoldenRodYellow
+            72. LightGray
+            73. LightGrey
+            74. LightGreen
+            75. LightPink
+            76. LightSalmon
+            77. LightSeaGreen
+            78. LightSkyBlue
+            79. LightSlateGray
+            80. LightSlateGrey
+            81. LightSteelBlue
+            82. LightYellow
+            83. Lime
+            84. LimeGreen
+            85. Linen
+            86. Magenta
+            87. Maroon
+            88. MediumAquaMarine
+            89. MediumBlue
+            90. MediumOrchid
+            91. MediumPurple
+            92. MediumSeaGreen
+            93. MediumSlateBlue
+            94. MediumSpringGreen
+            95. MediumTurquoise
+            96. MediumVioletRed
+            97. MidnightBlue
+            98. MintCream
+            99. MistyRose
+            100. Moccasin
+            101. NavajoWhite
+            102. Navy
+            103. OldLace
+            104. Olive
+            105. OliveDrab
+            106. Orange
+            107. OrangeRed
+            108. Orchid
+            109. PaleGoldenRod
+            110. PaleGreen
+            111. PaleTurquoise
+            112. PaleVioletRed
+            113. PapayaWhip
+            114. PeachPuff
+            115. Peru
+            116. Pink
+            117. Plum
+            118. PowderBlue
+            119. Purple
+            120. Red
+            121. RosyBrown
+            122. RoyalBlue
+            123. SaddleBrown
+            124. Salmon
+            125. SandyBrown
+            126. SeaGreen
+            127. SeaShell
+            128. Sienna
+            129. Silver
+            130. SkyBlue
+            131. SlateBlue
+            132. SlateGray
+            133. SlateGrey
+            134. Snow
+            135. SpringGreen
+            136. SteelBlue
+            137. Tan
+            138. Teal
+            139. Thistle
+            140. Tomato
+
+        </p>
+    </section>
+    
+    <section>
+        <div class="h22">
+            <h2>2] By : <q>HEX</q> Values</h2>
+        </div>
+                <ol>
+            <li>
+                Hexadecimal triplet with 3 digits (#rgb).
+            </li>
+            <li>
+                Each digit represents Red, Green, Blue (0-F in hex).
+            </li>
+            <li>
+                Browser expands each digit to double (e.g. #f00 → #ff0000).
+            </li>
+            <li>
+                <b>Example : </b>
+                <ul style="list-style-type: square;">
+                    3 DIGIT HEX VALUE 
+                    <li>#000 : #rgb : r=0 , g=0 , b=0</li>
+                    <li>#fff : #rgb : r=f , g=f , b=f</li>
+                    <li>#f00 : #rgb : red=f , g=0 , b=0</li>
+                    <li>#0f0 : #rgb : r=0 , green=f , b=0</li>
+                    <li>#00f : #rgb : r=0 , g=0 , blue=f</li>
+                    <br>
+                    6 DIGIT HEX VALUE 
+                    <li>#000000 : #rrggbb : red=00 , green=00 , blue=00</li>
+                    <li>#ff0000 : #rrggbb : red=ff , green=00 , blue=00</li>
+                    <li>#00FF00 : #rrggbb : red=00 , green=FF , blue=00</li>
+                    <li>#0000FF : #rrggbb : red=00 , green=00 , blue=FF</li>
+                </ul>
+            </li>
+        </ol>
+        <table>
+            <tr>
+                <th style="background-color: #000; color: white;">1] #000</th>
+                <th style="background-color: #fff;">2] #fff</th>
+                <th style="background-color: #f00;">3] #f00</th>
+                <th style="background-color: #00ff00;">4] #00ff00</th>
+            </tr>
+            <tr>
+                <th style="background-color: #0000ff; color: white;">5] #0000FF</th>
+                <th style="background-color: #0000dd; color: white;">5] #0000dd</th>
+                <th style="background-color: #0000bb; color: white;">5] #0000bb</th>
+                <th style="background-color: #000099; color: white;">5] #000099</th>
+            </tr>
+            <tr>
+                <th style="background-color: #004400; color: white;">5] #004400</th>
+                <th style="background-color: #008800; color: white;">5] #008800</th>
+                <th style="background-color: #00bb00; color: white;">5] #00bb00</th>
+                <th style="background-color: #00ff00; color: white;">5] #00ff00</th>
+            </tr>
+        </table>
+        
+    </section>
+    
+    <section>
+        <div class="h22">
+                <h2>3] By : <q>RGB</q> Values</h2>
+        </div>
+                <ol>
+            <li>
+                Specifies color by mixing <b>Red, Green, Blue</b> values.
+            </li>
+            <li>
+                Each channel carries: 0-255 integers Range.
+            </li>
+            <li>
+                <b>Syntax :</b> property: rgb(R, G, B);
+            </li>
+            <li>
+                <b>Example : </b> color: rgb(255,0,0);
+                <ul style="list-style-type: square;">
+                    <li>rgb(0,0,0) : red=0 , green=0 , blue=0</li>
+                    <li>rgb(255,255,255) : red=255 , green=255 , blue=255</li>
+                    <li>rgb(255,0,0) : red=255 , green=0 , blue=0</li>
+                    <li>rgb(0,255,0) : red=0 , green=255 , blue=0</li>
+                    <li>rgb(0,0,255) : red=0 , green=0 , blue=255</li>
+                </ul>
+            </li>
+        </ol>
+        <table>
+            <tr>
+                <th style="background-color: rgb(0,0,0); color: white;">1] rgb(0,0,0)</th>
+                <th style="background-color: rgb(255,255,255);">2] rgb(255,255,255)</th>
+                <th style="background-color: rgb(255,0,0);">3] rgb(255,0,0)</th>
+                <th style="background-color: rgb(0,255,0);">4] rgb(0,255,0)</th>
+            </tr>
+            <tr>
+                <th style="background-color: rgb(0,0,255); color: white;">5] rgb(0,0,255)</th>
+                <th style="background-color: rgb(0,0,200); color: white;">5] rgb(0,0,200)</th>
+                <th style="background-color: rgb(0,0,150); color: white;">5] rgb(0,0,150)</th>
+                <th style="background-color: rgb(0,0,100); color: white;">5] rgb(0,0,100)</th>
+            </tr>
+            <tr>
+                <th style="background-color: rgb(200,0,0); color: white;">6] rgb(200,0,0)</th>
+                <th style="background-color: rgb(150,0,0); color: white;">6] rgb(150,0,0)</th>
+                <th style="background-color: rgb(100,0,0); color: white;">6] rgb(100,0,0)</th>
+                <th style="background-color: rgb(50,0,0); color: white;">6] rgb(50,0,0)</th>
+            </tr>
+            <tr>
+                <th style="background-color: rgb(50,50,50); color: white;">7] rgb(50,50,50)</th>
+                <th style="background-color: rgb(100,100,100); color: white;">7] rgb(100,100,100)</th>
+                <th style="background-color: rgb(150,150,150); color: white;">7] rgb(150,150,150)</th>
+                <th style="background-color: rgb(200,200,200); color: white;">7] rgb(200,200,200)</th>
+            </tr>
+        </table>
+        
+    </section>
+    
+    <section>
+        <div class="h22">
+            <h2>4] By : <q>RGBA</q> Values</h2>
+        </div>
+                <ol>
+            <li>
+                Extension of RGB with <b>Alpha</b> channel.
+            </li>
+            <li>
+                Alpha controls <b>opacity</b>→ <b>1.0 = fully opaque(Original Color)</b>, <b>0.0 = fully transparent</b>.
+            </li>
+            <li>
+                <b>Syntax → </b> property: rgba(R, G, B, A);
+            </li>
+            <li>
+                <b>Example : </b>
+                <ul style="list-style-type: square;">
+                    <li>rgba(255,0,0,<b>1.0</b>) → red=255 , green=0 , blue=0 , <b>alpha=1.0</b></li>
+                    <li>rgba(255,255,255,<b>0.0</b>) → red=255 , green=0 , blue=0 , <b>alpha=0.0</b></li>
+                </ul>
+            </li>
+        </ol>
+        <table>
+            <tr>
+                <th style="background-color: rgba(255,0,0,1.0); color: white;">1] rgba(255,0,0,1.0)</th>
+                <th style="background-color: rgba(255,0,0,0.7); color: white;">2] rgba(255,0,0,0.7)</th>
+                <th style="background-color: rgba(255,0,0,0.4);">3] rgba(255,0,0,0.4)</th>
+                <th style="background-color: rgba(255,0,0,0.1);">4] rgba(255,0,0,0.1)</th>
+            </tr>
+            <tr>
+                <th style="background-color: rgba(0,0,255,1.0); color: white;">5] rgba(0,0,255,1.0)</th>
+                <th style="background-color: rgba(0,0,255,0.8); color: white;">6] rgba(0,0,255,0.8)</th>
+                <th style="background-color: rgba(0,0,255,0.6); color: white;">7] rgba(0,0,255,0.6)</th>
+                <th style="background-color: rgba(0,0,255,0.4); color: white;">8] rgba(0,0,255,0.4)</th>
+            </tr>
+            <tr>
+                <th style="background-color: rgba(0,0,255,0.3);">9] rgba(0,0,255,0.3)</th>
+                <th style="background-color: rgba(0,0,255,0.2);">10] rgba(0,0,255,0.2)</th>
+                <th style="background-color: rgba(0,0,255,0.1);">11] rgba(0,0,255,0.1)</th>
+                <th style="background-color: rgba(0,0,255,0.0);">12] rgba(0,0,255,0.0)</th>
+            </tr>
+        </table>
+        
+    </section>
+    
+    <section>
+        <div class="h22">
+            <h2>5] By : <q>HSL</q> Values</h2>
+        </div>
+                <ol>
+            <li>
+                Uses <B>Hue, Saturation, Lightness</B> for intuitive color control.
+            </li>
+            <li>
+                <b>Hue (Value in degree):</b> Range (<b>0° - 360°</b>) → 0/360=Red, 120=Green, 240=Blue
+            </li>
+            <li>
+                <b>Saturation (Value in %):</b> Range (<b>0% - 100%</b>) → <b>100% (full color)</b>
+            </li>
+            <li>
+                <b>Lightness (Value in %):</b> Range (<b>0% - 100%</b>) → <b>50% (normal)</b>
+            </li>
+            <li>
+                <b>Lightness :</b>  0% (black) → <b>50% (normal)</b> → 100% (white)
+            </li>
+            <li>
+                <b>Syntax :</b> property: hsl(hue[0-360], saturation[0-100]%, lightness[0-100]%);
+            </li>
+            <li>
+                <b>Example : </b>
+                <ul style="list-style-type: square;">
+                    <li>hsl(360,100%,50%) : hue=360 deg° , saturation=100% , lightness=50%</li>
+                </ul>
+            </li>
+        </ol>
+        <table>
+            <tr>
+                <th style="background-color: hsl(0, 100%, 50%); color: white;">1] hsl(0,100%,50%)</th>
+                <th style="background-color: hsl(120,100%,50%); color: white;">2] hsl(120,100%,50%)</th>
+                <th style="background-color: hsl(240,100%,50%);">3] hsl(240,100%,50%)</th>
+                <th style="background-color: hsl(360,100%,50%);">4] hsl(360,100%,50%)</th>
+            </tr>
+            <tr>
+                <th style="background-color: hsl(240,25%,50%); color: white;">5] hsl(240,25%,50%)</th>
+                <th style="background-color: hsl(240,50%,50%); color: white;">6] hsl(240,50%,50%)</th>
+                <th style="background-color: hsl(240,75%,50%); color: white;">7] hsl(240,75%,50%)</th>
+                <th style="background-color: hsl(240,100%,50%); color: white;">8] hsl(240,100%,50%)  *</th>
+            </tr>
+            <tr>
+                <th style="background-color: hsl(120,100%,25%);">9] hsl(120,100%,25%)</th>
+                <th style="background-color: hsl(120,100%,50%);">10] hsl(120,100%,50%)  *</th>
+                <th style="background-color: hsl(120,100%,75%);">11] hsl(120,100%,75%)</th>
+                <th style="background-color: hsl(120,100%,100%);">12] hsl(120,100%,100%)</th>
+            </tr>
+        </table>
+        
+    </section>
+    
+    <section>
+        <div class="h22">
+            <h2>6] By : <q>HSLA</q> Values</h2>
+        </div>
+                <ol>
+            <li>
+                Extension of HSL with <b>Alpha</b> channel.
+            </li>
+            <li>
+                Alpha controls <b>opacity</b>: <b>1.0 = fully opaque(Original Color)</b>, <b>0.0 = fully transparent</b>.
+            </li>
+            <li>
+                <b>Syntax :</b> property: hsla(H, S, L, A);
+            </li>
+            <li>
+                <b>Example : </b>
+                <ul style="list-style-type: square;">
+                    <li>hsla(360,100%,50%,1.0) : hue=360 deg° , saturation=100% , lightness=50% , <b>alpha=1.0</b></li>
+                    <li>hsla(360,100%,50%,0.0) : hue=360 deg° , saturation=100% , lightness=50% , <b>alpha=0.0</b></li>
+                </ul>
+            </li>
+        </ol>
+        <table>
+            <tr>
+                <th style="background-color: hsla(0, 100%, 50%,1.0); color: white;">1] hsla(0, 100%, 50%,1.0)</th>
+                <th style="background-color: hsla(0, 100%, 50%,0.9); color: white;">2] hsla(0, 100%, 50%,0.9)</th>
+                <th style="background-color: hsla(0, 100%, 50%,0.8); color: white;">3] hsla(0, 100%, 50%,0.8)</th>
+                <th style="background-color: hsla(0, 100%, 50%,0.7); color: white;">4] hsla(0, 100%, 50%,0.7)</th>
+            </tr>
+            <tr>
+                <th style="background-color: hsla(0, 100%, 50%,0.0);">8] hsla(0, 100%, 50%,0.0)</th>
+                <th style="background-color: hsla(0, 100%, 50%,0.2);">7] hsla(0, 100%, 50%,0.2)</th>
+                <th style="background-color: hsla(0, 100%, 50%,0.4); color: white;">6] hsla(0, 100%, 50%,0.4)</th>
+                <th style="background-color: hsla(0, 100%, 50%,0.6); color: white;">5] hsla(0, 100%, 50%,0.6)</th>
+            </tr>
+        </table>
+        
+    </section>
+</body>
+</html>
+

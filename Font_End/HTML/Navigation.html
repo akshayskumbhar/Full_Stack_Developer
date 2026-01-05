@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/inipagi/business-economic/256/store-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Anchor Tag For Navigation</title>
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            background-color: rgba(255, 255, 255, 0.788);
+            text-align: center;
+            border-radius: 10px;
+            font-family: verdana;
+            position: sticky;
+        }
+        h2{
+            text-align: center;
+            font-family: verdana;
+            position: sticky;
+        }
+        .nav{
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            border-radius: 10px;
+            padding: 15px;
+            gap: 30px;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            color: #0066cc;
+        }
+        header{
+            background-color: white;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: -20px;
+        }
+        main{
+            width: auto;
+            height: 500px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.575);
+            border-radius: 10px;
+        }
+        footer{
+            background-color: white;
+            border-radius: 10px;
+            position: sticky;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+        
+        footer i {
+            font-size: 18px;
+        }
+        pre{
+            background-color: white;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+        }
+        .backarrow:hover{
+            background-color: rgb(255, 127, 127);
+            color: white;
+        }
+        .backarrow{
+                    background-color: white;
+                    border-radius: 50%; 
+                    width: 40px; 
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0);
+            border: 0px solid;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <h1>Anchor Tag For Navigation </h1>
+        <div class="nav">
+            <ul>
+                <li type="none"><a href="#">Home</a></li>
+                <li type="none"><a href="#">About Us</a></li>
+                <li type="none"><a href="#">Contact Us</a></li>
+                <li type="none"><a href="#">Product</a></li>
+                <li type="none"><a href="#">Helps</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="combo">
+            <div class="backarrow"><a href="./Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <h2 style="margin: 1 20px; background-color: rgba(255, 255, 255, 0.555);padding: 10px; border-radius: 10px; color: black;">⬆️Navigation⬆️</h2>
+        </div>
+    <main>
+        <h2>Main Body</h2>
+        <b>Navigation in HTML</b>
+            <p>Navigation in HTML is essential for creating user-friendly websites. The &lt;nav&gt; tag is specifically designed to define a set of navigation links. This tag helps in organizing and presenting links for user navigation, enhancing accessibility by aiding screen readers in identifying primary navigation areas.
+        </p>
+            <b>Basic Usage of &lt;nav&gt; Tag</b>
+            <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                        &lt;head&gt;
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                            &lt;title&gt;HTML nav Tag&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;h2&gt;HTML nav Tag&lt;/h2&gt;
+                        &lt;nav&gt;
+                            &lt;a href="#"&gt;Home&lt;/a&gt; 
+                            &lt;a href="#"&gt;Interview&lt;/a&gt;
+                            &lt;a href="#"&gt;Languages&lt;/a&gt; 
+                            &lt;a href="#"&gt;Data Structure&lt;/a&gt; 
+                            &lt;a href="#"&gt;Algorithm&lt;/a&gt;
+                        &lt;/nav&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </pre>
+    </main>
+    <footer>
+        <h1>This Is Footer</h1>
+         <ul>
+            <li type="none">
+                <a href="#">
+                    <i class="fa-brands fa-square-facebook"></i>Facebook</a></li>
+            <li type="none">
+                <a href="#">
+                    <i class="fa-brands fa-square-twitter"></i>Twitter</a></li>
+            <li type="none">
+                <a href="#">
+                    <i class="fa-brands fa-square-linkedin"></i>Linkedin</a></li>
+            <li type="none">
+                <a href="#">
+                    <i class="fa-brands fa-square-github"></i>Github</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

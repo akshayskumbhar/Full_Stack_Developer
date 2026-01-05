@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        div{
+            margin: 15px 30px;
+            padding: 10px;
+            border: 2px inset gray;
+            border-radius: 10px;
+            background-color: whitesmoke;
+            font-size: 25px;
+        }
+        h1{
+            background-color: rgba(255, 255, 255, 0.582);
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        
+        h2{
+            color: rgb(255, 255, 255);
+            margin: 30px;
+            font-size: 35px;
+        }
+        h3{
+            color: crimson;
+            font-size: 25px;
+        }
+        .backarrow:hover{
+            background-color: rgb(255, 127, 127);
+            color: white;
+        }
+        .backarrow{
+                    background-color: white;
+                    border-radius: 50%; 
+                    width: 40px; 
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+            background-color: rgba(0, 0, 0, 0);
+            border: 0px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+    <div class="combo">
+            <div class="backarrow"><a href="./Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <h2 style="margin: 0 20px; background-color: rgba(255, 255, 255, 0.555);padding: 10px; border-radius: 10px; color: black;">Text Formating</h2>
+        </div>
+    <h2>1] Non-Semantic Element</h2>
+    <div>
+        <h3>
+            1. &lt;b&gt; Element : 
+        </h3>
+        <b>TEXT Formatting</b>
+        <hr>
+        <h3>
+            2. &lt;i&gt; Element : 
+        </h3>
+        <i>TEXT Formatting</i>
+        <hr>
+        <h3>
+            3. &lt;u&gt; Element : 
+        </h3>
+        <u>TEXT Formatting</u>
+        <hr>
+        <h3>
+            4. &lt;mark&gt; Element : 
+        </h3>
+        <mark>TEXT Formatting</mark>
+        <hr>
+        <h3>
+            5. &lt;sub&gt; Element : 
+        </h3>
+        H<sub>2</sub>O , T<sub>E</sub>X<sub>T</sub>.
+        <hr>
+        <h3>
+            6. &lt;sup&gt; Element : 
+        </h3>
+        (a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup> <br><br>
+        a<sup>2</sup> + b<sup>2</sup> = (a+b)(a-b)
+        <hr>
+    </div><hr>
+
+    <h2>2] Semantic Element</h2>
+    <div>
+        <h3>
+            1. &lt;strong&gt; Element : 
+        </h3>
+        <strong>INDIA</strong> , <strong>MARATHI</strong>
+        <hr>
+        <h3>
+            2. &lt;em&gt; Element : 
+        </h3>
+        <em>My Parents</em> , <em>My Country</em>
+        <hr>
+        <h3>
+            3. &lt;abbr&gt; Element : 
+        </h3>
+        <abbr title="Object Oriented">O</abbr> <br><br>
+        <abbr title="">R</abbr><br>
+        <abbr title="">A</abbr><br>
+        <abbr title="">H</abbr><br>
+        <abbr title="">I</abbr><br>
+        <abbr title="">M</abbr><br><br>
+        <abbr title="1]Simple 2]Secure">2S</abbr><br>
+        <abbr title="">p</abbr><br>
+        <abbr title="">D</abbr><br>
+        <abbr title="">p</abbr><br>
+        <hr>
+        <h3>
+            4. &lt;cite&gt; Element : (Creative Work)
+        </h3>
+        <img src="Majanu.png" alt="Majanu Wali Painting" style="width: 400px; height: 200px;"><br>
+        <cite>MAJANUCHI PAINTING.</cite>
+        <hr>
+        <h3>
+            5. &lt;code&gt; Element : (Any Pro. language Code Snippet - Visible in Monospace)
+        </h3>
+        <code>
+            System.out.println();
+        </code>
+        <hr>
+    </div><hr>
+    
+    <h2>3] Quotation Element</h2>
+    <div>
+        <h3>
+            1. &lt;blockquote&gt; Element
+        </h3>
+        <hr>
+        <blockquote cite="https://www.joinindianarmy.nic.in/an-officer-and-gentleman.htm">
+            <b>blockquote :</b><br>
+            <b>An Officer and A Gentleman</b> :
+An officer in the Indian Army inherits glorious heritage and lasting traditions, blended perfectly with the latest advances in technology in the fields of armament, management, engineering and medical sciences. It offers a golden opportunity to be a part of the world's finest Army and get trained not only to be an Officer but also a Gentleman for life.
+        </blockquote>
+        <hr> 
+        <p>
+            <b>Paragraph :</b><br>
+            <b>An Officer and A Gentleman</b> :
+An officer in the Indian Army inherits glorious heritage and lasting traditions, blended perfectly with the latest advances in technology in the fields of armament, management, engineering and medical sciences. It offers a golden opportunity to be a part of the world's finest Army and get trained not only to be an Officer but also a Gentleman for life.
+        </p> 
+        <hr>      
+        <h3>
+            2. &lt;q&gt; Element
+        </h3>
+        <q>THANK YOU , ....</q>
+        <hr>
+
+    </div><hr>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ORDERED LIST</title>
+        <link rel="stylesheet" href="../liststyle.css">
+    </head>
+    <body>
+        <h1>ORDERED LIST</h1>
+
+        <div>
+            <pre>
+    <b>📘DEFINATION :</b>
+            An Ordered List is used to display a sequence of items in a numbered format, 
+            where the order matters (e.g., steps in a process, ranking, etc.).
+
+        🔸 Use the &lt;ol&gt; tag to define an ordered list.
+        🔸 Use &lt;li&gt; (list item) inside &lt;ol&gt; to define individual list elements. </pre>
+        </div>
+
+        <div>
+            <table width="95%">
+                <tr>
+                    <th width="33%">
+                        SYNTAX
+                    </th>
+                    <th width="33%">
+                        EXAMPLE
+                    </th>
+                    <th>
+                        OUTPUT
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre>
+    &lt;ol&gt;
+        &lt;li&gt;Item1&lt;/li&gt;
+        &lt;li&gt;Item2&lt;/li&gt;
+    &lt;/ol&gt;
+                        </pre>
+                    </td>
+                    <td>
+                        <pre>
+    &lt;ol&gt;
+        &lt;li&gt;Item1&lt;/li&gt;
+        &lt;li&gt;Item2&lt;/li&gt;
+    &lt;/ol&gt;                        
+                        </pre>
+                    </td>
+                    <td>
+                        <ol>
+                            <li>PAPITA</li>
+                            <li>MAYA</li>
+                            <li>ARUNDHATI</li>
+                            <li>GANAPA</li>
+                            <li>BUNTY</li>
+                            <li>RAMESH</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <h2>🛠️ Customizing Number Style :</h2>
+<pre>       You can change the numbering using the <b>type</b> and <b>start</b> <i>Attributes</i>.</pre>
+
+            <h3>
+                1] <q>type</q> Attribute : <b>Sets the <i>Type(1,A,a,i,I)</i> for the list.</b>
+            </h3>
+            <table width="90%">
+                <tr>
+                    <th width="20%">type="1" <i>(default)</i></th>
+                    <th>type="A"</th>
+                    <th>type="a"</th>
+                    <th>type="i"</th>
+                    <th>type="I"</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol type="1">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol type="A">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol type="a">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol type="i">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol type="I">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+
+            <h3>
+                2] <q>start</q> Attribute : <b>Sets the <i>starting number</i> for the list.</b>
+            </h3>
+            <table width="90%">
+                <tr>
+                    <th width="20%">
+                        type="1" <i>(default)</i><br>
+                        start="5"
+                    </th>
+                    <th>
+                        type="A"<br>start="2"
+                    </th>
+                    <th>
+                        type="a"<br>start="3"
+                    </th>
+                    <th>
+                        type="i"<br>start="4"
+                    </th>
+                    <th>
+                        type="I"<br>start="5"
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <ol type="1" start="5">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol type="A" start="2">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol type="a" start="3">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol type="i" start="4">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ol type="I" start="5">
+                            <li>RINKU</li>
+                            <li>PINKU</li>
+                            <li>CHINKU</li>
+                            <li>TINKU</li>
+                            <li>MINKU</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>

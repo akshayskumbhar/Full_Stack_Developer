@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.767);
+            margin: 10px;
+            padding: 10px;
+            justify-content: center;
+            border-radius: 10px;
+            
+        }
+        p{
+            margin: 0;
+        }
+        .index{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+        }
+        .box1 {
+            position: static;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 0, 0, 0.6);
+            z-index: 1; /* lower → behind */
+        }
+
+        .box2 {
+            position: static;
+            width: 150px;
+            margin-top: 80px;
+            margin-left: -80px;
+            height: 150px;
+            background: rgba(0, 0, 255, 0.6);
+            z-index: 5; /* higher → in front */
+        }
+        section{
+            background-color: rgba(255, 255, 255, 0.753);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        pre{
+            background-color: white;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+        }
+
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .backarrow:hover{
+            color: white;
+            background-color: rgb(255, 93, 93);
+        }
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+    <section>
+       <div class="combo">
+            <div class="backarrow"><a id="back" href="../CSS/CSS_Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <h2 style="margin: 0 20px; background-color: rgba(255, 255, 255, 0.829); margin: 10px; padding: 10px; border-radius: 10px;">Z-index</h2>
+        </div>
+        
+        <pre>
+<b style="font-size: 20px;">✅ Concept </b>
+            <p>● z-index controls the stacking order of positioned elements (which element appears on top).</p>
+            <p>● Only works when the element has a position other than static (i.e., relative, absolute, fixed, sticky).</p>
+            <p>● Higher z-index = element appears in front.</p>
+            <p>● Default stacking order is determined by the DOM order, unless overridden using z-index.</p>
+
+
+<b style="font-size: 20px;">🧩 Syntax</b>
+
+        .box1 {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 0, 0, 0.6);
+            z-index: 1; /* lower → behind */
+            }
+
+        .box2 {
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 255, 0.6);
+            z-index: 5; /* higher → in front */
+            }
+
+
+</pre>
+<b style="font-size: 20px;">🧪 Example </b> 
+        <table border="1">
+            <tr>
+                <th width="10%">
+                    <h3>Z-index</h3>
+                        <div class="index">
+                            <div class="box1">Red Box (Behind)</div>
+                            <div class="box2">Blue Box (Front)</div>
+                        </div>
+                </th>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

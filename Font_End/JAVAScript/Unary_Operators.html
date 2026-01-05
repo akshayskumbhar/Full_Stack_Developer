@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unary Operators</title>
+</head>
+<body>
+    <h1>Unary Operators</h1>
+
+    <script>
+
+        // this is typeof with increment and Decrement
+
+        let count = 5;
+        console.log(typeof count); //number
+        console.log(count); //6
+
+
+        let marks = 10;
+        console.log(typeof marks); //number
+        console.log(marks); //9
+
+        let number =15;
+        console.log(typeof number); //number
+        console.log(number);
+
+        let delta =20;
+        console.log(typeof delta); //number
+        console.log(delta);
+
+        //this is delete 
+
+        let counts = 11;
+        console.log(delete counts); //false
+        console.log(counts);
+
+        //this is increment value
+
+        let inr = 27;
+        inr++;
+        console.log("Here is Increment Value of 27 is: "+inr);  //28
+
+        //this is Decrement Value
+
+        let der = 23;
+        der--;
+        console.log("here is decrement value of 23 is: "+der);  //22
+
+        //addition of two variable
+
+        let num1 = 100;
+        let num2 = 200;
+
+        console.log("let num1 =" +num1+ ":\n let num2 =" +num2+":");
+        console.log("1] increment : ++ : (Default Increment=1)");
+        console.log("1.1] Pre-Increment : ++Variable: (First Increment, Then Assignment)");
+        let x1 = ++num1;
+        console.log("EXAMPLE : let x1 = ++num1:\n i] num1 incremented first: "+num1+ "\n ii] Assigned to : "+x1);
+
+        console.log("1.2] Post-Increment: Variable++ : (First Assignment, Then increment)");
+        let x2 = num2++;
+
+        //x1 = num2++; x2 = 
+
+        console.log("EXAMPLE: let x2 = num2++ :\n i] x2=" +2+
+                    "\n ii] num2 incremented to : "+num2);
+            console.log("-----------------------");
+
+            let val1 =50;
+            let val2 =90;
+
+            console.log("let val1 =" +val1+":\n let val2 =" +val2+ ":");
+            console.log("2] Descrement : -- : (Default Descrement=1)");
+            console.log("2.1] Pre-Decrement :-- Variable : (First Decrement, Then Assignment)");
+            let y1 =--val1;
+            console.log("val1 decrement to: "+val1+ "\n y1 = "+y1);
+            console.log("2.2] Post-Decrement: Variable--:(First Assignment, Then Descremen)");
+            let y2 = val2--;
+            console.log("y2 ="+y2+"\n val1 decremented to: "+val2);
+            console.log("==============================");
+            // 
+            //  2] typeof Operator
+            // 
+
+        console.log("2] typeof Operator : Returns Data Type");
+        console.log("===================================");
+
+        let a =10;
+        let b =10.5;
+        let c ="Javascript";
+        let d = true;
+        let e;
+        let f = null;
+        let g ={name:"JS"};
+
+
+        console.log("typeof a:" + typeof a);
+        console.log("typeof b:" + typeof b);
+        console.log("typeof c:" + typeof c);
+        console.log("typeof d:" + typeof d);
+        console.log("typeof e:" + typeof e);
+        console.log("typeof f:" + typeof f);
+        console.log("typeof g:" + typeof g);
+        console.log("====================:");
+        /*===============================================================================================================================
+        3] delete Operator
+        =================================================================================================================================*/
+        console.log("3] delete Operator : Deletes Object Properties");
+        console.log("--------------------------------------------------");
+
+        let student = {
+            name: "Rohit",
+            age: 21,
+            course: "JavaScript"
+        };
+        console.log("Before delete: ", student);
+        delete student.age;
+        console.log("After delete age property : ", student);
+    </script>
+</body>
+</html>

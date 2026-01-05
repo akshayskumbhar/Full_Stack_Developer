@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Property</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+            font-family: verdana;
+        }
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .backarrow:hover{
+            color: white;
+            background-color: rgb(255, 93, 93);
+        }
+        h1{
+            background-color: rgba(255, 255, 255, 0.692);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.692);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .syntax{
+            background-color: rgba(255, 255, 255, 0.637);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .syntax1{
+            background-color: rgba(255, 255, 255, 0.637);
+            padding: 10px;
+            margin: 0px 80px;
+            border-radius: 10px;
+        }
+        /* Rotate keyframes */
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg); /* full rotation */
+        }
+      }
+
+      @keyframes rotater {
+        from {
+          transform: rotate(360deg);
+        }
+        to {
+          transform: rotate(0deg); /* full reverse rotation */
+        }
+      }
+
+      .rotate-box1 {
+        width: 150px;
+        padding: 50px;
+        margin: 80px auto;
+        background: #2196f3;
+        color: white;
+        text-align: center;
+
+        animation: rotate 3s linear infinite; /* smooth continuous rotation */
+      }
+      .rotate-box2 {
+        width: 150px;
+        height: 150px;
+        padding: 50px;
+        margin: 80px auto;
+        background: linear-gradient(to left, red, blue);
+        color: white;
+        text-align: center;
+        border-radius: 50%;
+        animation: rotater 3s linear infinite; /* smooth continuous rotation */
+      }
+      .description{
+        background-color: rgba(255, 255, 255, 0.653);
+        height: auto;
+        border-radius: 10px;
+      }
+      h2{
+        margin: 10px;
+        padding: 10px;
+      }
+      pre{
+        font-family: verdana;
+      }
+    </style>
+</head>
+<body>
+    <h1>Full stack Development</h1>
+    <div class="container">
+         <div class="backarrow">
+            <a href="../CSS/Animation.html"><i class="fa-solid fa-arrow-left"></i></i></a>
+        </div>
+        <h2>Rotating Animation</h2>
+        <div class="description">
+            <h2>Syntax</h2>
+            <pre>
+                @keyframes rotate {
+                    from {
+                    transform: rotate(0deg);
+                    }
+                    to {
+                    transform: rotate(360deg); /* full rotation */
+                    }
+                }
+            </pre>
+        </div>
+        <div class="rotate-box1">animation: rotate 3s linear infinite;</div>
+        <h2>Rotating Circle Reverse Animation</h2>
+        <div class="description">
+            <h2>Syntax</h2>
+            <pre>
+                @keyframes rotater {
+                  from {
+                    transform: rotate(360deg);
+                  }
+                  to {
+                    transform: rotate(0deg); /* full reverse rotation */
+                  }
+                }
+            </pre>
+        </div>
+        <div class="rotate-box2">animation: rotate 3s linear infinite;</div>
+    </div>
+    </div>
+</body>
+</html>

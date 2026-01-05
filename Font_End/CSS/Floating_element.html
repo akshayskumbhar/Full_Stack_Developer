@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4] Floating Elements (float)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body{
+        background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+    }
+    header{
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+    }
+    header h1{
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-family: verdana;
+        margin: 10px;
+        padding: 10px;
+    }
+    th{
+        align-items: center;
+        justify-content: center;
+    }
+    .hp{
+        text-align: center;
+        color: whitesmoke;
+        margin: 3px;
+    }
+
+    section{
+        margin: 20px 40px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: white;
+    }
+    section h2{
+        font-size: 30px;
+        color: darkred;
+        margin: 0px;
+    }
+    pre{
+        font-size: 18px;
+    }
+    h3{
+        font-size: 25px;
+        color: darkblue;
+
+    }
+
+    .b1{
+        height: 50px;
+        font-size: 20px;
+        background-color: rgb(100, 185, 181);
+        border-radius: 5px;
+        margin: 10px 0px;
+        color: maroon;
+    }
+    .i1{
+        height: 50px;
+        width: 70%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        background-color: rgb(170, 93, 179);
+        border-radius: 5px;
+        color: rgb(249, 249, 252);
+    }
+    .ib1{
+        background-color: aquamarine;
+        border-radius: 10px;
+        width: 40%; 
+        height: 150px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+/* Z-INDEX */
+    .box1 {
+      position: static;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 0, 0, 0.6);
+      z-index: 1; /* lower → behind */
+    }
+
+    .box2 {
+      position: static;
+      width: 150px;
+      margin-top: -80px;
+      margin-left: 40px;
+      height: 150px;
+      background: rgba(0, 0, 255, 0.6);
+      z-index: 5; /* higher → in front */
+    }
+    /* FLOATING */
+    div{
+      margin: 10px;
+      width: 150px;
+      height: 150px;
+      background: lightgreen;
+    }
+
+    .img-box {
+      float: left;  /* image floats left */
+    }
+
+    .img-box1 {
+      float: right;  /* image floats right */
+    }
+
+    .text {
+      background: #f0f0f0;
+      padding: 10px;
+    }
+    .backarrow:hover{
+            color: rgb(55, 32, 255);
+            background-color: rgb(255, 41, 130);
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Full Stack Development</h1>
+    </header>
+    <section style="font-family: verdana; display: flex; background-color: rgba(255, 255, 255, 0); display: flex; justify-content: center;">
+        <div style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 20px; background-color: white;"><a href="../../index.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+        <div style="text-align: center; display: flex; align-items: center; justify-content: center; width: 230px; height: 50px; border-radius: 10px; background-color: white;">Floating Element (Float)</div>
+    </section>
+    <section>
+        <h2>1] float: left;   <i>/* or right */</i></h2>
+        <pre>
+<b>✅ Concept </b>
+        ● The float property moves an element to the left or right, 
+            allowing other content to wrap around it.
+        ● Historically used for layouts (before Flexbox/Grid).
+        ● Common for:
+            ○ Images with wrapped text
+            ○ Basic column layouts
+
+<b>🧩 Syntax</b>
+        element {
+            float: left;   /* or right */
+        }
+
+<b>🧪 Example </b> </pre>
+
+
+        <table border="1">
+            <tr>
+                <th width="30%">
+                    <h3>Without <q>float</q> property</h3>
+                    <div>
+                        IMAGE
+                    </div>
+                    <p class="text">
+                        WITHOUT , float: left;
+                    </p>
+                </th>
+                <th width="35%">
+                    <h3>WITH , float: left;</h3> 
+                    <div class="img-box">
+                        IMAGE
+                    </div>
+                    <p class="text">                        
+                        This text wraps around the floating element.
+                        The float pushes the content around it, creating a flow.
+                    </p>
+                </th>
+                <th>
+                    <h3>WITH , float: right;</h3> 
+                    <div class="img-box1">
+                        IMAGE
+                    </div>
+                    <p class="text">                        
+                        This text wraps around the floating element.
+                        The float pushes the content around it, creating a flow.
+                    </p>
+                </th>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>2] Z-index</h2>
+        <pre>
+        <b>✅ Concept </b>
+        
+            ●	z-index controls the stacking order of positioned elements (which element appears on top).
+
+            ●	Only works when the element has a position other than static (i.e., relative, absolute, fixed, sticky).
+
+            ●	Higher z-index = element appears in front.
+
+            ●	Default stacking order is determined by the DOM order, unless overridden using z-index.
+
+
+<b>🧩 Syntax</b>
+        .box1 {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 0, 0, 0.6);
+            z-index: 1; /* lower → behind */
+            }
+
+    .box2 {
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 255, 0.6);
+            z-index: 5; /* higher → in front */
+            }
+
+
+<b>🧪 Example </b> </pre>
+
+
+        <table border="1">
+            <tr>
+                <th width="10%">
+                    <h3>Z-index</h3>
+                        <div class="box1">Red Box (Behind)</div>
+                        <div class="box2">Blue Box (Front)</div>
+                </th>
+            </tr>
+        </table>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 Function</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background-color: rgb(205, 205, 223);
+            padding-top: 200px;
+        }
+        h3{
+            border-left: 6px solid #4caf50;
+            padding: 4px;
+        }
+        header{
+            background-color: rgb(23, 23, 54);
+            font-family: verdana;
+            color: white;
+            padding: 20px;
+            margin: -10px -8px 0 -8px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .lists{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1px;
+            gap: 10px;
+        }
+        li{
+            margin: 5px;
+        }
+        a{
+            text-decoration: none;
+        }
+        section{
+            font-family: verdana;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .syntax{
+            background-color: rgb(228, 228, 228);
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px 10px 10px 20px;
+        }
+        button{
+            background-color: green;
+            padding: 10px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+        #result{
+            margin-top: 5px;
+            padding: 5px;
+        }
+        .main1
+        {
+            padding: 20px;
+            margin: auto;
+            width: 900px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Function & Scope in Javascript</h1>
+        <ul class="lists">
+            <li type="none"><a href="#function1" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Function</a></li>
+            <li type="none"><a href="#function2" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Declaration vs Expression</a></li>
+            <li type="none"><a href="#function3" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Params vs Args</a></li>
+            <li type="none"><a href="#function4" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Return</a></li>
+            <li type="none"><a href="#function5" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Arrow Fn</a></li>
+            <li type="none"><a href="#function6" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Callbacks</a></li>
+            <li type="none"><a href="#function7" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Scope</a></li>
+            <li type="none"><a href="#function8" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Closures</a></li>
+            <li type="none"><a href="#function9" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Default</a></li>
+            <li type="none"><a href="#function10" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Use Cases</a></li>
+            <li type="none"><a href="#function11" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Hand-On</a></li>
+            <li type="none"><a href="#function12" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Pitfalls</a></li>
+            <li type="none"><a href="#function13" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Quiz</a></li>
+            <li type="none"><a href="#function14" style="color: white; background-color: rgb(0, 122, 82); padding: 8px; border-radius: 20px;">Best Practices</a></li>
+        </ul>
+    </header>
+    <div class="main1">
+        <main>
+        <!-- here is function -->
+        <section id="function1">
+            <h3>1️⃣ What is a Function?</h3>
+            <p><b>Concept:</b> Two ways to define function.</p>
+            <ul>
+                <li>A function is block of reusable code that performs a task.</li>
+                <li>Follow DRY principle -> Don't Repeat Yourself.</li>
+                <li>Can be called multiple times with different inputs.</li>
+            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+                    function functionName() 
+                    {
+                        return result;
+                    } 
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function run1()
+                {
+                    function  msg()
+                    {
+                        return "Here is Simple Message";
+                    }
+                document.getElementById("out1").textContent = msg();
+                document.getElementById("cd").style.display = "block";
+                console.log(msg());
+                }
+                </pre>
+            </div>
+            <div id="output" style="text-align: center;">
+                <button onclick="simple()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function simple()
+            {
+                function  msg()
+                {
+                    return "Here is Simple Message";
+                }
+                document.getElementById("result").textContent = msg();
+                console.log(msg());
+
+            }
+        </script>
+    
+        <!-- here is -->
+        <section id="function2">
+            <h3>2️⃣ Function Declaration vs Function Expression</h3>
+            <p><b>Concept:</b></p>
+            <ul>
+                <li><b>Declaration</b>: Hoisted → can be called before defined</li>
+                <li><b>Expression</b>: Stored in variable, not hoisted</li>
+            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+            // Declaration
+                function add(a, b) { return a + b; }
+
+            // Expression
+                const addExp = function(a, b) { return a + b; };
+
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample2() 
+                {
+                    function addDec(a, b) 
+                    { 
+                        return a + b; 
+                    }
+                    const addExp = function(a, b) 
+                    {
+                        return a + b; 
+                    };
+
+                    let result = "Declaration: " + addDec(5,3) +
+                                " | Expression: " + addExp(5,3);
+
+                    document.getElementById("output2").textContent = result;
+                    console.log(result);
+                }
+                </pre>
+            </div>
+            <div id="output2" style="text-align: center;">
+                <button onclick="runExample2()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample2() 
+            {
+                function addDec(a, b) 
+                {
+                    return a + b; 
+                }
+            const addExp = function(a, b) 
+            {
+                return a + b; 
+            };
+
+            let result = "Declaration: " + addDec(5,3) +
+                        " | Expression: " + addExp(5,3);
+
+            document.getElementById("output2").textContent = result;
+            console.log(result);
+            }
+
+        </script>
+    
+        <!-- here is -->
+       <section id="function3">
+            <h3>3️⃣ Parameters vs Arguments</h3>
+            <p><b>Concept:</b> Two ways to define function.</p>
+            <ul>
+                <li>Parameters: Variables listed in function definition</li>
+                <li>Arguments: Actual values passed during function call</li>
+            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+                    function functionName() 
+                    {
+                        return result;
+                    } 
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample3() {
+                function multiply(x, y) { return x * y; }
+                let result = multiply(4, 5); // arguments = 4, 5
+
+                document.getElementById("output3").textContent =
+                "Multiply Result: " + result;
+
+                console.log("Multiply:", result); // 20
+            }
+
+                </pre>
+            </div>
+            <div id="output3" style="text-align: center;">
+                <button onclick="runExample3()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+                <h3>3. Parameters vs Arguments</h3>
+            </div>
+        </section>
+        <script>
+            function runExample3() {
+            function multiply(x, y) { return x * y; }
+            let result = multiply(4, 5); // arguments = 4, 5
+
+            document.getElementById("output3").textContent =
+            "Multiply Result: " + result;
+
+            console.log("Multiply:", result); // 20
+        }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function4">
+            <h3>4️⃣ Return Statements</h3>
+            <p><b>Concept:</b> Two ways to define function.</p>
+            <ul>
+                <li>return sends value back to caller.</li>
+                <li>Without return, function gives undefined.</li>
+            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+                    function functionName(params) {
+                    return value;
+                    }
+ 
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample4() {
+                function square(num) { return num * num; }
+                let result = square(6);
+
+                document.getElementById("output4").textContent =
+                "Square of 6: " + result;
+
+                console.log("Square:", result); // 36
+            }
+
+                </pre>
+            </div>
+            <div id="output4" style="text-align: center;">
+                <button onclick="runExample4()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample4() {
+                function square(num) { return num * num; }
+                let result = square(6);
+
+                document.getElementById("output4").textContent =
+                "Square of 6: " + result;
+
+                console.log("Square:", result); // 36
+            }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function5">
+            <h3>5️⃣ Arrow Functions (ES6)</h3>
+            <p><b>Concept:</b></p>
+            <ul>
+                <li>Introduced in ES6 for cleaner syntax</li>
+                <li>Shorter than traditional functionsFollow DRY principle -> Don't Repeat Yourself.</li>
+                <li>Useful for callbacks and small tasks.</li>
+            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+                    const functionName = (params) => expression; 
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample5() {
+                const greet = (name) => `Hello, ${name}!`;
+                const square = x => x * x;
+
+                let result = greet("Alice") + " | Square of 5: " + square(5);
+
+                document.getElementById("output5").textContent = result;
+                console.log(result);
+            }
+
+                </pre>
+            </div>
+            <div id="output5" style="text-align: center;">
+                <button onclick="runExample5()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample5() {
+            const greet = (name) => `Hello, ${name}!`;
+            const square = x => x * x;
+
+            let result = greet("Alice") + " | Square of 5: " + square(5);
+
+            document.getElementById("output5").textContent = result;
+            console.log(result);
+        }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function6">
+            <h3>6️⃣ Anonymous & Callback Functions</h3>
+            <p><b>Concept:</b></p>
+            <ul>
+                <li>Anonymous Function: Function without a name (often used inline).</li>
+                <li>Callback Function: Passed as an argument to another function</li>
+            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+                    function functionName() 
+                    {
+                        return result;
+                    } 
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample6() {
+                // Anonymous Function with setTimeout
+                setTimeout(function() {
+                console.log("Executed after 2 seconds (Anonymous Function)");
+                }, 2000);
+
+                // Callback Function
+                function greetUser(name, callback) {
+                let msg = "Hello, " + name;
+                console.log(msg);
+                callback();
+                return msg;
+                }
+
+                let result = greetUser("Alice", function() {
+                console.log("Callback executed!");
+                });
+
+                document.getElementById("output6").textContent = result + " (check console)";
+            }
+
+                </pre>
+            </div>
+            <div id="output6" style="text-align: center;">
+                <button onclick="runExample6()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample6() {
+            // Anonymous Function with setTimeout
+            setTimeout(function() {
+            console.log("Executed after 2 seconds (Anonymous Function)");
+            }, 2000);
+
+            // Callback Function
+            function greetUser(name, callback) {
+            let msg = "Hello, " + name;
+            console.log(msg);
+            callback();
+            return msg;
+            }
+
+            let result = greetUser("Alice", function() {
+            console.log("Callback executed!");
+            });
+
+            document.getElementById("output6").textContent = result + " (check console)";
+        }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function7">
+            <h3>7️⃣ Variable Scope</h3>
+            <p><b>Concept:</b> Two ways to define function.</p>
+            <ul>
+                <li><b>Global Scope</b>: Accessible everywhere.</li>
+                <li><b>Local Scope</b>: Accessible only inside functions</li>
+\            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+                    function functionName() 
+                    {
+                        return result;
+                    } 
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample7() {
+                    let globalVar = "I am Global";
+
+                    function testScope() {
+                    let localVar = "I am Local";
+                    console.log(globalVar); // Accessible
+                    console.log(localVar);  // Accessible
+                    return globalVar + " | " + localVar;
+                    }
+
+                    let output = testScope();
+                    document.getElementById("output7").textContent = output;
+
+                    console.log(globalVar); // Accessible
+                    // console.log(localVar); // ❌ Error
+                }
+
+                </pre>
+            </div>
+            <div id="output7" style="text-align: center;">
+                <button onclick="runExample7()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample7() {
+                let globalVar = "I am Global";
+
+                function testScope() {
+                let localVar = "I am Local";
+                console.log(globalVar); // Accessible
+                console.log(localVar);  // Accessible
+                return globalVar + " | " + localVar;
+                }
+
+                let output = testScope();
+                document.getElementById("output7").textContent = output;
+
+                console.log(globalVar); // Accessible
+                // console.log(localVar); // ❌ Error
+            }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function8">
+            <h3>8️⃣ Lexical Scoping & Closures</h3>
+            <p><b>Concept:</b> Two ways to define function.</p>
+            <ul>
+                <li>Lexical Scope: Inner functions can access outer variables</li>
+                <li>Closure: Function remembers variables even after outer function ends</li>
+            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+                    function functionName() 
+                    {
+                        return result;
+                    } 
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample8() {
+                function outer() {
+                let outerVar = "I am outside!";
+                function inner() {
+                    return outerVar;
+                }
+                return inner;
+                }
+
+                const closureFunc = outer();
+                document.getElementById("output8").textContent = closureFunc();
+
+                console.log(closureFunc()); // "I am outside!"
+            }
+
+                </pre>
+            </div>
+            <div id="output8" style="text-align: center;">
+                <button onclick="runExample8()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample8() {
+            function outer() {
+            let outerVar = "I am outside!";
+            function inner() {
+                return outerVar;
+            }
+            return inner;
+            }
+
+            const closureFunc = outer();
+            document.getElementById("output8").textContent = closureFunc();
+
+            console.log(closureFunc()); // "I am outside!"
+        }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function9">
+            <h3>9️⃣ Default Parameters</h3>
+            <p><b>Concept:</b></p>
+            <ul>
+                <li>Allows assigning default values if no argument is passed.</li>
+            </ul>
+            <div class="syntax">
+                <pre>
+    Syntax:    
+                    function functionName() 
+                    {
+                        return result;
+                    } 
+                    </pre>
+            </div>
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample9() {
+                function greet(name = "Guest") {
+                return `Hello, ${name}!`;
+                }
+
+                let result = greet("Alice") + " | " + greet();
+                document.getElementById("output9").textContent = result;
+
+                console.log(greet("Alice")); // Hello, Alice!
+                console.log(greet());        // Hello, Guest!
+            }
+
+                </pre>
+            </div>
+            <div id="output" style="text-align: center;">
+                <button onclick="simple()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function simple()
+            {
+                function  msg()
+                {
+                    return "Here is Simple Message";
+                }
+                document.getElementById("result").textContent = msg();
+                console.log(msg());
+
+            }
+        </script>
+    
+        <!-- here is -->
+        <section id="function10">
+            
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function run1()
+                {
+                    function  msg()
+                    {
+                        return "Here is Simple Message";
+                    }
+                document.getElementById("out1").textContent = msg();
+                document.getElementById("cd").style.display = "block";
+                console.log(msg());
+                }
+                </pre>
+            </div>
+            <div id="output" style="text-align: center;">
+                <button onclick="simple()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function simple()
+            {
+                function  msg()
+                {
+                    return "Here is Simple Message";
+                }
+                document.getElementById("result").textContent = msg();
+                console.log(msg());
+
+            }
+        </script>
+    
+        <!-- here is -->
+        <section id="function11">
+            <h3>1️⃣1️⃣ Hands-On Activities</h3>
+            
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample11() {
+                // Calculator
+                function calculator(a, b, op) {
+                if(op === "add") return a + b;
+                if(op === "sub") return a - b;
+                if(op === "mul") return a * b;
+                if(op === "div") return a / b;
+                }
+
+                // Arrow function
+                const add = (x, y) => x + y;
+
+                // Closure Counter
+                function counter() {
+                let count = 0;
+                return function() {
+                    count++;
+                    return count;
+                }
+                }
+                let myCounter = counter();
+
+                let result = "Add: " + calculator(4,2,"add") +
+                            " | Arrow Add: " + add(4,2) +
+                            " | Counter: " + myCounter();
+
+                document.getElementById("output11").textContent = result;
+                console.log(result);
+            }
+
+                </pre>
+            </div>
+            <div id="output" style="text-align: center;">
+                <button onclick="simple()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample11() {
+            // Calculator
+            function calculator(a, b, op) {
+            if(op === "add") return a + b;
+            if(op === "sub") return a - b;
+            if(op === "mul") return a * b;
+            if(op === "div") return a / b;
+            }
+
+            // Arrow function
+            const add = (x, y) => x + y;
+
+            // Closure Counter
+            function counter() {
+            let count = 0;
+            return function() {
+                count++;
+                return count;
+            }
+            }
+            let myCounter = counter();
+
+            let result = "Add: " + calculator(4,2,"add") +
+                        " | Arrow Add: " + add(4,2) +
+                        " | Counter: " + myCounter();
+
+            document.getElementById("output11").textContent = result;
+            console.log(result);
+        }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function12">
+            <h3>1️⃣ What is a Function?</h3>
+            
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample12() {
+                // Mistake: Forgetting return
+                function wrongSquare(n) {
+                n * n; // ❌ No return
+                }
+                console.log(wrongSquare(5)); // undefined
+
+                // Global var misuse
+                let globalVar = 100;
+                function changeVar() {
+                globalVar = 200; // modifies global unintentionally
+                }
+                changeVar();
+
+                let result = "WrongSquare: " + wrongSquare(5) + 
+                            " | Modified GlobalVar: " + globalVar;
+
+                document.getElementById("output12").textContent = result;
+                console.log(result);
+            }
+
+                </pre>
+            </div>
+            <div id="output" style="text-align: center;">
+                <button onclick="simple()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample12() {
+            // Mistake: Forgetting return
+            function wrongSquare(n) {
+            n * n; // ❌ No return
+            }
+            console.log(wrongSquare(5)); // undefined
+
+            // Global var misuse
+            let globalVar = 100;
+            function changeVar() {
+            globalVar = 200; // modifies global unintentionally
+            }
+            changeVar();
+
+            let result = "WrongSquare: " + wrongSquare(5) + 
+                        " | Modified GlobalVar: " + globalVar;
+
+            document.getElementById("output12").textContent = result;
+            console.log(result);
+        }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function13">
+            <h3>1️⃣3️⃣ Quiz / Challenge</h3>
+            
+                <div class="syntax">
+                <pre>
+    //Web:    
+                  function runExample13() {
+                    function square(n) { return n*n; }
+
+                    function makeCounter() {
+                    let c = 0;
+                    return () => ++c;
+                    }
+                    let counter = makeCounter();
+
+                    function greet(name, callback) {
+                    console.log("Hello " + name);
+                    callback();
+                    }
+                    greet("Bob", () => console.log("Arrow callback executed!"));
+
+                    let x = 10;
+                    function test() {
+                    let x = 20;
+                    console.log(x); // 20
+                    }
+                    test();
+                    console.log(x); // 10
+
+                    let result = "Square: " + square(4) + " | Counter: " + counter();
+                    document.getElementById("output13").textContent = result;
+                    console.log(result);
+                }
+
+                </pre>
+            </div>
+            <div id="output" style="text-align: center;">
+                <button onclick="simple()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+              function runExample13() {
+                function square(n) { return n*n; }
+
+                function makeCounter() {
+                let c = 0;
+                return () => ++c;
+                }
+                let counter = makeCounter();
+
+                function greet(name, callback) {
+                console.log("Hello " + name);
+                callback();
+                }
+                greet("Bob", () => console.log("Arrow callback executed!"));
+
+                let x = 10;
+                function test() {
+                let x = 20;
+                console.log(x); // 20
+                }
+                test();
+                console.log(x); // 10
+
+                let result = "Square: " + square(4) + " | Counter: " + counter();
+                document.getElementById("output13").textContent = result;
+                console.log(result);
+            }
+
+        </script>
+    
+        <!-- here is -->
+        <section id="function14">
+            <h3>1️⃣4️⃣ Notes / Best Practices</h3>
+            
+                <div class="syntax">
+                <pre>
+    //Web:    
+                function runExample14() {
+                let practices = [
+                "Use functions to modularize code.",
+                "Prefer const for function expressions/arrow functions.",
+                "Keep variables local when possible.",
+                "Use arrow functions for short callbacks.",
+                "Test functions with different inputs."
+                ];
+
+                let list = document.getElementById("output14");
+                list.innerHTML = "";
+                practices.forEach(p => {
+                let li = document.createElement("li");
+                li.textContent = p;
+                list.appendChild(li);
+                });
+
+                console.log("Best Practices:", practices);
+            }
+
+                </pre>
+            </div>
+            <div id="output" style="text-align: center;">
+                <button onclick="simple()">RUN EXAMPLE</button><hr><br>
+                <div style="display: flex; align-items: center; justify-content: center;" id="result">  </div>
+            </div>
+        </section>
+        <script>
+            function runExample14() {
+            let practices = [
+            "Use functions to modularize code.",
+            "Prefer const for function expressions/arrow functions.",
+            "Keep variables local when possible.",
+            "Use arrow functions for short callbacks.",
+            "Test functions with different inputs."
+            ];
+
+            let list = document.getElementById("output14");
+            list.innerHTML = "";
+            practices.forEach(p => {
+            let li = document.createElement("li");
+            li.textContent = p;
+            list.appendChild(li);
+            });
+
+            console.log("Best Practices:", practices);
+        }
+
+        </script>
+    
+    </main>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>

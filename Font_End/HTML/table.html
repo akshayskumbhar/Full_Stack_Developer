@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Linear Gradient Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            color: black;
+            background-color: rgba(255, 255, 255, 0.63);
+            height: 70px;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-family: verdana;
+            box-shadow: 0 4px 8px rgba(224, 221, 221, 0.897);
+        }
+
+        footer{
+            align-items: center;
+            justify-content: center;
+            margin-left: 40px;
+            color: white;
+        }
+
+        .icons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        ul{
+            display: flex;
+        }
+        .box1:hover{
+            background-color: rgb(255, 86, 86);
+            border: 3px solid black;
+        }
+        
+        .backarrow:hover{
+            background-color: rgb(255, 127, 127);
+            color: white;
+        }
+        .backarrow{
+                    background-color: white;
+                    border-radius: 50%; 
+                    width: 40px; 
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+        }
+
+        main{
+            margin: 10px;
+        }
+        div, table{
+            align-items: center;
+            justify-content: center;
+        }
+        table{
+            width: 100%;
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+        }
+        .one, .two, .three, .four, .five{
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.562);
+        }
+        pre{
+            background-color: white;
+            padding: 10px;
+            margin: 30px;
+            border-radius: 10px;
+        }
+        tr:nth-child(even) {
+            background-color: #c2c1c1;
+            }
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+    <section>
+        <div class="combo">
+            <div class="backarrow"><a href="./Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <h2 style="margin: 0 20px; background-color: white;padding: 10px; border-radius: 10px;">Table Tag</h2>
+        </div>
+    </section>
+    <main>
+        <div class="one">
+            <h2 style="background-color: white; text-align: center; border-radius: 10px; padding: 10px;">Basic Table Formate</h2>
+    <hr>
+    <h2>Syntax</h2>
+    <pre>
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Age&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alice&lt;/td&gt;
+                &lt;td&gt;24&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    </pre>
+    <h2>Output</h2>
+    <div>
+        <table border="1" style="text-align: center;">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Akshay</td>
+                <td>22</td>
+            </tr>
+    </table>
+    </div>
+    <hr>
+        </div>
+
+        <div class="four">
+            <h2 style="background-color: white; text-align: center; border-radius: 10px; padding: 10px;">Important Tags</h2>
+    <hr>
+    <h2>Syntax</h2>
+    <pre>
+        &lt;table border="1" style="text-align: center;"&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Tag&lt;/th&gt;
+                &lt;th&gt;Description&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;table&gt;&lt;/td&gt;
+                &lt;td&gt;Defines a table&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;tr&gt;&lt;/td&gt;
+                &lt;td&gt;Table row&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;th&gt;&lt;/td&gt;
+                &lt;td&gt;Table header (bold, centered)&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;Table data cell&lt;/td&gt;
+            &lt;/tr&gt;
+    &lt;/table&gt;
+    </pre>
+    <h2>Output</h2>
+    <div>
+        <table border="1" style="text-align: center;">
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&lt;table&gt;</td>
+                <td>Defines a table</td>
+            </tr>
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>Table row</td>
+            </tr>
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>Table header (bold, centered)</td>
+            </tr>
+            <tr>
+                <td>&lt;td&gt;</td>
+                <td>Table data cell</td>
+            </tr>
+    </table>
+    </div>
+    <hr>
+        </div>
+
+         <div class="five">
+            <h2 style="background-color: white; text-align: center; border-radius: 10px; padding: 10px;">Rowspan in Table</h2>
+    <hr>
+    <h2>Syntax</h2>
+    <pre>
+        &lt;table border="1" style="text-align: center;"&gt;
+            &lt;tr&gt;
+                &lt;th rowspan="5">Details</th>
+                &lt;th&gt;First</th>
+                &lt;th&gt;last</th>
+                &lt;th&gt;Roll No.&lt;/th&gt;
+                &lt;th&gt;Subject&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+            &lt;td rowspan="3"&gt;Akshay&lt;/td&gt;
+                &lt;td&gt;&lt;Akshay&gt;&lt;/td&gt;
+                &lt;td&gt;2003&lt;/td&gt;
+                &lt;td&gt;Math&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Kedar&lt;/td&gt;
+                &lt;td&gt;2025&lt;/td&gt;
+                &lt;td&gt;English&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Sandip&lt;/td&gt;
+                &lt;td&gt;2020&lt;/td&gt;
+                &lt;td rowspan="2"&gt;Marathi&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rohit&lt;/td&gt;
+                &lt;td&gt;Akshay&lt;/td&gt;
+                &lt;td&gt;2007&lt;/td&gt;
+            &lt;/tr&gt;
+    &lt;/table&gt;
+    </pre>
+    <h2>Output</h2>
+    <div>
+        <table border="1" style="text-align: center;">
+            <tr>
+                <th rowspan="5" style="background-color: yellow;">Details</th>
+                <th>First</th>
+                <th>last</th>
+                <th>Roll No.</th>
+                <th>Subject</th>
+            </tr>
+            <tr>
+                <td rowspan="3" style="background-color: yellow;">Akshay</td>
+                <td>Akshay</td>
+                <td>2003</td>
+                <td>Math</td>
+            </tr>
+            <tr>
+                <td>Kedar</td>
+                <td>2025</td>
+                <td>English</td>
+            </tr>
+            <tr>
+                <td>Sandip</td>
+                <td>2020</td>
+                <td rowspan="2" style="background-color: yellow;">Marathi</td>
+            </tr>
+            <tr>
+                <td>Rohit</td>
+                <td>Akshay</td>
+                <td>2007</td>
+            </tr>
+    </table>
+    </div>
+    <hr>
+        </div>
+    <hr>
+        </div>
+
+        <div class="five">
+            <h2 style="background-color: white; text-align: center; border-radius: 10px; padding: 10px;">Colspan in Table</h2>
+    <hr>
+    <h2>Syntax</h2>
+    <pre>
+        &lt;table border="1" style="text-align: center;"&gt;
+            &lt;tr&gt;
+                &lt;th colspan="4"&gt;Details&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th&gt;First&lt;/th&gt;
+                &lt;th&gt;last&lt;/th&gt;
+                &lt;th&gt;Roll No.&lt;/th&gt;
+                &lt;th&gt;Subject&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td colspan="2" style="background-color: yellow;"&gt;Akshay&lt;/td&gt;
+                &lt;td&gt;2003&lt;/td&gt;
+                &lt;td&gt;Math&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                
+                &lt;td&gt;Kedar&lt;/td&gt;
+                &lt;td&gt;Akshay&lt;/td&gt;
+                &lt;td&gt;2025&lt;/td&gt;
+                &lt;td&gt;English&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Sandip&lt;/td&gt;
+                &lt;td&gt;Akshay&lt;/td&gt;
+                &lt;td&gt;2020&lt;/td&gt;
+                &lt;td&gt;marathi&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rohit&lt;/td&gt;
+                &lt;td&gt;Akshay&lt;/td&gt;
+                &lt;td colspan="2" style="background-color: yellow;"&gt;2007&lt;/td&gt;
+                
+            &lt;/tr&gt;
+    &lt;/table&gt;
+    </pre>
+    <h2>Output</h2>
+    <div>
+        <table border="1" style="text-align: center;">
+            <tr>
+                <th colspan="4">Details</th>
+            </tr>
+            <tr>
+                <th>First</th>
+                <th>last</th>
+                <th>Roll No.</th>
+                <th>Subject</th>
+            </tr>
+            <tr>
+                <td colspan="2" style="background-color: yellow;">Akshay</td>
+                <td>2003</td>
+                <td>Math</td>
+            </tr>
+            <tr>
+                
+                <td>Kedar</td>
+                <td>Akshay</td>
+                <td>2025</td>
+                <td>English</td>
+            </tr>
+            <tr>
+                <td>Sandip</td>
+                <td>Akshay</td>
+                <td>2020</td>
+                <td>marathi</td>
+            </tr>
+            <tr>
+                <td>Rohit</td>
+                <td>Akshay</td>
+                <td colspan="2" style="background-color: yellow;">2007</td>
+                
+            </tr>
+    </table>
+    </div>
+    <hr>
+        </div>
+
+        <div class="five">
+            <h2 style="background-color: white; text-align: center; border-radius: 10px; padding: 10px;">Zebra Stripes in Table</h2>
+    <hr>
+    <h2>Syntax</h2>
+    <pre>
+        &lt;table border="1" style="text-align: center;"&gt;
+            &lt;tr&gt;
+                &lt;th rowspan="5">Details</th>
+                &lt;th&gt;First</th>
+                &lt;th&gt;last</th>
+                &lt;th&gt;Roll No.&lt;/th&gt;
+                &lt;th&gt;Subject&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+            &lt;td rowspan="3"&gt;Akshay&lt;/td&gt;
+                &lt;td&gt;&lt;Akshay&gt;&lt;/td&gt;
+                &lt;td&gt;2003&lt;/td&gt;
+                &lt;td&gt;Math&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Kedar&lt;/td&gt;
+                &lt;td&gt;2025&lt;/td&gt;
+                &lt;td&gt;English&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Sandip&lt;/td&gt;
+                &lt;td&gt;2020&lt;/td&gt;
+                &lt;td rowspan="2"&gt;Marathi&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rohit&lt;/td&gt;
+                &lt;td&gt;Akshay&lt;/td&gt;
+                &lt;td&gt;2007&lt;/td&gt;
+            &lt;/tr&gt;
+    &lt;/table&gt;
+    </pre>
+    <h2>Output</h2>
+    <div>
+        <table border="1" style="text-align: center;">
+            <tr>
+                <th>First</th>
+                <th>last</th>
+                <th>Roll No.</th>
+                <th>Subject</th>
+            </tr>
+            <tr>
+                <td>Akshay</td>
+                <td>kumbhar</td>
+                <td>2003</td>
+                <td>Math</td>
+            </tr>
+            <tr>
+                <td>Kedar</td>
+                <td>Gosavi</td>
+                <td>2025</td>
+                <td>English</td>
+            </tr>
+            <tr>
+                <td>Sandip</td>
+                <td>badhan</td>
+                <td>2020</td>
+                <td>Marathi</td>
+            </tr>
+            <tr>
+                <td>Rohit</td>
+                <td>Ahire</td>
+                <td>2007</td>
+                <td>Hindi</td>
+            </tr>
+    </table>
+    </div>
+
+        <div class="three">
+            <h2 style="background-color: white; text-align: center; border-radius: 10px; padding: 10px;">Table Example with &lt;caption&gt;</h2>
+    <h2>1] Table Example without &lt;caption&gt;</h2>
+    <p>
+        <b>Without &lt;caption&gt; :</b> The table has <mark>No Title</mark>; only headers and data are shown.
+    </p>
+    <div>
+        <table border="1" style="justify-content: center; align-items: center;">
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>CLASS</th>
+                <th>RESULT</th>
+            </tr>
+            <tr>
+                <td>Yash</td>
+                <td>22</td>
+                <td>12<sup>th</sup></td>
+                <td>PASS</td>
+            </tr>
+            <tr>
+                <td>Kedar</td>
+                <td>22</td>
+                <td>10<sup>th</sup></td>
+                <td>PASS</td>
+            </tr>
+            <tr>
+                <td>Rohit</td>
+                <td>22</td>
+                <td>12<sup>th</sup></td>
+                <td>FAIL</td>
+            </tr>
+            <tr>
+                <td>King</td>
+                <td>20</td>
+                <td>12<sup>th</sup></td>
+                <td>FAIL</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+        </div>
+
+    <div class="two">
+        <h2>2] Table Example with &lt;caption&gt;</h2>
+    <p>
+        <b>With &lt;caption&gt; :</b> The table has a <mark>Descriptive Title</mark> above (or below) the table, improving accessibility and clarity.
+    </p>
+    <h3>i] Descriptive Title : <mark>Above</mark> The Table</h3>
+    <div>
+        <table border="1">
+            <caption>STUDENT DETAILS</caption>
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>CLASS</th>
+                <th>RESULT</th>
+            </tr>
+            <tr>
+                <td>Akshay</td>
+                <td>19</td>
+                <td>10<sup>th</sup></td>
+                <td>PASS</td>
+            </tr>
+            <tr>
+                <td>Sanjay</td>
+                <td>24</td>
+                <td>11<sup>th</sup></td>
+                <td>PASS</td>
+            </tr>
+            <tr>
+                <td>Ganesh</td>
+                <td>21</td>
+                <td>12<sup>th</sup></td>
+                <td>FAIL</td>
+            </tr>
+            <tr>
+                <td>Kamlesh</td>
+                <td>28</td>
+                <td>12<sup>th</sup></td>
+                <td>FAIL</td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    <hr>
+
+    <div class="three">
+        <h3>ii] Descriptive Title : <mark>Below</mark> The Table</h3>
+    
+    <div>
+        <table border="1">            
+            <caption style="caption-side: bottom;text-align: center;">
+                STUDENT DETAILS
+            </caption>
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>CLASS</th>
+                <th>RESULT</th>
+            </tr>
+            <tr>
+                <td>Akshay</td>
+                <td>22</td>
+                <td>10<sup>th</sup></td>
+                <td>PASS</td>
+            </tr>
+            <tr>
+                <td>Kedar</td>
+                <td>23</td>
+                <td>8<sup>th</sup></td>
+                <td>PASS</td>
+            </tr>
+            <tr>
+                <td>Harsh</td>
+                <td>21</td>
+                <td>12<sup>th</sup></td>
+                <td>FAIL</td>
+            </tr>
+            <tr>
+                <td>Yash</td>
+                <td>18</td>
+                <td>12<sup>th</sup></td>
+                <td>FAIL</td>
+            </tr>            
+        </table>        
+    </div>
+    <pre>
+        &lt;table&gt;            
+            <b>&lt;caption style="<mark>caption-side: bottom;text-align: center;</mark>"&gt; 
+                STUDENT DETAILS
+            &lt;/caption&gt;</b>
+            &lt;tr&gt;
+                &lt;th&gt; ...
+    </pre>
+    </div>
+    <hr>
+</main>
+</body>
+</html>

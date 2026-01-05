@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Linear Gradient Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background: linear-gradient(to left, rgb(255, 193, 193), rgb(129, 129, 255)) ;
+        }
+        h1{
+            color: black;
+            background-color: rgba(255, 255, 255, 0.63);
+            height: 70px;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-family: verdana;
+            box-shadow: 0 4px 8px rgba(224, 221, 221, 0.897);
+        }
+        
+        h2{
+            color: white;
+            font-family: verdana;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            margin: 0px;
+            width: 500px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.336);
+            border-left: 6px solid black;
+        }
+
+        h3{
+            padding: 20px;
+            color: white;
+        }
+
+        .h22{
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+        }
+
+        h4{
+            color: rgba(68, 68, 68, 0.904);
+            margin-top: 20px;
+            padding: 10px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-family: verdana;
+        }
+
+        h5{
+            margin-left: 10px;
+            font-family: verdana;
+        }
+
+        footer{
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.63);
+            border-radius: 10px;
+        }
+
+        .icons{
+            display: flex;
+            justify-content: center;
+        }
+
+        li{
+            display: inline;
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: verdana;
+        }
+
+        #facebook:hover{
+            background-color: rgb(75, 25, 255);
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        #insta:hover{
+            background-color: rgb(255, 128, 25);
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        #twitter:hover{
+            background-color: rgb(25, 171, 255);
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        #github:hover{
+            background-color: rgb(144, 25, 255);
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        .container{
+            background-color: rgba(255, 255, 255, 0.63);
+            font-family: verdana;
+            width: auto;
+            height: auto;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .topic{
+            width: 130px;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.678);
+        }
+
+        .topic2{
+            width: 120px;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.678);
+        }
+
+        .topic3{
+            width: 120px;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.678);
+        }
+
+        .topic4{
+            width: 120px;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.678);
+        }
+
+        .topic:hover{
+            background-color: rgb(75, 25, 255);
+            color: white;
+            border: 3px solid black;
+        }
+
+        .topic2:hover{
+            background-color: rgb(255, 128, 25);
+            color: white;
+            border: 3px solid black;
+        }
+
+        .topic3:hover{
+            background-color: rgb(25, 171, 255);
+            color: white;
+            border: 3px solid black;
+        }
+
+        .topic4:hover{
+            background-color: rgb(144, 25, 255);
+            color: white;
+            border: 3px solid black;
+        }
+        h2:hover{
+            background: linear-gradient(to left, red, blue);
+            border: 3px solid black;
+        }
+        .just{
+            width: auto;
+            height: auto;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        .c1{
+            background-color: rgba(255, 255, 255, 0.473);
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+        }
+        .boxy{
+            background-color: white;
+            height: 300px;
+            border-radius: 5px;
+            display: flex;
+        }
+        .box1{
+            background-color: rgb(89, 89, 255);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin: 15px;
+            width: 60px;
+            height: 50px;
+        }
+
+        .stre{
+            background-color: rgb(89, 89, 255);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin: 15px;
+            width: 60px;
+        }
+        .box1:hover{
+            background-color: rgb(255, 86, 86);
+            border: 3px solid black;
+        }
+
+        .stre:hover{
+            background-color: rgb(255, 86, 86);
+            border: 3px solid black;
+        }
+        .backarrow{
+            background-color: white;
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .combo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100;
+        }
+    </style>
+</head>
+<body>
+    <h1>Full Stack Development</h1>
+    <section>
+        <div class="combo">
+            <div class="backarrow"><a href="./Topics.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+            <h2 style="margin: 0 20px;">flex-direction: Value;</h2>
+        </div>
+        <div class="container">
+            <h3>flex-direction</h3>
+            <div class="just">
+                <div class="c1">
+                    <h5>flex-direction: row;</h5>
+                    <div class="boxy" style="flex-direction: row;">
+                        <div class="box1">box1</div>
+                        <div class="box1">box2</div>
+                        <div class="box1">box3</div>
+                        <div class="box1">box4</div>
+                    </div>
+                </div>
+                <div class="c1">
+                    <h5>flex-direction: row-reverse;</h5>
+                    <div class="boxy" style="flex-direction: row-reverse;">
+                        <div class="box1">box1</div>
+                        <div class="box1">box2</div>
+                        <div class="box1">box3</div>
+                        <div class="box1">box4</div>
+                    </div>
+                </div>
+                <div class="c1">
+                    <h5>flex-direction: column;</h5>
+                    <div class="boxy" style="flex-direction: column;">
+                        <div class="box1">box1</div>
+                        <div class="box1">box2</div>
+                        <div class="box1">box3</div>
+                        <div class="box1">box4</div>
+                    </div>
+                </div>
+                <div class="c1">
+                    <h5>flex-direction: column-reverse;</h5>
+                    <div class="boxy" style="flex-direction: column-reverse;">
+                        <div class="box1">box1</div>
+                        <div class="box1">box2</div>
+                        <div class="box1">box3</div>
+                        <div class="box1">box4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="icons">
+            <ul>
+                <li type="none" id="facebook"><a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a></li>
+                <li type="none" id="insta"><a href="#"><i class="fa-brands fa-instagram"></i></i>Instagram</a></li>
+                <li type="none" id="twitter"><a href="#"><i class="fa-brands fa-x-twitter"></i>Twitter</a></li>
+                <li type="none" id="github"><a href="#"><i class="fa-brands fa-github"></i>Github</a></li>
+            </ul>
+        </div>
+        <h4>&copy; copyright 1986-2026, Akshay26april.site</h4>
+    </footer>
+</body>
+</html>

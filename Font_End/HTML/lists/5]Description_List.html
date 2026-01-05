@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DESCRIPTION LIST</title>
+        <link rel="stylesheet" href="../liststyle.css">
+    </head>
+    <body>
+        <h1>DESCRIPTION LIST</h1>
+
+        <div>
+            <pre>
+    <b>📘DEFINATION :</b>
+            A <b>Description List</b> (also called a Definition List) is used to display br <b> terms and their descriptions</b> — ideal for <b> glossaries, FAQs
+            , or key-value data</b>
+
+        🔹 It uses:
+        <ul>
+    <b><li>&lt;dl&gt;</b> - Description List container</li>
+    <b><li>&lt;dt&gt;</b> - Description Term (like a heading)</li>
+    <b><li>&lt;dd&gt;</b> - Description Detail (explanation of </li>term)
+    </ul>
+
+ </pre>
+        </div>
+
+        <div>
+            <table width="90%">
+                <tr>
+                    <th width="30%">
+                        SYNTAX
+                    </th>
+                    <th>
+                        EXAMPLE
+                    </th>
+                    <th>
+                        OUTPUT
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre>
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language
+   - used to structure web pages.&lt;/dd&gt;
+
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets
+   - used to style HTML content.&lt;/dd&gt;
+&lt;/dl&gt;
+
+
+                        </pre>
+                    </td>
+                    <td>
+                        <pre>
+                    &lt;dl&gt;
+                    &lt;dt&gt;HTML&lt;/dt&gt;
+                    &lt;dd&gt;HyperText Markup Language
+                    - used to structure web pages.&lt;/dd&gt;
+
+                    &lt;dt&gt;CSS&lt;/dt&gt;
+                    &lt;dd&gt;Cascading Style Sheets
+                    - used to style HTML content.&lt;/dd&gt;
+                    &lt;/dl&gt; 
+                        </pre>
+                    </td>
+                    <td>
+                        <h3>Web Technologies</h3>
+<dl>
+  <dt>HTML</dt>
+  <dd>HyperText Markup Language - used to structure web pages.</dd>
+
+  <dt>CSS</dt>
+  <dd>Cascading Style Sheets - used to style HTML content.</dd>
+</dl>
+
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <h2>🛠️ Practice :</h2>
+<pre>
+    <b>Example - Glossary of Web Terms: </b>
+</pre>
+
+            <table width="90%">
+                <tr>
+                    <th width="45%">Html code</th>
+                    <th>CSS code</th>
+                    <th>Output</th>
+            
+    
+                </tr>
+                <tr>
+                    <td>
+                        
+&lt;h3&gt;Glossary&lt;/h3&gt;
+&lt;dl&gl;
+  &lt;dt&gl;Frontend&lt;/dt&gl;
+  &lt;dd&gl;Part of the website that users interact with (HTML, CSS, JS).&lt;/dd&gl;
+
+  &lt;dt&gl;Backend&lt;/dt&gl;
+  &lt;dd&gl;Server-side logic that processes user requests and data.&lt;/dd&gl;
+
+  &lt;dt&gl;API&lt;/dt&gl;
+  &lt;dd&gl;Application Programming Interface - allows communication between software components.&lt;/dd&gl;
+&lt;/dl&gl;
+
+
+                    </td>
+                    <td>
+                    <p>dl {
+                        border-left: 4px solid #0d6efd;
+                        padding-left: 1rem;
+                        }
+
+                        dt {
+                        font-weight: bold;
+                        color: #333;
+                        margin-top: 10px;
+                        }
+
+                        dd {
+                        margin-left: 20px;
+                        color: #555;
+                        } 
+                    </p>
+
+
+                    </td>
+                    <td id="style1">
+                        <h3>Glossary</h3>
+<dl>
+  <dt>Frontend</dt>
+  <dd>Part of the website that users interact with (HTML, CSS, JS).</dd>
+
+  <dt>Backend</dt>
+  <dd>Server-side logic that processes user requests and data.</dd>
+
+  <dt>API</dt>
+  <dd>Application Programming Interface - allows communication between software components.</dd>
+</dl>
+
+
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

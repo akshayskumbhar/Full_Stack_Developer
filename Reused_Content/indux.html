@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshay Kumbhar | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+  --bg-dark: #0f172a;
+  --bg-light: #f8fafc;
+  --accent: #38bdf8;
+  --text-light: #e5e7eb;
+  --text-dark: #020617;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* ===== GLOBAL ===== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section.dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* ===== NAV ===== */
+.header {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  color: white;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(120deg, #020617, #0f172a);
+  color: white;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+  gap: 40px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.primary {
+  background: var(--accent);
+  color: black;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+}
+
+.outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.outline:hover {
+  background: var(--accent);
+  color: black;
+}
+
+/* ===== SKILLS ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== SOCIAL ===== */
+.socials {
+  text-align: center;
+}
+
+.socials a {
+  font-size: 1.8rem;
+  margin: 0 15px;
+  color: var(--text-dark);
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: var(--accent);
+}
+
+footer {
+  background: #020617;
+  color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+}
+  </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container nav">
+    <h2 class="logo">Akshay<span>.</span></h2>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>Hello, I'm <span>Akshay Kumbhar</span></h1>
+      <p>Frontend Developer • Problem Solver • Learner</p>
+
+      <div class="hero-btns">
+        <a href="#" class="btn primary">Download CV</a>
+        <a href="#contact" class="btn outline">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <img src="./Reused_Content/images.png" alt="Akshay Profile">
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-desc">
+      I'm a motivated developer with hands-on experience in HTML, CSS, JavaScript, Java, and Python.
+      I enjoy building clean, responsive, and user-friendly interfaces while continuously improving my skills.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section dark">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">HTML5</div>
+      <div class="skill-card">CSS3</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Java</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">Responsive Design</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+
+    <div class="socials">
+      <a href="https://github.com/akshay26april"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/akshay26april"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/akshay26april"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Akshay Kumbhar. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
