@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if_Else</title>
+</head>
+<body>
+    <h1>if else</h1>
+
+    <fieldset>
+        <legend>If Else</legend>
+        <form action="#">
+            <input id="abc" type="number">
+            <button onclick="run()" type="submit">RUN</button>
+        
+    </fieldset>
+    <div id="out"></div>
+
+    <script>
+        function run()
+        {
+            let y = document.getElementById("out").value;
+            x = document.getElementById("abc").value
+            if(x>=1)
+            {
+                console.log("You Enter 'Positive' value "+x);
+                document.getElementById("out").textContent = "You Enter 'Positive' value is: "+x;
+            }
+            else{
+                console.log("You Enter 'Negative' value "+x);
+                document.getElementById("out").textContent = "You Enter 'Negative' value is: "+x;
+            }
+        }
+    </script>
+    
+    <fieldset>
+        <legend>Even or Odd</legend>
+        <form action="#">
+            <input type="number" id="num" placeholder="Enter a number">
+            <button onclick="checkEvenOdd()">Check</button>
+    </fieldset>
+    <p id="result"></p>
+
+    <script>
+        function checkEvenOdd() {
+            let n = document.getElementById("num").value;
+            n = Number(n);
+
+            let output = (n % 2 === 0) ? "Even Number" : "Odd Number"; //ternary operator
+
+            document.getElementById("result").textContent = output;
+        }
+    </script>
+
+<fieldset>
+        <legend>Subject Marks</legend>
+        <form action="#">
+            <input id="input" type="number">
+            <button onclick="run1()" type="submit">RUN</button>
+        
+    </fieldset>
+    <div id="output"></div>
+
+    <script>
+        function run1()
+        {
+            let input = document.getElementById("input").value;
+                output = document.getElementById("output").value;
+            if(input>=100)
+            {
+                console.log("invaild"+input);
+                document.getElementById("output").textContent = "invaild"+input;
+            }
+            else if(input>=90){
+                console.log("Topper"+input);
+                document.getElementById("output").textContent = "Topper"+input;
+            }
+            else if(input>=80){
+                console.log("first class"+input);
+                document.getElementById("output").textContent = "first class"+input;
+            }
+            else if(input>=70){
+                console.log("Good"+input);
+                document.getElementById("output").textContent = "Good"+input;
+            }
+            else if(input>=35){
+                console.log("Passed"+input);
+                document.getElementById("output").textContent = "Passed"+input;
+            }
+            else if(input>=0){
+                console.log("Failed"+input);
+                document.getElementById("output").textContent = "Failed"+input;
+            }
+            else{
+                console.log("invalid input"+input);
+                document.getElementById("output").textContent = "invalid input"+input;
+            }
+        }
+    </script>
+
+
+<fieldset>
+        <legend>Vowels</legend>
+        <form action="#">
+            <input id="input1" type="text">
+            <button onclick="run2()" type="submit">RUN</button>
+        
+    </fieldset>
+    <div id="output1"></div>
+
+    <script>
+        function run2()
+        {
+            let input = document.getElementById("input1").value;
+                output = document.getElementById("output1").value;
+            if(input=="A" || input=="E" || input=="I" || input=="O" || input=="U")
+            {
+                console.log("This is Vowel: "+input);
+                document.getElementById("output1").textContent = "This is Vowel: "+input;
+            }
+            else{
+                console.log("Invaild vowel"+input);
+                document.getElementById("output1").textContent = "Invalid Vowel: "+input;
+            }
+    }
+    </script>
+
+    
+
+</body>
+</html>

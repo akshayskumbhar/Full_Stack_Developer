@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+<body>
+    <h1>Switch Cases with all values</h1>
+    <p>Select two numbers and an operation:</p>
+    <input type="number" id="num1" placeholder="Enter First No">
+    <input type="number" id="num2" placeholder="Enter Second number">
+    
+    <select id="operation">
+        <option value="add">1</option>
+        <option value="subtract">2</option>
+        <option value="multiply">3</option>
+        <option value="divide">4</option>
+    </select>
+    
+    <button onclick="calculate()">Result</button>
+    <p id="result"></p>
+
+    <script>
+    function calculate() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+
+        let operation = document.getElementById("operation").value;
+        let result;
+        
+        switch(operation) {
+            case "add":
+                result = num1 + num2;
+                break;
+            case "subtract":
+                result = num1 - num2;
+                break;
+            case "multiply":
+                result = num1 * num2;
+                break;
+            case "divide":
+                result = num1 / num2;
+                break;
+            default:
+                result = "Invalid operation";
+        }
+        
+        document.getElementById("result").textContent = "Result: " + result;
+    }
+    </script>
+    
+
+    <h1>Switch Cases With All values</h1>
+    <p>Select two number and an operator</p>
+    <input type="number" id="num3" placeholder="Enter First No: ">
+    <input type="number" id="num4" placeholder="Enter First No: ">
+
+    <select id="operation1">
+        <option value="addition">+</option>
+        <option value="substration">-</option>
+        <option value="Multiply">*</option>
+        <option value="Module">/</option>
+    </select>
+
+    <button onclick="newcal()">Result</button>
+
+    <script>
+        function newcal(){
+                let num3 = parseFloat(document.getElementById("num3").value);
+                let num4 = parseFloat(document.getElementById("num4").value);
+
+                let operation1 = document.getElementById("operation1").value;
+                let result;
+
+                switch(operation1){
+                    case "addition":
+                        result = num3 + num4;
+                        break;
+                    case "substration":
+                        result = num3 - num4;
+                        break;
+                    case "multiplication":
+                        result = num3 * num4;
+                        break;
+                    case "divition":
+                        result = num3 / num4;
+                        break;
+                        default:
+                            result = "Invalid operation";
+                }
+                document.getElementById("result").textContent = "result: " +result;
+            }
+    </script>
+
+    <fieldset>
+        <legend>Enter Loop Value</legend>
+        
+        <form action="#">
+            <label for="input1">Enter value 1 to 10</label>
+            <input type="number" id="input" placeholder="Enter Loop Value:  ">
+            <button type="submit" onclick="run()">Result</button>
+            <div id="results"></div>
+    </fieldset>
+
+
+    <script>
+    
+            let input;
+            let x=1;
+           
+            function run()
+            {
+                input =  Number( document.getElementById("input").value);
+                console.log(input);
+                while(x <= input)
+                {
+                    console.log("Here is console result: "+x);
+                    document.getElementById("results").textContent = "Result is : "+x;
+                    x++;
+                }
+            }
+    </script>
+</body>
+</html>
