@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patterns</title>
+</head>
+<body>
+    <h1>java Script Star Patterns</h1>
+
+
+    <!-- no 1 pattern -->
+    <h3>1] Pattern</h3>
+    <div id="result1"></div>
+    <button onclick="run1()">RUN</button>
+    <script>
+
+        function run1()
+        {   
+            let a = document.getElementById("result1");
+            let pattern ="";
+            for (let i = 1; i <= 3; i++) 
+            { 
+            let row = "";                   // rows
+                for (let j = 1; j <= i; j++) 
+                {                           
+                    row += "* ";
+                                // columns
+                }
+                pattern += row +"<br>";
+                console.log(row);
+            }
+            a.innerHTML = pattern;
+        }
+
+    </script>
+
+    <!-- no 2 pattern -->
+    <h3>2] Pattern</h3>
+    <div id="result2"></div>
+    <button onclick="run2()">RUN</button>
+    <script>
+
+        function run2() {
+        let a = document.getElementById("result2");
+        let pattern = "";
+        for (let i = 1; i <= 5; i++) {
+            let row = "";
+            for (let j = 1; j <= i; j++) {
+                row += "* ";
+            }
+            console.log(row);
+            pattern += row + "<br>";
+        }
+        a.innerHTML = pattern;
+    }
+
+    </script>
+
+    <!-- no 3 pattern -->
+    <h3>3] Pattern</h3>
+    <div id="result3"></div>
+    <button onclick="run3()">RUN</button>
+    <script>
+
+        function run3() {
+        let a = document.getElementById("result3");
+        let pattern = "";
+        for (let i = 5; i >= 1; i--) {
+            let row = "";
+            for (let j = 1; j <= i; j++) {
+                row += "* ";
+            }
+            pattern += row + "<br>";
+        }
+        a.innerHTML = pattern;
+    }
+
+    </script>
+
+    <!-- no 4 pattern -->
+    <h3>4] Pattern</h3>
+    <div id="result4"></div>
+    <button onclick="run4()">RUN</button>
+    <script>
+
+        function run4() {
+        let a = document.getElementById("result4");
+        let pattern = "";
+        for (let i = 1; i <= 5; i++) {
+            let row = "";
+            for (let s = 5; s > i; s--) {
+                row += "&nbsp;&nbsp;&nbsp;";
+            }
+            for (let j = 1; j <= i; j++) {
+                row += "* ";
+            }
+            pattern += row + "<br>";
+        }
+        a.innerHTML = pattern;
+    }
+    </script>
+
+    <!-- no 5 pattern -->
+    <h3>5] Pattern</h3>
+    <div id="result5"></div>
+    <button onclick="run5()">RUN</button>
+    <script>
+
+        function run5() {
+        let a = document.getElementById("result5");
+        let pattern = "";
+        for (let i = 1; i <= 5; i++) {
+            let row = "";
+            for (let s = 5; s > i; s--) {
+                row += "&nbsp;&nbsp;&nbsp;";
+            }
+            for (let j = 1; j <= (2*i-1); j++) {
+                row += "* ";
+            }
+            pattern += row + "<br>";
+        }
+        a.innerHTML = pattern;
+    }
+    </script>
+
+    <!-- no 6 pattern -->
+    <h3>6] Pattern</h3>
+    <div id="result6"></div>
+    <button onclick="run6()">RUN</button>
+    <script>
+
+        function run6() {
+        let a = document.getElementById("result6");
+        let pattern = "";
+        for (let i = 5; i >= 1; i--) {
+            let row = "";
+            for (let s = 5; s > i; s--) {
+                row += "&nbsp;&nbsp;&nbsp;";
+            }
+            for (let j = 1; j <= (2*i-1); j++) {
+                row += "* ";
+            }
+            pattern += row + "<br>";
+        }
+        a.innerHTML = pattern;
+    }
+    </script>
+
+
+    <!-- no 7 pattern -->
+    <h3>7] Pattern</h3>
+    <div id="result7"></div>
+    <button onclick="run7()">RUN</button>
+    <script>
+
+        function run7() {
+        let a = document.getElementById("result7");
+        let pattern = "";
+
+        for (let i = 1; i <= 4; i++) {
+            let row = "";
+            for (let s = 4; s > i; s--) row += "&nbsp;&nbsp;&nbsp;";
+            for (let j = 1; j <= (2*i-1); j++) row += "* ";
+            pattern += row + "<br>";
+        }
+
+        for (let i = 3; i >= 1; i--) {
+            let row = "";
+            for (let s = 4; s > i; s--) row += "&nbsp;&nbsp;&nbsp;";
+            for (let j = 1; j <= (2*i-1); j++) row += "* ";
+            pattern += row + "<br>";
+        }
+
+        a.innerHTML = pattern;
+    }
+    </script>
+
+
+<!-- no 8 pattern -->
+    <h3>8] Pattern</h3>
+    <div id="result8"></div>
+    <button onclick="run8()">RUN</button>
+    <script>
+
+        function run8() {
+        let a = document.getElementById("result8");
+        let pattern = "";
+        for (let i = 1; i <= 5; i++) 
+        {
+            let row = "";
+            for (let j = 1; j <= 5; j++) 
+            {
+                row += "* ";
+            }
+            pattern += row + "<br>";
+        }
+        a.innerHTML = pattern;
+    }
+    </script>
+
+    <!-- no 9 pattern -->
+    <h3>9] Pattern</h3>
+    <div id="result9"></div>
+    <button onclick="run9()">RUN</button>
+    <script>
+
+        function run9() {
+        let a = document.getElementById("result9");
+        let pattern = "";
+        for (let i = 1; i <= 5; i++) {
+            let row = "";
+            for (let j = 1; j <= 5; j++) {
+                if (i === 1 || i === 5 || j === 1 || j === 5)
+                    row += "* ";
+                else
+                    row += "&nbsp;&nbsp; ";
+            }
+            pattern += row + "<br>";
+        }
+        a.innerHTML = pattern;
+    }
+    </script>
+
+    <!-- Pattern 10 -->
+    <h3>10] X Shape</h3>
+    <div id="result10"></div>
+    <button onclick="run10()">RUN</button>
+
+    <script>
+    function run10() {
+        let a = document.getElementById("result10");
+        let pattern = "";
+        let n = 5;
+        for (let i = 1; i <= n; i++) {
+            let row = "";
+            for (let j = 1; j <= n; j++) {
+                if (j === i || j === (n - i + 1))
+                    row += "* ";
+                else
+                    row += "&nbsp;&nbsp; ";
+            }
+            pattern += row + "<br>";
+        }
+        a.innerHTML = pattern;
+    }
+</script>
+
+<!-- Pattern 11 -->
+<h3>11] Character A Pattern</h3>
+<div id="result11"></div>
+<button onclick="run11()">RUN</button>
+
+<script>
+function run11() {
+    let a = document.getElementById("result11");
+    let pattern = "";
+    let n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                j === 1 ||                     // left vertical line
+                j === n ||                     // right vertical line
+                i === 1 ||                     // top horizontal line
+                i === Math.ceil(n / 2)         // middle horizontal line
+            ) {
+                row += "* ";
+            } else {
+                row += "&nbsp;&nbsp; ";
+            }
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+    <!-- Pattern 12 -->
+<h3>12] Character B Pattern</h3>
+<div id="result12"></div>
+<button onclick="run12()">RUN</button>
+
+<script>
+function run12() {
+    let a = document.getElementById("result12");
+    let pattern = "";
+    let n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                j === 1 ||                         // left vertical line
+                (i === 1 && j < n) ||              // top bar
+                (i === n && j < n) ||              // bottom bar
+                (i === Math.ceil(n / 2) && j < n) || // middle bar
+                (j === n && i !== 1 && i !== Math.ceil(n / 2) && i !== n) // right curve
+            ) {
+                row += "* ";
+            } else {
+                row += "&nbsp;&nbsp; ";
+            }
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+<!-- Pattern 13 -->
+<h3>13] Character C Pattern</h3>
+<div id="result13"></div>
+<button onclick="run13()">RUN</button>
+
+<script>
+function run13() {
+    let a = document.getElementById("result13");
+    let pattern = "";
+    let n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                j === 1 ||               // left vertical line
+                i === 1 ||               // top horizontal line
+                i === n                  // bottom horizontal line
+            ) {
+                row += "* ";
+            } else {
+                row += "&nbsp;&nbsp; ";
+            }
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+<!-- Pattern 14 -->
+<h3>14] Character D Pattern</h3>
+<div id="result14"></div>
+<button onclick="run14()">RUN</button>
+
+<script>
+function run14() {
+    let a = document.getElementById("result14");
+    let pattern = "";
+    let n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                j === 1 ||                      // left vertical line
+                (i === 1 && j < n) ||           // top bar
+                (i === n && j < n) ||           // bottom bar
+                (j === n && i !== 1 && i !== n) // right curve
+            ) {
+                row += "* ";
+            } else {
+                row += "&nbsp;&nbsp; ";
+            }
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+<!-- Pattern 15 -->
+<h3>15] Character E Pattern</h3>
+<div id="result15"></div>
+<button onclick="run15()">RUN</button>
+
+<script>
+function run15() {
+    let a = document.getElementById("result15");
+    let pattern = "";
+    let n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                j === 1 ||                     // left vertical line
+                i === 1 ||                     // top horizontal line
+                i === n ||                     // bottom horizontal line
+                i === Math.ceil(n / 2)         // middle horizontal line
+            ) {
+                row += "* ";
+            } else {
+                row += "&nbsp;&nbsp; ";
+            }
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+<!-- Pattern 16 -->
+<h3>16] Character F Pattern</h3>
+<div id="result16"></div>
+<button onclick="run16()">RUN</button>
+
+<script>
+function run16() {
+    let a = document.getElementById("result16");
+    let pattern = "";
+    let n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                j === 1 ||                     // left vertical line
+                i === 1 ||                     // top horizontal line
+                i === Math.ceil(n / 2)         // middle horizontal line
+            ) {
+                row += "* ";
+            } else {
+                row += "&nbsp;&nbsp; ";
+            }
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+    <h3>17] Character G Pattern</h3>
+        <div id="g"></div>
+            <button onclick="runG()">RUN</button>
+    <script>
+    function runG(){
+        let a=g, p="", n=5;
+        for(let i=1;i<=n;i++){
+        let r="";
+            for(let j=1;j<=n;j++){
+            if(j===1||i===1||i===n||(i>Math.ceil(n/2)&&j===n)|| (i===Math.ceil(n/2)&&j>=3))
+                r+="* ";
+            else r+="&nbsp;&nbsp; ";
+            }
+            p+=r+"<br>";
+        }
+        a.innerHTML=p;
+    }
+    </script>
+
+<h3>18] Character H Pattern</h3><div id="h"></div><button onclick="runH()">RUN</button>
+    <script>
+    function runH(){
+    let a=h,p="",n=5;
+    for(let i=1;i<=n;i++){
+    let r="";
+    for(let j=1;j<=n;j++){
+    if(j===1||j===n||i===Math.ceil(n/2)) r+="* ";
+    else r+="&nbsp;&nbsp; ";
+    }
+    p+=r+"<br>";
+    }
+    a.innerHTML=p;
+    }
+    </script>
+
+<h3>19] Character I Pattern</h3><div id="i"></div><button onclick="runI()">RUN</button>
+<script>
+function runI(){
+ let a=i,p="",n=5;
+ for(let x=1;x<=n;x++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(x===1||x===n||j===Math.ceil(n/2)) r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>20] Character J Pattern</h3><div id="j"></div><button onclick="runJ()">RUN</button>
+<script>
+function runJ(){
+ let a=j,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let k=1;k<=n;k++){
+   if(i===1||k===Math.ceil(n/2)||(i===n&&k<Math.ceil(n/2))||(k===1&&i>Math.ceil(n/2)))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>21] Character K Pattern</h3><div id="k"></div><button onclick="runK()">RUN</button>
+<script>
+function runK(){
+ let a=k,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(j===1||j===n-i+1||j===i-1) r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>22] Character L Pattern</h3><div id="l"></div><button onclick="runL()">RUN</button>
+<script>
+function runL(){
+ let a=l,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(j===1||i===n) r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>23] Character M Pattern</h3><div id="m"></div><button onclick="runM()">RUN</button>
+<script>
+function runM(){
+ let a=m,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(j===1||j===n||(i===j&&i<=3)||(j===n-i+1&&i<=3))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>24] Character N Pattern</h3><div id="n"></div><button onclick="runN()">RUN</button>
+<script>
+function runN(){
+ let a=n,p="",n1=5;
+ for(let i=1;i<=n1;i++){
+  let r="";
+  for(let j=1;j<=n1;j++){
+   if(j===1||j===n1||i===j) r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>25] Character o Pattern</h3><div id="o"></div><button onclick="runO()">RUN</button>
+<script>
+function runO(){
+ let a=o,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(i===1||i===n||j===1||j===n) r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>26] Character P Pattern</h3><div id="p"></div><button onclick="runP()">RUN</button>
+<script>
+function runP(){
+ let a=p,p1="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(j===1||i===1||(i===Math.ceil(n/2)&&j<n)||(j===n&&i>1&&i<Math.ceil(n/2)))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p1+=r+"<br>";
+ }
+ a.innerHTML=p1;
+}
+</script>
+
+
+<h3>27] Character Q Pattern</h3><div id="q"></div><button onclick="runQ()">RUN</button>
+<script>
+function runQ(){
+ let a=q,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(i===1||i===n||j===1||j===n||(i===j&&i>3))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>28] Character R Pattern</h3><div id="r"></div><button onclick="runR()">RUN</button>
+<script>
+function runR(){
+ let a=r,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r1="";
+  for(let j=1;j<=n;j++){
+   if(j===1||i===1||i===Math.ceil(n/2)||(j===n&&i<Math.ceil(n/2))||i-j===2)
+    r1+="* ";
+   else r1+="&nbsp;&nbsp; ";
+  }
+  p+=r1+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>29] Character S Pattern</h3><div id="s"></div><button onclick="runS()">RUN</button>
+<script>
+function runS(){
+ let a=s,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(i===1||i===Math.ceil(n/2)||i===n||(j===1&&i<3)||(j===n&&i>3))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>30] Character T Pattern</h3><div id="t"></div><button onclick="runT()">RUN</button>
+<script>
+function runT(){
+ let a=t,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(i===1||j===Math.ceil(n/2)) r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>31] Character U Pattern</h3><div id="u"></div><button onclick="runU()">RUN</button>
+<script>
+function runU(){
+ let a=u,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if((j===1||j===n)&&i<n|| (i===n&&j>1&&j<n))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>32] Character V Pattern</h3><div id="v"></div><button onclick="runV()">RUN</button>
+<script>
+function runV(){
+ let a=v,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if((j===i&&i>2)||(j===n-i+1&&i>2))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>33] Character W Pattern</h3><div id="w"></div><button onclick="runW()">RUN</button>
+<script>
+function runW(){
+ let a=w,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(j===1||j===n||(i+j===n+1&&i>2)||(i===j&&i>2))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>34] Character X Pattern</h3><div id="x"></div><button onclick="runX()">RUN</button>
+<script>
+function runX(){
+ let a=x,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(j===i||j===n-i+1) r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>35] Character Y Pattern</h3><div id="y"></div><button onclick="runY()">RUN</button>
+<script>
+function runY(){
+ let a=y,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if((j===i||j===n-i+1)&&i<3|| (j===Math.ceil(n/2)&&i>=3))
+    r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<h3>36] Character Z Pattern</h3><div id="z"></div><button onclick="runZ()">RUN</button>
+<script>
+function runZ(){
+ let a=z,p="",n=5;
+ for(let i=1;i<=n;i++){
+  let r="";
+  for(let j=1;j<=n;j++){
+   if(i===1||i===n||j===n-i+1) r+="* ";
+   else r+="&nbsp;&nbsp; ";
+  }
+  p+=r+"<br>";
+ }
+ a.innerHTML=p;
+}
+</script>
+
+
+<!-- Pattern 27 -->
+<h3>37] Number 1 Pattern</h3>
+<div id="result27"></div>
+<button onclick="run27()">RUN</button>
+
+<script>
+function run27() {
+    let a = document.getElementById("result27");
+    let pattern = "";
+    let n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                j === Math.ceil(n / 2) ||   // vertical center line
+                (i === n && j <= Math.ceil(n / 2) + 1) || // base line
+                (i === 1 && j === Math.ceil(n / 2) - 1)   // small top hook
+            ) {
+                row += "* ";
+            } else {
+                row += "&nbsp;&nbsp; ";
+            }
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+<h3>38] Number 2</h3>
+<div id="result28"></div>
+<button onclick="run28()">RUN</button>
+<script>
+function run28() {
+    let a = document.getElementById("result28");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                i === 1 ||                          // top bar
+                i === Math.ceil(n/2) ||             // middle bar
+                i === n ||                          // bottom bar
+                (j === n && i < Math.ceil(n/2)) ||  // right top
+                (j === 1 && i > Math.ceil(n/2))     // left bottom
+            ) row += "* ";
+            else row += "&nbsp;&nbsp; ";
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+<h3>39] Number 3</h3>
+<div id="result29"></div>
+<button onclick="run29()">RUN</button>
+<script>
+function run29() {
+    let a = document.getElementById("result29");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                i === 1 || i === Math.ceil(n/2) || i === n ||
+                j === n
+            ) row += "* ";
+            else row += "&nbsp;&nbsp; ";
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+
+<h3>40] Number 4</h3>
+<div id="result30"></div>
+<button onclick="run30()">RUN</button>
+<script>
+function run30() {
+    let a = document.getElementById("result30");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                j === n ||                          // right line
+                i === Math.ceil(n/2) ||             // middle bar
+                (j === 1 && i <= Math.ceil(n/2))    // left top
+            ) row += "* ";
+            else row += "&nbsp;&nbsp; ";
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+
+<h3>41] Number 5</h3>
+<div id="result31"></div>
+<button onclick="run31()">RUN</button>
+<script>
+function run31() {
+    let a = document.getElementById("result31");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                i === 1 || i === Math.ceil(n/2) || i === n ||
+                (j === 1 && i < Math.ceil(n/2)) ||
+                (j === n && i > Math.ceil(n/2))
+            ) row += "* ";
+            else row += "&nbsp;&nbsp; ";
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+
+<h3>42] Number 6</h3>
+<div id="result32"></div>
+<button onclick="run32()">RUN</button>
+<script>
+function run32() {
+    let a = document.getElementById("result32");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                i === 1 || i === Math.ceil(n/2) || i === n ||
+                j === 1 || (j === n && i > Math.ceil(n/2))
+            ) row += "* ";
+            else row += "&nbsp;&nbsp; ";
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+
+<h3>43] Number 7</h3>
+<div id="result33"></div>
+<button onclick="run33()">RUN</button>
+<script>
+function run33() {
+    let a = document.getElementById("result33");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                i === 1 || j === n - i + 1
+            ) row += "* ";
+            else row += "&nbsp;&nbsp; ";
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+
+<h3>44] Number 8</h3>
+<div id="result34"></div>
+<button onclick="run34()">RUN</button>
+<script>
+function run34() {
+    let a = document.getElementById("result34");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                i === 1 || i === Math.ceil(n/2) || i === n ||
+                j === 1 || j === n
+            ) row += "* ";
+            else row += "&nbsp;&nbsp; ";
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+
+<h3>45] Number 9</h3>
+<div id="result35"></div>
+<button onclick="run35()">RUN</button>
+<script>
+function run35() {
+    let a = document.getElementById("result35");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                i === 1 || i === Math.ceil(n/2) ||
+                j === n || (j === 1 && i < Math.ceil(n/2))
+            ) row += "* ";
+            else row += "&nbsp;&nbsp; ";
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+<h3>46] Random Shape</h3>
+<div id="result46"></div>
+<button onclick="run46()">RUN</button>
+
+<script>
+function run46() {
+    let a = document.getElementById("result46");
+    let pattern = "", n = 5;
+
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= n; j++) {
+            if (
+                i === 1 ||                      // top line
+                i === n ||                      // bottom line
+                j === 1 ||                      // left line
+                j === n ||                      // right line
+                i === j ||                      // diagonal \
+                j === (n - i + 1)               // diagonal /
+            ) {
+                row += "* ";
+            } else {
+                row += "&nbsp;&nbsp; ";
+            }
+        }
+        pattern += row + "<br>";
+    }
+    a.innerHTML = pattern;
+}
+</script>
+
+
+</body>
+</html>
