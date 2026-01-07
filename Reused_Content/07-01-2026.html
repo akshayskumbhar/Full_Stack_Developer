@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <h1>Do while Task 1-10 and 10 to 1</h1>
+
+    <fieldset>
+        <legend>Do while</legend>
+        <form action="#">
+            <input id="input" type="number" placeholder="Enter Number: ">
+            <button onclick="run()">RUN</button>
+    </fieldset>
+    <pre id="output"> </pre>
+        
+    <script>
+        function run()
+        {
+            let x = document.getElementById("input").value;
+            let y = document.getElementById("output").textContent = `here is the list from:` +x;
+            do{
+                console.log(x);
+                x++;
+                
+            }
+            while(x<=10);
+        }
+    </script>
+
+    <fieldset>
+        <legend>Do while Reverse</legend>
+        <form action="#">
+            <input id="input1" type="number" placeholder="Enter Number: ">
+            <button onclick="run1()">RUN</button>
+    </fieldset>
+    <pre id="output1"> </pre>
+    <script>
+        function run1()
+        {
+            let a = document.getElementById("input1").value;
+            let b = document.getElementById("output1").textContent = `here is the list from:` +a;
+            do{
+                console.log(a);
+                    a++;
+                    document.write="<br>"
+            }
+            while(a <= 10);
+        }
+    </script>
+
+    <fieldset>
+        <legend>here is Output</legend>
+        <pre id="output2"> </pre>
+        <button onclick="run2()">RUN</button>
+    </fieldset>
+    
+    <script>
+        function run2()
+        {
+            
+        for(let i=1; i<=4; i++)
+            {
+                for(let j=1; j<=i; j++)
+                {
+                   console.log(i);
+                }
+                document.write= ("<br>");
+            }
+        }
+    </script>
+
+
+<fieldset>
+    <legend>1 to 10 tables</legend>
+    <div id="input5"></div>
+    <button onclick="run3()">RUN</button>
+</fieldset>
+<script>
+    function run3()
+    {
+        for(let i=1; i<=10;  i++)
+            {
+                for(let j=1; j<=10; j++)
+                {
+                   document.write(i*j+" ");
+                   if((i*j)<=9)
+                   {
+                    document.write("&nbsp&nbsp")
+                   }
+                   document.write("&nbsp&nbsp&nbsp&nbsp");
+                }
+                document.write("<br>");
+            }
+    }
+</script>
+</body>
+</html>
