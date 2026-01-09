@@ -28,19 +28,12 @@ Each topic is implemented and displayed directly on the browser.
 Below are screenshots from the actual implementations:
 
 ### 🔹 Tutorial Home Page
-![Home Page](images/image.jpg)
+![Home Page](images/home.png)
 
-### 🔹 Practical Implementation Example
-![Practical Demo](images/practical-demo.png)
+### 🔹 Output HTML Page
+![Practical Demo](images/htmlpage.png)
 
-### 🔹 Output Result Page
-![Result Page](images/output.png)
+### 🔹 Output CSS Page
+![Result Page](images/csspage.png)
 
 > 📌 **Note:** All images are stored inside the repository.
-
----
-
-## 📂 How to Add Internal Images in README.md
-
-### ✅ Step 1: Create an Images Folder
-Inside your project, create a folder:
