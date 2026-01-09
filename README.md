@@ -36,4 +36,7 @@ Below are screenshots from the actual implementations:
 ### 🔹 Output CSS Page
 ![Result Page](images/csspage.png)
 
+### 🔹 Output Javascript Page
+![Result Page](images/js.png)
+
 > 📌 **Note:** All images are stored inside the repository.
