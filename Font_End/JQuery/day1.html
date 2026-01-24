@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mini Project</title>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#0d47a1;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{
+  color:#0d47a1;
+}
+button{
+  padding:10px 15px;
+  background:#0d47a1;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  margin:5px 0;
+}
+button:hover{
+  background:#08306b;
+}
+.box{
+  padding:15px;
+  background:#e3f2fd;
+  border-left:5px solid #0d47a1;
+  margin-top:10px;
+}
+.card{
+  padding:15px;
+  margin:10px 0;
+  background:#fafafa;
+  border:1px solid #ddd;
+  border-radius:6px;
+}
+.hidden{
+  display:none;
+}
+input{
+  padding:8px;
+  width:100%;
+  margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>jQuery Mini Project</h1>
+<p>Write Less, Do More 🚀</p>
+</header>
+
+<!-- ABOUT JQUERY -->
+<section>
+<h2>📘 About jQuery</h2>
+
+<p><b>Definition:</b> jQuery is a fast, lightweight JavaScript library that simplifies DOM manipulation, event handling, animations, and AJAX.</p>
+
+<p><b>Why jQuery?</b></p>
+<ul>
+  <li>Simpler syntax than JavaScript</li>
+  <li>Cross-browser compatibility</li>
+  <li>Fast development of interactive UI</li>
+</ul>
+
+<div class="box">
+<b>Syntax:</b><br>
+<code>$(selector).action()</code>
+</div>
+</section>
+
+<!-- PROJECT -->
+<section>
+<h2>🛠️ Mini Project: Interactive Content Controller</h2>
+
+<p>This project demonstrates:</p>
+<ul>
+  <li>Click events</li>
+  <li>DOM manipulation</li>
+  <li>CSS changes</li>
+  <li>Show / Hide animations</li>
+</ul>
+
+<h3 id="heading">Welcome to jQuery!</h3>
+
+<button id="changeText">Change Text</button>
+<button id="changeColor">Change Color</button>
+<button id="toggleBox">Show / Hide Info</button>
+
+<div class="card hidden" id="infoBox">
+<p>🎉 This content is controlled using <b>jQuery</b>!</p>
+</div>
+
+<div class="box" id="output">Action output will appear here</div>
+</section>
+
+<!-- EXTRA INTERACTION -->
+<section>
+<h2>✨ Extra Feature: Live Name Update</h2>
+
+<input type="text" id="nameInput" placeholder="Enter your name">
+<button id="showName">Show Name</button>
+
+<div class="box" id="nameOutput"></div>
+</section>
+
+<!-- jQuery SCRIPT -->
+<script>
+$(document).ready(function(){
+
+  $("#changeText").click(function(){
+    $("#heading").text("You clicked the Change Text button!");
+    $("#output").text("Text updated using .text()");
+  });
+
+  $("#changeColor").click(function(){
+    $("#heading").css("color","red");
+    $("#output").text("Color changed using .css()");
+  });
+
+  $("#toggleBox").click(function(){
+    $("#infoBox").slideToggle();
+    $("#output").text("Content toggled using .slideToggle()");
+  });
+
+  $("#showName").click(function(){
+    let name = $("#nameInput").val();
+    $("#nameOutput").text("Hello, " + name + " 👋");
+  });
+
+});
+</script>
+
+</body>
+</html>

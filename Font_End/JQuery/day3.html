@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Day 3.2 – Binding & Unbinding Events</title>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#004d40;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#004d40; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+button{
+  padding:8px 14px;
+  background:#004d40;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  margin-top:5px;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#e0f2f1;
+  border-left:5px solid #004d40;
+}
+.box{
+  width:120px;
+  height:120px;
+  background:lightblue;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:10px;
+}
+.highlight{
+  background:lightyellow;
+  border:2px solid red;
+}
+input{
+  padding:8px;
+  width:100%;
+  margin-top:8px;
+}
+span{
+  display: flex;
+  justify-content: center;
+}
+#btn{
+  margin: 10px;
+  font-size: 20px;
+}
+
+#btn:hover{
+  background-color: rgb(24, 150, 205);
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>jQuery Day 3.2</h1>
+<p>Binding & Unbinding Events</p>
+</header>
+
+<span><button id="btn"><a href="/Font_End/JQuery/day2.html"> &lt; PREV</button></a><button id="btn"><a href="#"> HOME</button></a><button id="btn"><a href="/Font_End/JQuery/day3.5.html"> NEXT &gt;</button></a></span>
+
+
+<section>
+<h2>📘 Definition & Importance</h2>
+<p><b>Definition:</b> jQuery simplifies event handling by providing cross-browser compatible methods.</p>
+
+<p><b>Importance:</b></p>
+<ul>
+  <li>Handles user actions (click, hover, keypress)</li>
+  <li>Supports dynamic elements</li>
+  <li>Cleaner syntax than JavaScript</li>
+</ul>
+
+<code>
+$(selector).on("event", handler)
+$(selector).off("event", handler)
+</code>
+</section>
+
+<!-- BIND & UNBIND -->
+<section>
+<h2>1️⃣ Binding & Unbinding Events</h2>
+
+<p><b>Definition:</b>  
+<b>.on()</b> attaches events, <b>.off()</b> removes events.</p>
+
+<button id="bindBtn">Click Me</button>
+<button onclick="unbindEvent()">Unbind Event</button>
+
+<div class="output" id="out1"></div>
+</section>
+
+<!-- SHORTCUT EVENTS -->
+<section>
+<h2>2️⃣ Event Shortcut Methods</h2>
+
+<p><b>Examples:</b> <code>.click()</code>, <code>.hover()</code>, <code>.focus()</code></p>
+
+<div class="box" id="box">Hover / Click</div>
+<input id="focusInput" placeholder="Focus here">
+
+<div class="output" id="out2"></div>
+</section>
+
+<!-- EVENT OBJECT -->
+<section>
+<h2>3️⃣ Event Object</h2>
+
+<p><b>Definition:</b> Event object provides information about the triggered event.</p>
+
+<div class="box" id="eventBox">Click Me</div>
+<div class="output" id="out3"></div>
+</section>
+
+<!-- EVENT DELEGATION -->
+<section>
+<h2>4️⃣ Event Delegation</h2>
+
+<p><b>Definition:</b> Parent handles events for dynamic child elements.</p>
+
+<ul id="list">
+  <li class="item">Item 1</li>
+</ul>
+<button id="addItem">Add Item</button>
+
+<div class="output" id="out4"></div>
+</section>
+
+<!-- KEYBOARD EVENTS -->
+<section>
+<h2>5️⃣ Keyboard Events</h2>
+
+<p><b>keydown / keyup</b></p>
+
+<input type="text" id="keyInput" placeholder="Type something">
+
+<div class="output" id="out5"></div>
+</section>
+
+<!-- jQuery SCRIPT -->
+<script>
+/* 1. Binding */
+$("#bindBtn").on("click", function(){
+ $("#out1").text("Button Clicked using .on()");
+});
+
+/* Unbinding */
+function unbindEvent(){
+ $("#bindBtn").off("click");
+ $("#out1").text("Click event unbound using .off()");
+}
+
+/* 2. Shortcut Events */
+$("#box").click(function(){
+ $("#out2").text("Box clicked using .click()");
+});
+$("#box").hover(
+ function(){ $("#out2").text("Mouse Entered"); },
+ function(){ $("#out2").text("Mouse Left"); }
+);
+$("#focusInput").focus(function(){
+ $("#out2").text("Input Focused");
+});
+
+/* 3. Event Object */
+$("#eventBox").on("click", function(e){
+ $("#out3").html(
+  "Event Type: "+e.type+"<br>"+
+  "Target: "+e.target.tagName+"<br>"+
+  "Mouse X: "+e.pageX+", Y: "+e.pageY
+ );
+});
+
+/* 4. Event Delegation */
+$("#list").on("click",".item",function(){
+ $("#out4").text($(this).text()+" clicked!");
+});
+$("#addItem").click(function(){
+ $("#list").append('<li class="item">New Item</li>');
+});
+
+/* 5. Keyboard Events */
+$(document).keydown(function(e){
+ $("#out5").text("Key Down: "+e.key);
+});
+$(document).keyup(function(e){
+ $("#out5").append(" | Key Up: "+e.key);
+});
+</script>
+
+</body>
+</html>

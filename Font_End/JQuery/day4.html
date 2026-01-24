@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Day 4 – Manipulating Page Content</title>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#4a148c;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:950px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#4a148c; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+button{
+  padding:8px 14px;
+  background:#4a148c;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  margin:5px 0;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#ede7f6;
+  border-left:5px solid #4a148c;
+}
+.box{
+  padding:10px;
+  border:1px solid #ccc;
+  margin-top:10px;
+}
+.highlight{
+  background:yellow;
+}
+span{
+  display: flex;
+  justify-content: center;
+}
+#btn{
+  margin: 10px;
+  font-size: 20px;
+}
+
+#btn:hover{
+  background-color: rgb(24, 150, 205);
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>jQuery Day 4</h1>
+<p>Manipulating Page Content</p>
+</header>
+
+<span><button id="btn"><a href="/Font_End/JQuery/day3.html"> &lt; PREV</button></a><button id="btn"><a href="#"> HOME</button></a><button id="btn"><a href="/Font_End/JQuery/day5.html"> NEXT &gt;</button></a></span>
+
+<section>
+<h2>📘 Definition & Importance</h2>
+<p><b>Definition:</b> Manipulating page content means reading, updating, adding, or removing HTML elements dynamically using jQuery.</p>
+<p><b>Why important?</b></p>
+<ul>
+  <li>No page reload required</li>
+  <li>Improves user experience</li>
+  <li>Used in real-time dashboards, forms, comments</li>
+</ul>
+<code>$(selector).method()</code>
+</section>
+
+<!-- TEXT -->
+<section>
+<h2>1️⃣ .text()</h2>
+<p><b>Definition:</b> Gets or sets plain text (no HTML).</p>
+
+<p id="textDemo">Hello <b>World</b></p>
+<button id="getText">Get Text</button>
+<button id="setText">Set Text</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- HTML -->
+<section>
+<h2>2️⃣ .html()</h2>
+<p><b>Definition:</b> Gets or sets HTML content.</p>
+
+<p id="htmlDemo">This is <i>italic</i></p>
+<button id="setHtml">Change HTML</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- VAL -->
+<section>
+<h2>3️⃣ .val()</h2>
+<p><b>Definition:</b> Gets or sets form values.</p>
+
+<input type="text" id="city" value="MUMBAI">
+<button id="showVal">Show</button>
+<button id="setVal">Update</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- APPEND / PREPEND -->
+<section>
+<h2>4️⃣ .append() & .prepend()</h2>
+
+<ul id="list">
+  <li>Item 1</li>
+</ul>
+<button id="addEnd">Add End</button>
+<button id="addStart">Add Start</button>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section>
+<h2>5️⃣ .before() & .after()</h2>
+
+<p id="para">This is paragraph</p>
+<button id="before">Before</button>
+<button id="after">After</button>
+</section>
+
+<!-- REMOVE / EMPTY -->
+<section>
+<h2>6️⃣ .remove() & .empty()</h2>
+
+<div class="box" id="box">
+  <p>Inside content</p>
+</div>
+<button id="empty">Empty</button>
+<button id="remove">Remove</button>
+</section>
+
+<!-- ATTR / PROP -->
+<section>
+<h2>7️⃣ .attr() & .prop()</h2>
+
+<img id="img" src="testing.png" alt="Old Image" width="100">
+<input type="checkbox" id="check">
+<br>
+<button id="modify">Modify</button>
+</section>
+
+<!-- CLASS -->
+<section>
+<h2>8️⃣ Class Manipulation</h2>
+
+<p id="classText">Watch my style</p>
+<button id="addClass">Add</button>
+<button id="removeClass">Remove</button>
+<button id="toggleClass">Toggle</button>
+</section>
+
+<!-- CSS -->
+<section>
+<h2>9️⃣ .css()</h2>
+
+<p id="styleText">Change my style</p>
+<button id="style1">Style 1</button>
+<button id="style2">Style 2</button>
+</section>
+
+<!-- CLONE / REPLACE -->
+<section>
+<h2>🔟 .clone() & .replaceWith()</h2>
+
+  <p id="cloneMe">Clone me!</p>
+  <button id="clone">Clone</button>
+
+  <p id="old">Old paragraph</p>
+  <button id="replace">Replace</button>
+</section>
+
+<!-- SHOW / HIDE -->
+<section>
+    <h2>1️⃣1️⃣ Show / Hide / Toggle</h2>
+
+    <p id="toggleText">This will hide or show</p>
+      <button id="hide">Hide</button>
+      <button id="show">Show</button>
+      <button id="toggle">Toggle</button>
+</section>
+
+<!-- SCRIPT -->
+<script>
+    $("#getText").click(()=> $("#o1").text($("#textDemo").text()));
+    $("#setText").click(()=> $("#textDemo").text("Welcome to jQuery"));
+
+    $("#setHtml").click(()=> {
+    $("#htmlDemo").html("<b>Now it's bold!</b>");
+    $("#o2").text("HTML updated");
+    });
+
+    $("#showVal").click(()=> $("#o3").text($("#city").val()));
+    $("#setVal").click(()=> $("#city").val("PUNE"));
+
+    $("#addEnd").click(()=> $("#list").append("<li>Added at End</li>"));
+    $("#addStart").click(()=> $("#list").prepend("<li>Added at Start</li>"));
+
+    $("#before").click(()=> $("#para").before("<h4>Inserted Before</h4>"));
+    $("#after").click(()=> $("#para").after("<h4>Inserted After</h4>"));
+
+    $("#empty").click(()=> $("#box").empty());
+    $("#remove").click(()=> $("#box").remove());
+
+    $("#modify").click(()=>{
+    $("#img").attr("src","pass.png");
+    $("#check").prop("checked",true);
+    $("#img").removeAttr("alt");
+    });
+
+    $("#addClass").click(()=> $("#classText").addClass("highlight"));
+    $("#removeClass").click(()=> $("#classText").removeClass("highlight"));
+    $("#toggleClass").click(()=> $("#classText").toggleClass("highlight"));
+
+    $("#style1").click(()=> $("#styleText").css({
+    color:"red", fontSize:"20px", background:"lightyellow"
+    }));
+    $("#style2").click(()=> $("#styleText").css("color","blue"));
+
+    $("#clone").click(()=> $("#cloneMe").clone().appendTo("body"));
+    $("#replace").click(()=> $("#old").replaceWith("<h2>New Heading Added</h2>"));
+
+    $("#hide").click(()=> $("#toggleText").hide());
+    $("#show").click(()=> $("#toggleText").show());
+    $("#toggle").click(()=> $("#toggleText").toggle());
+</script>
+
+</body>
+</html>

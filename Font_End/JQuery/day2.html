@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Day 2 – Retrieving & Traversing</title>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#1a237e;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#1a237e; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+button{
+  padding:8px 14px;
+  background:#1a237e;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  margin-top:5px;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#e8eaf6;
+  border-left:5px solid #1a237e;
+}
+.box{
+  padding:10px;
+  border:1px solid #ccc;
+  margin:5px 0;
+}
+.highlight{
+  background: lightyellow;
+  border:2px solid green;
+}
+span{
+  display: flex;
+  justify-content: center;
+}
+#btn{
+  margin: 10px;
+  font-size: 20px;
+}
+
+#btn:hover{
+  background-color: rgb(24, 150, 205);
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>jQuery Day 2 Project</h1>
+<p>Retrieving & Traversing Page Content</p>
+</header>
+
+<!-- ABOUT -->
+<section>
+<h2>📘 What is Retrieving & Traversing?</h2>
+<p><b>Definition:</b> Retrieving and traversing page content allows jQuery to select, inspect, and move through HTML elements efficiently.</p>
+
+<p><b>Syntax Pattern:</b></p>
+<code>
+$(selector).method()
+</code>
+
+<p>This is the backbone of DOM manipulation in jQuery.</p>
+</section>
+
+<!-- ID SELECTOR -->
+<section>
+<h2>1️⃣ ID Selector – <code>$("#id")</code></h2>
+<p><b>Definition:</b> Selects a single unique element.</p>
+
+<h3 id="title">Welcome to jQuery</h3>
+<button onclick="idExample()">Run Example</button>
+<div class="output" id="out1"></div>
+</section>
+
+<!-- CLASS SELECTOR -->
+<section>
+<h2>2️⃣ Class Selector – <code>$(".class")</code></h2>
+
+<p class="city">PUNE</p>
+<p class="city">MUMBAI</p>
+<p class="city">NAGPUR</p>
+
+<button onclick="classExample()">Run Example</button>
+<div class="output" id="out2"></div>
+</section>
+
+<!-- TAG SELECTOR -->
+<section>
+<h2>3️⃣ Tag Selector – <code>$("p")</code></h2>
+
+<p>RAJA</p>
+<p>RANI</p>
+<p>KAHANI</p>
+
+<button onclick="tagExample()">Run Example</button>
+<div class="output" id="out3"></div>
+</section>
+
+<!-- UNIVERSAL SELECTOR -->
+<section>
+<h2>4️⃣ Universal Selector – <code>$("*")</code></h2>
+
+<button onclick="universalExample()">Run Example</button>
+<div class="output" id="out4"></div>
+</section>
+
+<!-- ATTRIBUTE FILTER -->
+<section>
+<h2>5️⃣ Attribute Filtering</h2>
+
+<input type="text" placeholder="Name">
+<input type="checkbox" checked> Java
+<input type="checkbox"> Python
+
+<button onclick="attributeExample()">Run Example</button>
+<div class="output" id="out5"></div>
+</section>
+
+<!-- CONTENT FILTER -->
+<section>
+<h2>6️⃣ Content Filters</h2>
+
+<div class="box">Java Programming</div>
+<div class="box">Python Language</div>
+<div class="box"></div>
+<div class="box"><span>Web Development</span></div>
+
+<button onclick="contentExample()">Run Example</button>
+<div class="output" id="out6"></div>
+</section>
+
+<!-- TRAVERSING -->
+<section>
+<h2>7️⃣ DOM Traversing</h2>
+
+<div class="box" id="parent">
+  Parent
+  <p id="child">Child Paragraph</p>
+</div>
+
+<button onclick="traverseExample()">Run Example</button>
+<div class="output" id="out7"></div>
+</section>
+
+<!-- each -->
+<section>
+<h2>8️⃣ each() Iteration</h2>
+
+<ul id="list">
+  <li>Java</li>
+  <li>Python</li>
+  <li>JavaScript</li>
+</ul>
+
+<button onclick="eachExample()">Run Example</button>
+<div class="output" id="out8"></div>
+</section>
+
+<!-- jQuery Logic -->
+<script>
+function idExample(){
+ $("#title").addClass("highlight");
+ $("#out1").text("ID selector applied");
+}
+
+function classExample(){
+ $(".city").addClass("highlight");
+ $("#out2").text("Class selector applied to multiple elements");
+}
+
+function tagExample(){
+ $("p").css("color","green");
+ $("#out3").text("Tag selector applied");
+}
+
+function universalExample(){
+ $("*").css("border-radius","8px");
+ $("#out4").text("Universal selector applied to all elements");
+}
+
+function attributeExample(){
+ $("input[type='text']").addClass("highlight");
+ $("input:checked").css("outline","2px solid red");
+ $("#out5").text("Attribute filtering applied");
+}
+
+function contentExample(){
+ $("div:contains('Java')").css("background","lightgreen");
+ $("div:empty").css("background","lightpink");
+ $("div:has(span)").css("background","lightblue");
+ $("#out6").text("Content filters applied");
+}
+
+function traverseExample(){
+ $("#child").parent().addClass("highlight");
+ $("#out7").text("parent() traversal applied");
+}
+
+function eachExample(){
+ $("#list li").each(function(index){
+  $(this).text("Item " + (index+1) + " - " + $(this).text());
+ });
+ $("#out8").text("each() loop executed");
+}
+</script>
+
+</body>
+</html>
