@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 10 – Events & Event Handling</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#2e7d32;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#2e7d32; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+.btn{
+  background:#2e7d32;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:5px;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#e8f5e9;
+  border-left:5px solid #2e7d32;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+input{
+  padding:8px;
+  width:100%;
+  margin-top:8px;
+}
+.box{
+  padding:15px;
+  margin-top:10px;
+  background:antiquewhite;
+  border-radius:6px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Day 10: JavaScript Events & Event Handling</h1>
+<p>Mouse • Keyboard • Form • Bubbling • Delegation</p>
+</header>
+
+<!-- 1 -->
+<section>
+<h2>1️⃣ What is an Event?</h2>
+<p><b>Definition:</b> An event is an action performed by the user or browser.</p>
+
+<code>
+element.onclick = function(){}
+</code>
+
+<button class="btn" onclick="ex1()">▶ Run Example</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2️⃣ Mouse Events</h2>
+<p><b>click, dblclick, mouseover</b></p>
+
+<div class="box" id="mouseBox">Hover or Click Me</div>
+<button class="btn" onclick="ex2()">▶ Attach Events</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3️⃣ Keyboard Events</h2>
+<p><b>keydown, keyup</b></p>
+
+<input id="keyInput" placeholder="Type here">
+<button class="btn" onclick="ex3()">▶ Activate</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4️⃣ Form Submit Event</h2>
+
+<form id="myForm">
+  <input id="name" placeholder="Enter Name">
+  <button class="btn">Submit</button>
+</form>
+
+<div class="output" id="o4"></div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5️⃣ Event Object</h2>
+<p><b>Definition:</b> Event object stores event information.</p>
+
+<button class="btn" id="eventBtn">Click Me</button>
+<div class="output" id="o5"></div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6️⃣ addEventListener()</h2>
+
+<button class="btn" id="btn6">Click Using addEventListener</button>
+<div class="output" id="o6"></div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7️⃣ preventDefault()</h2>
+
+<form id="form2">
+  <button class="btn">Submit Form</button>
+</form>
+
+<div class="output" id="o7"></div>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8️⃣ Event Bubbling</h2>
+
+<div id="parent" class="box">
+  Parent
+  <button id="child" class="btn">Child</button>
+</div>
+
+<div class="output" id="o8"></div>
+</section>
+
+<!-- 9 -->
+<section>
+<h2>9️⃣ Event Delegation</h2>
+
+<ul id="list" class="box">
+  <li>Item One</li>
+  <li>Item Two</li>
+  <li>Item Three</li>
+</ul>
+
+<div class="output" id="o9"></div>
+</section>
+
+<!-- 10 -->
+<section>
+<h2>🔟 Real Use Case – Button Counter</h2>
+
+<button class="btn" id="countBtn">Count</button>
+<div class="output" id="o10"></div>
+</section>
+
+<script>
+/* 1 */
+function ex1(){
+ o1.textContent="Button Click Event Triggered";
+}
+
+/* 2 */
+function ex2(){
+ let box=document.getElementById("mouseBox");
+ box.onclick=()=>o2.textContent="Mouse Clicked";
+ box.onmouseover=()=>o2.textContent="Mouse Over";
+}
+
+/* 3 */
+function ex3(){
+ let input=document.getElementById("keyInput");
+ input.onkeydown=(e)=>o3.textContent="Key Pressed: "+e.key;
+}
+
+/* 4 */
+document.getElementById("myForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ o4.textContent="Form Submitted Without Reload";
+});
+
+/* 5 */
+document.getElementById("eventBtn").addEventListener("click",function(e){
+ o5.textContent="Event Type: "+e.type;
+});
+
+/* 6 */
+document.getElementById("btn6").addEventListener("click",()=>{
+ o6.textContent="Handled by addEventListener";
+});
+
+/* 7 */
+document.getElementById("form2").addEventListener("submit",function(e){
+ e.preventDefault();
+ o7.textContent="Default Action Prevented";
+});
+
+/* 8 */
+document.getElementById("parent").onclick=()=>o8.textContent="Parent Clicked";
+document.getElementById("child").onclick=(e)=>{
+ e.stopPropagation();
+ o8.textContent="Child Clicked (Bubbling Stopped)";
+};
+
+/* 9 */
+document.getElementById("list").onclick=function(e){
+ if(e.target.tagName==="LI"){
+  o9.textContent="Clicked: "+e.target.innerText;
+ }
+};
+
+/* 10 */
+let count=0;
+document.getElementById("countBtn").onclick=function(){
+ count++;
+ o10.textContent="Count = "+count;
+};
+</script>
+
+</body>
+</html>

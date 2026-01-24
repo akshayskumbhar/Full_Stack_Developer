@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 7 – DOM Manipulation Basics</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#00838f;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#00838f; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+.btn{
+  background:#00838f;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#e0f7fa;
+  border-left:5px solid #00838f;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Day 7: DOM Manipulation Basics</h1>
+<p>DOM • Selectors • Nodes • Dynamic Updates</p>
+</header>
+
+<!-- 1 -->
+<section>
+<h2>1️⃣ What is DOM Manipulation?</h2>
+<p><b>Definition:</b> DOM Manipulation is the process of using JavaScript to access, change, add, or remove elements from a webpage.</p>
+
+<code>
+document.getElementById("id").property
+</code>
+
+<h3 id="title">Hello</h3>
+<button class="btn" onclick="ex1()">▶ Run Example</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2️⃣ HTML–CSS–JS Analogy</h2>
+<p><b>Concept:</b> HTML = structure, CSS = design, JavaScript = controller.</p>
+
+<code>
+document.getElementById("msg").innerText = "Changed";
+</code>
+
+<p id="msg">Original</p>
+<button class="btn" onclick="ex2()">▶ Run Example</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3️⃣ DOM Tree & Nodes</h2>
+<p><b>Definition:</b> The DOM represents the page as a tree of nodes.</p>
+
+<code>
+element.firstChild.nodeValue
+</code>
+
+<p id="nodeP">Hello DOM</p>
+<button class="btn" onclick="ex3()">▶ Run Example</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4️⃣ Selecting Elements by ID</h2>
+
+<code>
+document.getElementById("id")
+</code>
+
+<p id="idText">Select by ID</p>
+<button class="btn" onclick="ex4()">▶ Run Example</button>
+<div class="output" id="o4"></div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5️⃣ Selecting Elements by Class</h2>
+
+<code>
+document.getElementsByClassName("className")
+</code>
+
+<p class="cls">First</p>
+<p class="cls">Second</p>
+<button class="btn" onclick="ex5()">▶ Run Example</button>
+<div class="output" id="o5"></div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6️⃣ Selecting Elements by Tag</h2>
+
+<code>
+document.getElementsByTagName("tag")
+</code>
+
+<p>Tag One</p>
+<p>Tag Two</p>
+<button class="btn" onclick="ex6()">▶ Run Example</button>
+<div class="output" id="o6"></div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7️⃣ querySelector()</h2>
+<p><b>Definition:</b> Selects the first matching element.</p>
+
+<code>
+document.querySelector(".class")
+</code>
+
+<p class="q">Query Selector</p>
+<button class="btn" onclick="ex7()">▶ Run Example</button>
+<div class="output" id="o7"></div>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8️⃣ querySelectorAll()</h2>
+<p><b>Definition:</b> Selects all matching elements.</p>
+
+<code>
+document.querySelectorAll(".class")
+</code>
+
+<p class="qa">One</p>
+<p class="qa">Two</p>
+<button class="btn" onclick="ex8()">▶ Run Example</button>
+<div class="output" id="o8"></div>
+</section>
+
+<script>
+function ex1(){
+ let t=document.getElementById("title");
+ t.innerText="DOM Manipulation Started";
+ o1.textContent="Text updated using DOM";
+}
+
+function ex2(){
+ document.getElementById("msg").innerText="Changed by JS Operator";
+ o2.textContent="HTML updated via JavaScript";
+}
+
+function ex3(){
+ let el=document.getElementById("nodeP");
+ o3.textContent="Node Value: "+el.firstChild.nodeValue;
+}
+
+function ex4(){
+ let el=document.getElementById("idText");
+ el.style.color="red";
+ o4.textContent="Color changed using getElementById";
+}
+
+function ex5(){
+ let items=document.getElementsByClassName("cls");
+ items[0].style.color="blue";
+ items[1].style.color="green";
+ o5.textContent="Both class elements styled";
+}
+
+function ex6(){
+ let tags=document.getElementsByTagName("p");
+ tags[0].style.fontWeight="bold";
+ o6.textContent="First <p> tag modified";
+}
+
+function ex7(){
+ let el=document.querySelector(".q");
+ el.style.background="yellow";
+ o7.textContent="querySelector applied";
+}
+
+function ex8(){
+ let els=document.querySelectorAll(".qa");
+ let out="";
+ els.forEach((e,i)=>{
+  e.style.color="purple";
+  out+="Element "+(i+1)+" updated\n";
+ });
+ o8.textContent=out;
+}
+</script>
+
+</body>
+</html>

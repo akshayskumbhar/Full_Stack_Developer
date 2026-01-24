@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 6 – DOM Content Manipulation</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#ef6c00;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#ef6c00; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+.btn{
+  background:#ef6c00;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#fff3e0;
+  border-left:5px solid #ef6c00;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+input{
+  padding:8px;
+  width:100%;
+  margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Day 6: JavaScript DOM Content Manipulation</h1>
+<p>innerHTML • innerText • textContent • attributes • value</p>
+</header>
+
+<!-- 1 -->
+<section>
+<h2>1️⃣ innerHTML</h2>
+<p><b>Definition:</b> Gets or sets HTML content including tags.</p>
+
+<code>
+element.innerHTML
+element.innerHTML = "&lt;b&gt;Text&lt;/b&gt;"
+</code>
+
+<div id="box1"><b>Hello</b> World</div>
+<button class="btn" onclick="ex1()">▶ Run Example</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2️⃣ innerText</h2>
+<p><b>Definition:</b> Returns only visible text.</p>
+
+<code>
+element.innerText
+</code>
+
+<p id="p2">Hello <span style="display:none">Hidden</span> World</p>
+<button class="btn" onclick="ex2()">▶ Run Example</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3️⃣ textContent</h2>
+<p><b>Definition:</b> Returns all text including hidden text.</p>
+
+<code>
+element.textContent
+</code>
+
+<p id="p3">Hello <span style="display:none">Hidden</span> World</p>
+<button class="btn" onclick="ex3()">▶ Run Example</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4️⃣ outerHTML</h2>
+<p><b>Definition:</b> Gets or replaces the entire element.</p>
+
+<code>
+element.outerHTML
+</code>
+
+<div id="box4">Original Box</div>
+<button class="btn" onclick="ex4()">▶ Run Example</button>
+<div class="output" id="o4"></div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5️⃣ outerText</h2>
+<p><b>Definition:</b> Replaces element with plain text.</p>
+
+<code>
+element.outerText
+</code>
+
+<div id="box5">Remove Me</div>
+<button class="btn" onclick="ex5()">▶ Run Example</button>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6️⃣ value (Form Input)</h2>
+<p><b>Definition:</b> Gets or sets input field value.</p>
+
+<code>
+element.value
+</code>
+
+<input id="name" value="John">
+<button class="btn" onclick="ex6()">▶ Run Example</button>
+<div class="output" id="o6"></div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7️⃣ nodeValue</h2>
+<p><b>Definition:</b> Gets or sets value of a text node.</p>
+
+<code>
+node.nodeValue
+</code>
+
+<p id="p7">Hello</p>
+<button class="btn" onclick="ex7()">▶ Run Example</button>
+<div class="output" id="o7"></div>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8️⃣ data (Text Node)</h2>
+<p><b>Definition:</b> Alias of nodeValue.</p>
+
+<code>
+textNode.data
+</code>
+
+<p id="p8">Hello</p>
+<button class="btn" onclick="ex8()">▶ Run Example</button>
+<div class="output" id="o8"></div>
+</section>
+
+<!-- 9 -->
+<section>
+<h2>9️⃣ getAttribute()</h2>
+<p><b>Definition:</b> Reads HTML attribute value.</p>
+
+<code>
+element.getAttribute("attr")
+</code>
+
+<img id="img9" src="sample.png" alt="Image">
+<button class="btn" onclick="ex9()">▶ Run Example</button>
+<div class="output" id="o9"></div>
+</section>
+
+<!-- 10 -->
+<section>
+<h2>🔟 setAttribute()</h2>
+<p><b>Definition:</b> Sets or updates attribute value.</p>
+
+<code>
+element.setAttribute("attr","value")
+</code>
+
+<img id="img10" src="old.png">
+<button class="btn" onclick="ex10()">▶ Run Example</button>
+<div class="output" id="o10"></div>
+</section>
+
+<script>
+function ex1(){
+ let el=document.getElementById("box1");
+ o1.textContent="Before: "+el.innerHTML;
+ el.innerHTML="<h3>Updated Content</h3>";
+}
+
+function ex2(){
+ let p=document.getElementById("p2");
+ o2.textContent=p.innerText;
+}
+
+function ex3(){
+ let p=document.getElementById("p3");
+ o3.textContent=p.textContent;
+}
+
+function ex4(){
+ let b=document.getElementById("box4");
+ o4.textContent=b.outerHTML;
+ b.outerHTML="<h2>New Element</h2>";
+}
+
+function ex5(){
+ document.getElementById("box5").outerText="Element Removed";
+}
+
+function ex6(){
+ let i=document.getElementById("name");
+ o6.textContent="Value: "+i.value;
+ i.value="Updated Name";
+}
+
+function ex7(){
+ let p=document.getElementById("p7");
+ let t=p.firstChild;
+ o7.textContent="Before: "+t.nodeValue;
+ t.nodeValue="Changed Text";
+}
+
+function ex8(){
+ let p=document.getElementById("p8");
+ let t=p.firstChild;
+ o8.textContent="Before: "+t.data;
+ t.data="Updated using data";
+}
+
+function ex9(){
+ let img=document.getElementById("img9");
+ o9.textContent=img.getAttribute("src");
+}
+
+function ex10(){
+ let img=document.getElementById("img10");
+ img.setAttribute("src","new.png");
+ img.setAttribute("alt","Updated Image");
+ o10.textContent="Attributes Updated";
+}
+</script>
+
+</body>
+</html>

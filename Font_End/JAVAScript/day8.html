@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 8 – Conditional Statements & Flow Control</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#c62828;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#c62828; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+.btn{
+  background:#c62828;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#ffebee;
+  border-left:5px solid #c62828;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+input{
+  padding:8px;
+  width:100%;
+  margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Day 8: Conditional Statements & Flow Control</h1>
+<p>if • else • ternary • switch • logical operators</p>
+</header>
+
+<!-- 1 -->
+<section>
+<h2>1️⃣ if Statement</h2>
+<p><b>Definition:</b> Executes code only when condition is true.</p>
+
+<code>
+if(condition){
+  // code
+}
+</code>
+
+<button class="btn" onclick="ex1()">▶ Run Example</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2️⃣ if–else Statement</h2>
+<p><b>Definition:</b> Chooses between two blocks.</p>
+
+<button class="btn" onclick="ex2()">▶ Run Example</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3️⃣ else-if Ladder</h2>
+<p><b>Definition:</b> Checks multiple conditions.</p>
+
+<button class="btn" onclick="ex3()">▶ Run Example</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4️⃣ Nested if</h2>
+<p><b>Definition:</b> if inside another if.</p>
+
+<button class="btn" onclick="ex4()">▶ Run Example</button>
+<div class="output" id="o4"></div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5️⃣ Ternary Operator</h2>
+<p><b>Definition:</b> Short-hand for if–else.</p>
+
+<code>
+condition ? value1 : value2
+</code>
+
+<button class="btn" onclick="ex5()">▶ Run Example</button>
+<div class="output" id="o5"></div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6️⃣ switch Statement</h2>
+<p><b>Definition:</b> Multi-branch decision structure.</p>
+
+<button class="btn" onclick="ex6()">▶ Run Example</button>
+<div class="output" id="o6"></div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7️⃣ Comparison Operators</h2>
+<p><b>== vs ===</b></p>
+
+<button class="btn" onclick="ex7()">▶ Run Example</button>
+<div class="output" id="o7"></div>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8️⃣ Logical Operators</h2>
+<p><b>&& (AND), || (OR), ! (NOT)</b></p>
+
+<button class="btn" onclick="ex8()">▶ Run Example</button>
+<div class="output" id="o8"></div>
+</section>
+
+<!-- 9 -->
+<section>
+<h2>9️⃣ Truthy & Falsy</h2>
+
+<button class="btn" onclick="ex9()">▶ Run Example</button>
+<div class="output" id="o9"></div>
+</section>
+
+<!-- 10 -->
+<section>
+<h2>🔟 Use Case – Eligibility Checker</h2>
+
+<input id="age" placeholder="Enter Age">
+<input id="idCard" placeholder="Has ID? (true/false)">
+<button class="btn" onclick="ex10()">▶ Check</button>
+<div class="output" id="o10"></div>
+</section>
+
+<script>
+function ex1(){
+ let age=20;
+ if(age>=18){
+  o1.textContent="Eligible to vote";
+ }
+}
+
+function ex2(){
+ let age=15;
+ o2.textContent = age>=18 ? "Adult" : "Minor";
+}
+
+function ex3(){
+ let marks=75;
+ let res;
+ if(marks>=90) res="A Grade";
+ else if(marks>=60) res="B Grade";
+ else res="Fail";
+ o3.textContent=res;
+}
+
+function ex4(){
+ let age=25, hasID=true;
+ if(age>=18){
+  if(hasID){
+   o4.textContent="Entry Allowed";
+  }
+ }
+}
+
+function ex5(){
+ let age=16;
+ o5.textContent = age>=18 ? "Adult" : "Minor";
+}
+
+function ex6(){
+ let day=3, out="";
+ switch(day){
+  case 1: out="Monday"; break;
+  case 2: out="Tuesday"; break;
+  case 3: out="Wednesday"; break;
+  default: out="Invalid";
+ }
+ o6.textContent=out;
+}
+
+function ex7(){
+ o7.textContent =
+ "5 == '5' → "+(5=="5")+"\n"+
+ "5 === '5' → "+(5==="5");
+}
+
+function ex8(){
+ let age=20, citizen=true;
+ o8.textContent = age>=18 && citizen ? "Eligible" : "Not Eligible";
+}
+
+function ex9(){
+ let val="";
+ if(val){
+  o9.textContent="Truthy";
+ }else{
+  o9.textContent="Falsy Value Detected";
+ }
+}
+
+function ex10(){
+ let a=Number(age.value);
+ let id=idCard.value==="true";
+ if(!id) o10.textContent="ID Required";
+ else if(a<18) o10.textContent="Underage";
+ else o10.textContent="Eligible";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 3 – Functions & Scope</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#2e7d32;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#2e7d32; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+.btn{
+  background:#2e7d32;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:5px;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#f1fff1;
+  border-left:5px solid #2e7d32;
+  font-family: monospace;
+}
+.nav{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+}
+.nav button{
+  width:120px;
+  border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header id="home">
+<h1>Day 3: Functions & Scope</h1>
+<p>Definition • Syntax • Examples • Practice</p>
+</header>
+
+<!-- 1 -->
+<section>
+<h2>1️⃣ What is a Function?</h2>
+<p><b>Definition:</b> A function is a reusable block of code that performs a task.</p>
+
+<code>
+function greet(){
+  return "Hello World";
+}
+</code>
+
+<button class="btn" onclick="ex1()">▶ Run</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2️⃣ Function Declaration vs Expression</h2>
+
+<code>
+function add(a,b){ return a+b; }
+
+const addExp = function(a,b){ return a+b; };
+</code>
+
+<button class="btn" onclick="ex2()">▶ Run</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3️⃣ Parameters vs Arguments</h2>
+<p><b>Parameters:</b> Variables in function definition</p>
+<p><b>Arguments:</b> Values passed during function call</p>
+
+<button class="btn" onclick="ex3()">▶ Run</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4️⃣ Return Statement</h2>
+<p><b>Definition:</b> return sends a value back to the caller.</p>
+
+<button class="btn" onclick="ex4()">▶ Run</button>
+<div class="output" id="o4"></div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5️⃣ Arrow Functions (ES6)</h2>
+
+<code>
+const square = x => x * x;
+</code>
+
+<button class="btn" onclick="ex5()">▶ Run</button>
+<div class="output" id="o5"></div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6️⃣ Anonymous & Callback Functions</h2>
+
+<button class="btn" onclick="ex6()">▶ Run</button>
+<div class="output" id="o6"></div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7️⃣ Variable Scope</h2>
+<p><b>Global:</b> Accessible everywhere</p>
+<p><b>Local:</b> Accessible inside function only</p>
+
+<button class="btn" onclick="ex7()">▶ Run</button>
+<div class="output" id="o7"></div>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8️⃣ Closures</h2>
+<p><b>Definition:</b> A function remembers its outer variables even after execution.</p>
+
+<button class="btn" onclick="ex8()">▶ Run</button>
+<div class="output" id="o8"></div>
+</section>
+
+<!-- 9 -->
+<section>
+<h2>9️⃣ Default Parameters</h2>
+
+<button class="btn" onclick="ex9()">▶ Run</button>
+<div class="output" id="o9"></div>
+</section>
+
+<!-- 10 -->
+<section>
+<h2>🔟 Mini Use Case</h2>
+<p>Tip Calculator using function</p>
+
+<button class="btn" onclick="ex10()">▶ Run</button>
+<div class="output" id="o10"></div>
+</section>
+
+<!-- NAV -->
+<div class="nav">
+<button class="btn" onclick="prev()">⬅ Previous</button>
+<button class="btn" onclick="goHome()">🏠 Home</button>
+<button class="btn" onclick="next()">Next ➡</button>
+</div>
+
+<script>
+const sections=document.querySelectorAll("section");
+let index=0;
+function scrollTo(i){
+ if(i>=0 && i<sections.length){
+  sections[i].scrollIntoView({behavior:"smooth"});
+  index=i;
+ }
+}
+function next(){scrollTo(index+1)}
+function prev(){scrollTo(index-1)}
+function goHome(){
+ document.getElementById("home").scrollIntoView({behavior:"smooth"});
+ index=0;
+}
+
+/* Examples */
+function ex1(){
+ function greet(){ return "Hello World"; }
+ o1.textContent=greet();
+}
+function ex2(){
+ function add(a,b){return a+b}
+ const addExp=function(a,b){return a+b}
+ o2.textContent=`Declaration: ${add(5,3)} | Expression: ${addExp(5,3)}`;
+}
+function ex3(){
+ function mul(x,y){return x*y}
+ o3.textContent="Multiply: "+mul(4,5);
+}
+function ex4(){
+ function square(n){return n*n}
+ o4.textContent="Square of 6 = "+square(6);
+}
+function ex5(){
+ const square=x=>x*x;
+ o5.textContent="Square of 5 = "+square(5);
+}
+function ex6(){
+ function greet(name,cb){
+  cb();
+  return "Hello "+name;
+ }
+ let r=greet("Alice",()=>console.log("Callback executed"));
+ o6.textContent=r+" (check console)";
+}
+function ex7(){
+ let globalVar="Global";
+ function test(){
+  let localVar="Local";
+  return globalVar+" & "+localVar;
+ }
+ o7.textContent=test();
+}
+function ex8(){
+ function outer(){
+  let x=10;
+  return function(){return x;}
+ }
+ let fn=outer();
+ o8.textContent="Closure value = "+fn();
+}
+function ex9(){
+ function greet(name="Guest"){return "Hello "+name}
+ o9.textContent=greet("Akshay")+" | "+greet();
+}
+function ex10(){
+ function tip(bill,percent=10){
+  return (bill*percent)/100;
+ }
+ o10.textContent="Tip on ₹500 = ₹"+tip(500);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 5 – Objects & Arrays</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#1565c0;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#1565c0; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+.btn{
+  background:#1565c0;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:5px;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#e3f2fd;
+  border-left:5px solid #1565c0;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Day 5: Objects & Arrays</h1>
+<p>Definition • Syntax • Working Examples</p>
+</header>
+
+<!-- 1 -->
+<section>
+<h2>1️⃣ What is an Object?</h2>
+<p><b>Definition:</b> An object is a collection of key–value pairs.</p>
+
+<code>
+let obj = { key: value };
+</code>
+
+<button class="btn" onclick="ex1()">▶ Run Example</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2️⃣ Accessing & Modifying Object Properties</h2>
+
+<code>
+object.key  
+object["key"]
+</code>
+
+<button class="btn" onclick="ex2()">▶ Run Example</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3️⃣ Nested Objects</h2>
+
+<code>
+obj.inner.key
+</code>
+
+<button class="btn" onclick="ex3()">▶ Run Example</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4️⃣ for...in Loop (Objects)</h2>
+<p><b>Definition:</b> Used to iterate over object keys.</p>
+
+<button class="btn" onclick="ex4()">▶ Run Example</button>
+<div class="output" id="o4"></div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5️⃣ What is an Array?</h2>
+<p><b>Definition:</b> An array stores ordered values using index positions.</p>
+
+<code>
+let arr = [1,2,3];
+</code>
+
+<button class="btn" onclick="ex5()">▶ Run Example</button>
+<div class="output" id="o5"></div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6️⃣ for...of Loop (Arrays)</h2>
+<p><b>Definition:</b> Iterates directly over array values.</p>
+
+<button class="btn" onclick="ex6()">▶ Run Example</button>
+<div class="output" id="o6"></div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7️⃣ Array Methods</h2>
+
+<code>
+push(), pop(), shift(), unshift()
+</code>
+
+<button class="btn" onclick="ex7()">▶ Run Example</button>
+<div class="output" id="o7"></div>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8️⃣ Destructuring</h2>
+
+<code>
+let [a,b] = array;
+let {key} = object;
+</code>
+
+<button class="btn" onclick="ex8()">▶ Run Example</button>
+<div class="output" id="o8"></div>
+</section>
+
+<!-- 9 -->
+<section>
+<h2>9️⃣ Spread & Rest Operators</h2>
+
+<code>
+[...array]  
+function fn(...args){}
+</code>
+
+<button class="btn" onclick="ex9()">▶ Run Example</button>
+<div class="output" id="o9"></div>
+</section>
+
+<!-- 10 -->
+<section>
+<h2>🔟 Object Method & this</h2>
+
+<button class="btn" onclick="ex10()">▶ Run Example</button>
+<div class="output" id="o10"></div>
+</section>
+
+<!-- 11 -->
+<section>
+<h2>1️⃣1️⃣ Use Case – Filter Data</h2>
+
+<button class="btn" onclick="ex11()">▶ Run Example</button>
+<div class="output" id="o11"></div>
+</section>
+
+<script>
+function ex1(){
+ let student={name:"SONU",age:18,course:"JS"};
+ o1.textContent=student.name+" | "+student.course;
+}
+
+function ex2(){
+ let s={name:"PAVAN",age:15};
+ s.age=21;
+ s.grade="A";
+ delete s.name;
+ o2.textContent=JSON.stringify(s,null,2);
+}
+
+function ex3(){
+ let company={name:"TechCorp",address:{city:"Pune",zip:411001}};
+ o3.textContent=company.address.city;
+}
+
+function ex4(){
+ let student={name:"Rahul",age:22,course:"JS"};
+ let out="";
+ for(let key in student){
+  out+=key+" : "+student[key]+"\n";
+ }
+ o4.textContent=out;
+}
+
+function ex5(){
+ let fruits=["Apple","Banana","Cherry"];
+ o5.textContent="First fruit: "+fruits[0];
+}
+
+function ex6(){
+ let langs=["Java","JS","Python"];
+ let out="";
+ for(let l of langs){ out+=l+"\n"; }
+ o6.textContent=out;
+}
+
+function ex7(){
+ let colors=["Red","Green"];
+ colors.push("Blue");
+ colors.pop();
+ o7.textContent=colors.join(", ");
+}
+
+function ex8(){
+ let arr=["Apple","Mango"];
+ let [a,b]=arr;
+ let obj={name:"Tech",city:"Pune"};
+ let {name}=obj;
+ o8.textContent=a+" | "+b+" | "+name;
+}
+
+function ex9(){
+ let a=[1,2], b=[3,4];
+ let c=[...a,...b];
+ function sum(...args){ return args.reduce((x,y)=>x+y); }
+ o9.textContent=c.join(", ")+" | Sum="+sum(1,2,3,4);
+}
+
+function ex10(){
+ let person={
+  name:"Alice",
+  greet:function(){ return "Hello I am "+this.name; }
+ };
+ o10.textContent=person.greet();
+}
+
+function ex11(){
+ let students=[
+  {name:"A",marks:85},
+  {name:"B",marks:70},
+  {name:"C",marks:92}
+ ];
+ let top=students.filter(s=>s.marks>80);
+ o11.textContent=JSON.stringify(top,null,2);
+}
+</script>
+
+</body>
+</html>

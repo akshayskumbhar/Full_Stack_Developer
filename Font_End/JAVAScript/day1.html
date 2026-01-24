@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Complete JavaScript Tutorial</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f8;
+    margin:0;
+}
+header{
+    background:#0a66c2;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+section{
+    background:white;
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#0a66c2; }
+code{
+    background:#eee;
+    display:block;
+    padding:10px;
+    margin:10px 0;
+}
+input,button{
+    padding:10px;
+    margin-top:5px;
+    width:100%;
+}
+.output{
+    margin-top:10px;
+    background:#e8f0fe;
+    padding:10px;
+    border-left:5px solid #0a66c2;
+}
+.nav{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:10px;
+}
+.nav button{
+    width:120px;
+    background:#0a66c2;
+    color:white;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header id="home">
+<h1>JavaScript Complete Tutorial</h1>
+<p>Definition • Syntax • Examples • Projects</p>
+</header>
+
+<!-- SECTION 1 -->
+<section>
+<h2>1. What is JavaScript?</h2>
+<p><b>Definition:</b> JavaScript is a high-level, interpreted programming language used to make web pages interactive.</p>
+<p><b>Use:</b> Validation, animations, dynamic content, APIs.</p>
+
+<code>
+// Example
+document.getElementById("msg").innerHTML = "Hello JavaScript";
+</code>
+
+<button onclick="jsIntro()">Run Example</button>
+<div class="output" id="msg"></div>
+</section>
+
+<!-- SECTION 2 -->
+<section>
+<h2>2. Variables</h2>
+<p><b>Definition:</b> Variables store data values.</p>
+
+<p><b>Syntax:</b></p>
+<code>
+let a = 10;
+const b = 20;
+</code>
+
+<button onclick="showVariable()">Show Variable</button>
+<div class="output" id="varOut"></div>
+</section>
+
+<!-- SECTION 3 -->
+<section>
+<h2>3. Data Types</h2>
+<p>Number, String, Boolean, Undefined, Object</p>
+
+<code>
+typeof 10;      // number
+typeof "Hi";    // string
+</code>
+
+<button onclick="dataType()">Check Type</button>
+<div class="output" id="typeOut"></div>
+</section>
+
+<!-- SECTION 4 -->
+<section>
+<h2>4. Functions</h2>
+<p><b>Definition:</b> A function is a block of reusable code.</p>
+
+<code>
+function add(a,b){
+  return a+b;
+}
+</code>
+
+<input id="f1" placeholder="Number 1">
+<input id="f2" placeholder="Number 2">
+<button onclick="addFunc()">Add</button>
+<div class="output" id="funcOut"></div>
+</section>
+
+<!-- SECTION 5 -->
+<section>
+<h2>5. Conditions</h2>
+<p><b>if / else</b> used for decision making.</p>
+
+<code>
+if(age >= 18){
+  eligible
+}else{
+  not eligible
+}
+</code>
+
+<input id="age" placeholder="Enter Age">
+<button onclick="checkAge()">Check</button>
+<div class="output" id="ageOut"></div>
+</section>
+
+<!-- SECTION 6 -->
+<section>
+<h2>6. Loops</h2>
+<p><b>Definition:</b> Loops repeat code.</p>
+
+<code>
+for(let i=1;i<=5;i++){
+ console.log(i)
+}
+</code>
+
+<input id="table" placeholder="Enter Number">
+<button onclick="tableFunc()">Generate Table</button>
+<div class="output" id="loopOut"></div>
+</section>
+
+<!-- SECTION 7 -->
+<section>
+<h2>7. Arrays</h2>
+<p><b>Definition:</b> Arrays store multiple values.</p>
+
+<code>
+let fruits = ["Apple","Banana"];
+</code>
+
+<button onclick="arrayFunc()">Show Array</button>
+<div class="output" id="arrOut"></div>
+</section>
+
+<!-- SECTION 8 -->
+<section>
+<h2>8. DOM Manipulation</h2>
+<p>JavaScript can change HTML dynamically.</p>
+
+<code>
+document.getElementById("x").innerHTML = "Changed";
+</code>
+
+<button onclick="domFunc()">Change Text</button>
+<div class="output" id="domOut">Original Text</div>
+</section>
+
+<!-- SECTION 9 -->
+<section>
+<h2>9. Events</h2>
+<p>Events occur due to user actions.</p>
+
+<code>
+onclick, onkeyup, onchange
+</code>
+
+<button onclick="alert('Button Clicked!')">Click Event</button>
+</section>
+
+<!-- SECTION 10 -->
+<section>
+<h2>10. Mini Project – Calculator</h2>
+
+<input id="c1" placeholder="Number 1">
+<input id="c2" placeholder="Number 2">
+<button onclick="calc()">Calculate</button>
+<div class="output" id="calcOut"></div>
+</section>
+
+<!-- NAV -->
+<div class="nav">
+<button onclick="prev()">⬅ Previous</button>
+<button onclick="goHome()">🏠 Home</button>
+<button onclick="next()">Next ➡</button>
+</div>
+
+<script>
+const sections=document.querySelectorAll("section");
+let index=0;
+
+function scrollToSec(i){
+ if(i>=0 && i<sections.length){
+  sections[i].scrollIntoView({behavior:"smooth"});
+  index=i;
+ }
+}
+function next(){ scrollToSec(index+1); }
+function prev(){ scrollToSec(index-1); }
+function goHome(){
+ document.getElementById("home").scrollIntoView({behavior:"smooth"});
+ index=0;
+}
+
+/* Examples */
+function jsIntro(){
+ document.getElementById("msg").innerHTML="JavaScript is running!";
+}
+function showVariable(){
+ let x=10;
+ document.getElementById("varOut").innerHTML="Value of x = "+x;
+}
+function dataType(){
+ document.getElementById("typeOut").innerHTML=typeof "Hello";
+}
+function addFunc(){
+ funcOut.innerHTML = Number(f1.value)+Number(f2.value);
+}
+function checkAge(){
+ ageOut.innerHTML = age.value>=18 ? "Eligible" : "Not Eligible";
+}
+function tableFunc(){
+ let t="";
+ for(let i=1;i<=10;i++){
+  t+=table.value+" x "+i+" = "+(table.value*i)+"<br>";
+ }
+ loopOut.innerHTML=t;
+}
+function arrayFunc(){
+ let arr=["Apple","Banana","Mango"];
+ arrOut.innerHTML=arr.join(", ");
+}
+function domFunc(){
+ domOut.innerHTML="Text Changed Using DOM";
+}
+function calc(){
+ calcOut.innerHTML =
+ "Sum = "+(Number(c1.value)+Number(c2.value));
+}
+</script>
+
+</body>
+</html>

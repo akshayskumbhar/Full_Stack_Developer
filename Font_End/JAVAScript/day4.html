@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 4 – Loops & Iteration</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#6a1b9a;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#6a1b9a; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+.btn{
+  background:#6a1b9a;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:5px;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#faf3ff;
+  border-left:5px solid #6a1b9a;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+.nav{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+}
+.nav button{
+  width:120px;
+  border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header id="home">
+<h1>Day 4: Loops & Iteration</h1>
+<p>for • while • do-while • break • continue • patterns</p>
+</header>
+
+<!-- 1 -->
+<section>
+<h2>1️⃣ What is a Loop?</h2>
+<p><b>Definition:</b> A loop executes a block of code repeatedly until a condition becomes false.</p>
+
+<button class="btn" onclick="ex1()">▶ Run</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2️⃣ for Loop</h2>
+
+<code>
+for(initialization; condition; increment){
+  // code
+}
+</code>
+
+<button class="btn" onclick="ex2()">▶ Run</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3️⃣ while Loop</h2>
+
+<code>
+while(condition){
+  // code
+}
+</code>
+
+<button class="btn" onclick="ex3()">▶ Run</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4️⃣ do-while Loop</h2>
+
+<code>
+do{
+  // code
+}while(condition);
+</code>
+
+<button class="btn" onclick="ex4()">▶ Run</button>
+<div class="output" id="o4"></div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5️⃣ break Statement</h2>
+<p><b>Definition:</b> Terminates the loop immediately.</p>
+
+<button class="btn" onclick="ex5()">▶ Run</button>
+<div class="output" id="o5"></div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6️⃣ continue Statement</h2>
+<p><b>Definition:</b> Skips the current iteration.</p>
+
+<button class="btn" onclick="ex6()">▶ Run</button>
+<div class="output" id="o6"></div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7️⃣ Nested Loops (Pattern)</h2>
+
+<button class="btn" onclick="ex7()">▶ Run</button>
+<div class="output" id="o7"></div>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8️⃣ Looping Backwards & Skipping</h2>
+
+<button class="btn" onclick="ex8()">▶ Run</button>
+<div class="output" id="o8"></div>
+</section>
+
+<!-- 9 -->
+<section>
+<h2>9️⃣ Multiplication Table</h2>
+
+<input id="num" placeholder="Enter Number">
+<button class="btn" onclick="ex9()">▶ Generate</button>
+<div class="output" id="o9"></div>
+</section>
+
+<!-- 10 -->
+<section>
+<h2>🔟 Infinite Loop (Explanation)</h2>
+<p><b>Definition:</b> Infinite loop occurs when condition never becomes false.</p>
+
+<button class="btn" onclick="ex10()">▶ Explain</button>
+<div class="output" id="o10"></div>
+</section>
+
+<!-- NAV -->
+<div class="nav">
+<button class="btn" onclick="prev()">⬅ Previous</button>
+<button class="btn" onclick="goHome()">🏠 Home</button>
+<button class="btn" onclick="next()">Next ➡</button>
+</div>
+
+<script>
+const sections=document.querySelectorAll("section");
+let index=0;
+
+function scrollToSection(i){
+ if(i>=0 && i<sections.length){
+  sections[i].scrollIntoView({behavior:"smooth"});
+  index=i;
+ }
+}
+function next(){scrollToSection(index+1)}
+function prev(){scrollToSection(index-1)}
+function goHome(){
+ document.getElementById("home").scrollIntoView({behavior:"smooth"});
+ index=0;
+}
+
+/* Examples */
+function ex1(){
+ o1.textContent="Loops repeat code and reduce duplication.";
+}
+
+function ex2(){
+ let out="";
+ for(let i=1;i<=5;i++){
+  out+=`Iteration ${i}\n`;
+ }
+ o2.textContent=out;
+}
+
+function ex3(){
+ let x=1,out="";
+ while(x<=5){
+  out+=`Count ${x}\n`;
+  x++;
+ }
+ o3.textContent=out;
+}
+
+function ex4(){
+ let x=1,out="";
+ do{
+  out+=`Executed at least once (x=${x})\n`;
+  x++;
+ }while(x>5);
+ o4.textContent=out;
+}
+
+function ex5(){
+ let out="";
+ for(let i=1;i<=5;i++){
+  if(i===3){
+   out+="Loop stopped at 3\n";
+   break;
+  }
+  out+=`i=${i}\n`;
+ }
+ o5.textContent=out;
+}
+
+function ex6(){
+ let out="";
+ for(let i=1;i<=5;i++){
+  if(i%2===0) continue;
+  out+=`Odd: ${i}\n`;
+ }
+ o6.textContent=out;
+}
+
+function ex7(){
+ let out="";
+ for(let i=1;i<=4;i++){
+  let row="";
+  for(let j=1;j<=i;j++){
+   row+="* ";
+  }
+  out+=row+"\n";
+ }
+ o7.textContent=out;
+}
+
+function ex8(){
+ let out="Backward:\n";
+ for(let i=5;i>=1;i--){
+  out+=i+" ";
+ }
+ out+="\nSkip even:\n";
+ for(let i=1;i<=5;i++){
+  if(i%2===0) continue;
+  out+=i+" ";
+ }
+ o8.textContent=out;
+}
+
+function ex9(){
+ let n=num.value;
+ let out="";
+ for(let i=1;i<=10;i++){
+  out+=`${n} x ${i} = ${n*i}\n`;
+ }
+ o9.textContent=out;
+}
+
+function ex10(){
+ o10.textContent=
+ "Infinite loop happens when increment/decrement is missing.\nAlways update loop variable.";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 2 – Variables, Data Types & Operators</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#0a66c2;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#0a66c2; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+input,button{
+  padding:10px;
+  margin-top:8px;
+  width:100%;
+}
+.output{
+  background:#e8f0fe;
+  margin-top:10px;
+  padding:10px;
+  border-left:5px solid #0a66c2;
+}
+.nav{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+}
+.nav button{
+  width:120px;
+  border:none;
+  border-radius:20px;
+  background:#0a66c2;
+  color:white;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header id="home">
+<h1>Day 2: Variables, Data Types & Operators</h1>
+<p>Definition • Syntax • Examples • Practice</p>
+</header>
+
+<!-- VARIABLES -->
+<section>
+<h2>1️⃣ Variables (var, let, const)</h2>
+
+<p><b>Definition:</b> Variables store data values.</p>
+
+<p><b>Syntax:</b></p>
+<code>
+var x = 10;
+let y = 20;
+const z = 30;
+</code>
+
+<button onclick="variableDemo()">Run Example</button>
+<div class="output" id="varOut"></div>
+</section>
+
+<!-- DATA TYPES -->
+<section>
+<h2>2️⃣ Primitive Data Types</h2>
+
+<p><b>Definition:</b> Primitive data types store single, simple values.</p>
+
+<code>
+String, Number, Boolean, Null, Undefined
+</code>
+
+<button onclick="typeDemo()">Check Types</button>
+<div class="output" id="typeOut"></div>
+</section>
+
+<!-- TYPE CONVERSION -->
+<section>
+<h2>3️⃣ Type Conversion & Coercion</h2>
+
+<p><b>Conversion:</b> Manual type change</p>
+<p><b>Coercion:</b> Automatic type change</p>
+
+<code>
+Number("10") → 10
+"5" + 2 → "52"
+</code>
+
+<button onclick="conversionDemo()">Run Conversion</button>
+<div class="output" id="convOut"></div>
+</section>
+
+<!-- ARITHMETIC -->
+<section>
+<h2>4️⃣ Arithmetic Operators</h2>
+
+<p><b>Operators:</b> +  −  *  /  %  **</p>
+
+<input id="a" placeholder="Enter A">
+<input id="b" placeholder="Enter B">
+<button onclick="arithDemo()">Calculate</button>
+<div class="output" id="arithOut"></div>
+</section>
+
+<!-- COMPARISON -->
+<section>
+<h2>5️⃣ Comparison Operators</h2>
+
+<p><b>== vs ===</b></p>
+
+<code>
+5 == "5"  → true
+5 === "5" → false
+</code>
+
+<button onclick="compareDemo()">Compare</button>
+<div class="output" id="compOut"></div>
+</section>
+
+<!-- LOGICAL -->
+<section>
+<h2>6️⃣ Logical Operators</h2>
+
+<p><b>&& (AND), || (OR), ! (NOT)</b></p>
+
+<button onclick="logicalDemo()">Run Logic</button>
+<div class="output" id="logicOut"></div>
+</section>
+
+<!-- TEMPLATE LITERALS -->
+<section>
+<h2>7️⃣ Template Literals</h2>
+
+<p><b>Definition:</b> Cleaner way to combine text and variables</p>
+
+<code>
+`Hello ${name}`
+</code>
+
+<input id="name" placeholder="Enter Name">
+<input id="age" placeholder="Enter Age">
+<button onclick="templateDemo()">Greet</button>
+<div class="output" id="tempOut"></div>
+</section>
+
+<!-- PARSE & isNaN -->
+<section>
+<h2>8️⃣ parseInt(), parseFloat(), isNaN()</h2>
+
+<input id="numStr" placeholder="Enter a value">
+<button onclick="parseDemo()">Check</button>
+<div class="output" id="parseOut"></div>
+</section>
+
+<!-- NAVIGATION -->
+<div class="nav">
+<button onclick="prev()">⬅ Previous</button>
+<button onclick="goHome()">🏠 Home</button>
+<button onclick="next()">Next ➡</button>
+</div>
+
+<script>
+const sections=document.querySelectorAll("section");
+let index=0;
+
+function scrollToSec(i){
+ if(i>=0 && i<sections.length){
+  sections[i].scrollIntoView({behavior:"smooth"});
+  index=i;
+ }
+}
+function next(){ scrollToSec(index+1); }
+function prev(){ scrollToSec(index-1); }
+function goHome(){
+ document.getElementById("home").scrollIntoView({behavior:"smooth"});
+ index=0;
+}
+
+/* JS DEMOS */
+function variableDemo(){
+ var x=10;
+ let y=20;
+ const z=30;
+ varOut.innerHTML=`var x=${x}, let y=${y}, const z=${z}`;
+}
+
+function typeDemo(){
+ let a="Hello", b=25, c=true, d;
+ typeOut.innerHTML=
+ typeof a+" | "+typeof b+" | "+typeof c+" | "+typeof d;
+}
+
+function conversionDemo(){
+ let x="5";
+ convOut.innerHTML =
+ `"5"+2 = ${x+2} <br> Number("5")+2 = ${Number(x)+2}`;
+}
+
+function arithDemo(){
+ let x=Number(a.value);
+ let y=Number(b.value);
+ arithOut.innerHTML =
+ `Add=${x+y}, Sub=${x-y}, Mul=${x*y}, Div=${x/y}`;
+}
+
+function compareDemo(){
+ compOut.innerHTML =
+ `5 == "5" → ${5=="5"} <br> 5 === "5" → ${5==="5"}`;
+}
+
+function logicalDemo(){
+ logicOut.innerHTML =
+ `true && false → ${true&&false}<br>true || false → ${true||false}`;
+}
+
+function templateDemo(){
+ tempOut.innerHTML =
+ `Hello ${name.value}, you are ${age.value} years old`;
+}
+
+function parseDemo(){
+ let v=numStr.value;
+ parseOut.innerHTML=
+ `parseInt: ${parseInt(v)} <br>
+ parseFloat: ${parseFloat(v)} <br>
+ isNaN: ${isNaN(v)}`;
+}
+</script>
+
+</body>
+</html>

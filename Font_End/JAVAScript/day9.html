@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day 9 – Advanced Array & Object Methods</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+}
+header{
+  background:#283593;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+section{
+  background:white;
+  max-width:900px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+h2{ color:#283593; }
+code{
+  display:block;
+  background:#eee;
+  padding:10px;
+  margin:10px 0;
+}
+.btn{
+  background:#283593;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.output{
+  margin-top:10px;
+  padding:10px;
+  background:#e8eaf6;
+  border-left:5px solid #283593;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Day 9: Advanced Array & Object Methods</h1>
+<p>forEach • map • filter • find • reduce • sort</p>
+</header>
+
+<!-- 1 -->
+<section>
+<h2>1️⃣ What are Advanced Array Methods?</h2>
+<p><b>Definition:</b> Built-in JavaScript methods to process data efficiently without manual loops.</p>
+
+<code>
+array.method(callback)
+</code>
+
+<button class="btn" onclick="ex1()">▶ Run Example</button>
+<div class="output" id="o1"></div>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2️⃣ forEach()</h2>
+<p><b>Definition:</b> Executes a function once for each array element.</p>
+
+<code>
+array.forEach((value, index) => { })
+</code>
+
+<button class="btn" onclick="ex2()">▶ Run Example</button>
+<div class="output" id="o2"></div>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3️⃣ map()</h2>
+<p><b>Definition:</b> Creates a new array by transforming each element.</p>
+
+<code>
+array.map(value => newValue)
+</code>
+
+<button class="btn" onclick="ex3()">▶ Run Example</button>
+<div class="output" id="o3"></div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4️⃣ filter()</h2>
+<p><b>Definition:</b> Filters elements based on a condition.</p>
+
+<code>
+array.filter(value => condition)
+</code>
+
+<button class="btn" onclick="ex4()">▶ Run Example</button>
+<div class="output" id="o4"></div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5️⃣ find() & findIndex()</h2>
+<p><b>Definition:</b> Finds the first matching value or index.</p>
+
+<button class="btn" onclick="ex5()">▶ Run Example</button>
+<div class="output" id="o5"></div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6️⃣ reduce()</h2>
+<p><b>Definition:</b> Reduces array into a single value.</p>
+
+<code>
+array.reduce((acc, val) => acc, initialValue)
+</code>
+
+<button class="btn" onclick="ex6()">▶ Run Example</button>
+<div class="output" id="o6"></div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7️⃣ sort()</h2>
+<p><b>Definition:</b> Sorts array elements.</p>
+
+<button class="btn" onclick="ex7()">▶ Run Example</button>
+<div class="output" id="o7"></div>
+</section>
+
+<script>
+function ex1(){
+ let numbers=[1123,2232,3134];
+ let out="";
+ numbers.forEach(n=>out+=n+"\n");
+ o1.textContent=out;
+}
+
+function ex2(){
+ let fruits=["Apple","Banana","Mango"];
+ let out="";
+ fruits.forEach((item,i)=>out+=i+" : "+item+"\n");
+ o2.textContent=out;
+}
+
+function ex3(){
+ let prices=[100,200,300];
+ let gst=prices.map(p=>p+p*0.18);
+ o3.textContent="Original: "+prices+"\nWith GST: "+gst;
+}
+
+function ex4(){
+ let marks=[35,80,45,90];
+ let passed=marks.filter(m=>m>=40);
+ o4.textContent="Passed Marks: "+passed;
+}
+
+function ex5(){
+ let users=[{id:1,name:"A"},{id:2,name:"B"}];
+ let user=users.find(u=>u.id===2);
+ let index=users.findIndex(u=>u.id===2);
+ o5.textContent="User: "+JSON.stringify(user)+"\nIndex: "+index;
+}
+
+function ex6(){
+ let nums=[10,20,30];
+ let sum=nums.reduce((total,n)=>total+n,0);
+ o6.textContent="Sum = "+sum;
+}
+
+function ex7(){
+ let numbers=[5,100,20];
+ numbers.sort((a,b)=>a-b);
+ let names=["Banana","Apple","Mango"];
+ names.sort();
+ o7.textContent="Sorted Numbers: "+numbers+"\nSorted Names: "+names;
+}
+</script>
+
+</body>
+</html>
