@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10 JavaScript Pattern Practice</title>
+</head>
+<body>
+    <h1>1] left Side Corner Triangle</h1>
+
+    <button onclick="run()">RUN</button>
+    <script>
+        function run()
+        {
+            
+            for(let i=4; i<=1; i--)                
+            {                                       
+                for(let j=1; j<=i; j++)
+                {
+                    document.write(i);
+                }
+                document.write("<br>");
+            }
+        }
+    </script>
+
+
+    <h1>2] Right Side top Triangle</h1>
+    <div id="output"></div>
+
+    <button onclick="run1()">RUN</button>
+    <script>
+        function run1()
+        {
+            
+            for(let i=4; i<=1; i++)         //1<=4       
+            {                                       
+                for(let j=4; j<=i; j++)
+                {
+                    
+                }
+                document.write("<br>");
+            }
+        }
+    </script>
+
+<!--
+<h1>Diamond Pattern</h1>
+<div id="output"></div>
+
+<button onclick="runDiamond()">RUN</button>
+<script>
+    function runDiamond()
+    {
+        // Ascending part
+        for(let i=1; i<=4; i++)
+        {
+            for(let j=1; j<=i; j++)
+            {
+                document.write(j);
+            }
+            document.write("<br>");
+        }
+        
+        for(let i=3; i>=1; i--)
+        {
+            for(let j=1; j<=i; j++)
+            {
+                document.write(j);
+            }
+            document.write("<br>");
+        }
+    }
+</script>
+-->
+<h1>2] Combination</h1>
+    <div id="output"></div>
+
+    <button onclick="run2()">RUN</button>
+    <script>
+        function run2()
+        {  
+            
+        for(let i=1; i<=4; i++)
+        {
+            for(let j=1; j<=i; j++)
+            {
+                document.write(j);
+            }
+            document.write("<br>");
+        }
+        
+        
+        for(let i=3; i>=1; i--)
+        {
+            for(let j=1; j<=i; j++)
+            {
+                document.write(j);
+            }
+            document.write("<br>");
+        }
+    }
+    </script>
+</body>
+</html>

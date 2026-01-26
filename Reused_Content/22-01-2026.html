@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm Strong And Anagram</title>
+    <style>
+        input{
+            height: 15px;
+            width: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Arm Strong And Anagram</h1>
+    <fieldset>
+        <legend>Arm Strong</legend>
+        <input type="number" placeholder="Enter Number" id="num1">
+        <input type="number" placeholder="Enter Number" id="num2">
+        <input type="number" placeholder="Enter Number" id="num3">
+        <input type="number" placeholder="Enter Number" id="num4">
+        <p id="output"></p>
+        <button onclick="run()">RUN</button>
+    </fieldset>
+
+    <script>
+        function run(){
+            let a = document.getElementById("num1").value;
+            b = document.getElementById("num2").value;
+            c = document.getElementById("num3").value;
+            d = document.getElementById("num4").value;
+            com = a,b,c,d;
+       switch(com) {
+            case "add":
+                e = a * a * a;
+                break;
+            case "subtract":
+                f = b * b * b;
+                break;
+            case "multiply":
+                g = c * c * c;
+                break;
+            case "divide":
+                h = d * d * d;
+                break;
+            default:
+                result = "Invalid operation";
+        }
+
+        let out = (e + f + g + h ==0)
+        document.write(out);
+        console.log(out);
+        }
+    </script>
+    
+</body>
+</html>

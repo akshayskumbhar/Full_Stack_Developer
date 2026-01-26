@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h3>Q1. Create an HTML page using JavaScript that demonstrates the use of Mouse Event, Keyboard Event, and Form
+        Event in a single program.</h3>
+    <form id="myForm">
+        <label class="m-event" for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <button id="button" type="submit">Submit</button>
+    </form>
+
+    <script>
+
+        const mouseE = document.querySelector('.m-event');
+        mouseE.addEventListener('mouseover', () => {
+            mouseE.textContent = 'Mouse is over this area!';
+        });
+
+        mouseE.addEventListener('mouseout', () => {
+            mouseE.textContent = 'Username:';
+        });
+
+        const username = document.getElementById('username');
+        username.addEventListener('keyup', (event) => {
+            const key = event.key;
+            console.log(`You pressed: ${key}`);
+        });
+
+        const form = document.getElementById('myForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            alert('Form submitted with username: ' + username.value);
+        });
+
+        const button = document.getElementById('button');
+        button.addEventListener('mouseout', () => {
+            mouseE.style.backgroundColor="red";
+        });
+
+    </script>
+
+
+    <h3>Q2. One Dimension Array:</h3>
+    <form id="arrayForm">
+        <input type="number" id="n1" placeholder="No 1" required>
+        <input type="number" id="n2" placeholder="No 2" required>
+        <input type="number" id="n3" placeholder="No 3" required>
+        <input type="number" id="n4" placeholder="No 4" required>
+        <input type="number" id="n5" placeholder="No 5" required>
+        <button type="submit">Store Array</button>
+    </form>
+    <div id="arrayOutput"></div>
+
+    <script>
+        document.getElementById('arrayForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const numbers = [
+                document.getElementById('n1').value,
+                document.getElementById('n2').value,
+                document.getElementById('n3').value,
+                document.getElementById('n4').value,
+                document.getElementById('n5').value
+            ];
+            document.getElementById('arrayOutput').innerHTML = '<p>Array Elements: ' + numbers.join(', ') + '</p>';
+        });
+    </script>
+
+    <h3>Q3 Sum of Array Elements</h3>
+
+    <script>
+        let sum = [5, 5, 15, 10];
+
+        let total = sum.reduce((acc, num) => acc + num, 0);
+
+        console.log('Sum of array elements: ' + total);
+        document.body.innerHTML += '<p>Sum of Array Elements: ' + total + '</p>';
+    </script>
+
+    <h3> Create an HTML, page that containes four paragraph elements, each with a different class name and text such as HTML CSS, JAVA, PYTHON</h3>
+
+    <p class="html">HTML</p>
+    <p class="css">CSS</p>
+    <p class="java">JAVA</p>
+    <p class="python">PYTHON</p>
+
+    <button id="styleBtn">Apply Styles</button>
+
+    <script>
+        document.getElementById('styleBtn').addEventListener('click', () => {
+            const html = document.querySelector('.html');
+            html.style.border = '2px solid red';
+            html.style.backgroundColor = 'aqua';
+
+            const css = document.querySelector('.css');
+            css.style.border = '2px solid red';
+            css.style.backgroundColor = 'yellow';
+
+            const java = document.querySelector('.java');
+            java.style.border = '2px solid red';
+            java.style.backgroundColor = 'pink';
+
+            const python = document.querySelector('.python');
+            python.style.border = '2px solid red';
+            python.style.backgroundColor = 'green';
+        });
+    </script>
+
+
+    <h3>Use queryselectorAll() to select all &lt;p&gt; element and change their text color to green when the button is clicked. add a console log that prints the total number of paragraphs on the page. </h3>
+
+    <div class="cont">
+        <p class="p1">Para1</p>
+        <p class="p2">Para2</p>
+        <p class="p3">Para3</p>
+        <p class="p3">Para3</p>
+    </div>
+    <button onclick="run()">Total paragraphs</button>
+
+    <script>
+        function run()
+        {
+            let para = document.querySelectorAll('p');
+            console.log('Total paragraphs: ' + para.length);
+            para.forEach((par) => {
+                par.style.color = 'green';
+            });
+        }
+    </script>
+</body>
+
+</html>

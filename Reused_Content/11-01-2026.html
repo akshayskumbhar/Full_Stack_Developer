@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Q1. Create an HTML page using JavaScript that demonstrates the use of Mouse Event, Keyboard Event, and Form
+        Event in a single program.</h3>
+    <form id="myForm">
+        <label class="m-event" for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+        const mouseE = document.querySelector('.m-event');
+        mouseE.addEventListener('mouseover', () => {
+            mouseE.textContent = 'Mouse is over this area!';
+        });
+
+        mouseE.addEventListener('mouseout', () => {
+            mouseE.textContent = 'Username:';
+        });
+
+        const username = document.getElementById('username');
+        username.addEventListener('keyup', (event) => {
+            const key = event.key;
+            console.log(`You pressed: ${key}`);
+        });
+
+        const form = document.getElementById('myForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Form submitted with username: ' + username.value);
+        });
+
+        const button = document.querySelector('button');
+        button.addEventListener('mouseover', () => {
+            button.style.backgroundColor = 'red';
+        });
+
+        button.addEventListener('mouseout', () => {
+            button.style.backgroundColor = '';
+        });
+
+    </script>
+
+    <h3>Q2. One Dimension Array:</h3>
+    <form id="arrayForm">
+        <input type="number" id="n1" placeholder="No 1" required>
+        <input type="number" id="n2" placeholder="No 2" required>
+        <input type="number" id="n3" placeholder="No 3" required>
+        <input type="number" id="n4" placeholder="No 4" required>
+        <input type="number" id="n5" placeholder="No 5" required>
+        <button type="submit">Store Array</button>
+    </form>
+    <div id="arrayOutput"></div>
+
+    <script>
+        document.getElementById('arrayForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const numbers = [
+                document.getElementById('n1').value,
+                document.getElementById('n2').value,
+                document.getElementById('n3').value,
+                document.getElementById('n4').value,
+                document.getElementById('n5').value
+            ];
+            document.getElementById('arrayOutput').innerHTML = '<p>Array Elements: ' + numbers.join(', ') + '</p>';
+        });
+    </script>
+</body>
+</html>
