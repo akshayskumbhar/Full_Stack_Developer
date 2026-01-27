@@ -7,7 +7,7 @@ This repository contains a **complete Full Stack Development tutorial** with
 All concepts are demonstrated using **working web pages**, so learners can
 **see, run, and understand** each feature practically.
 
----> 📌**Note** All topics Updated Soon...
+---> 📌**Note** All topics Updated Soon, Stay Tune!...
 
 ## 🧑‍💻 What This Tutorial Covers
 
