@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery DOM</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h1>DOM Manipulation</h1>
+
+<h2>Get / Set Content</h2>
+<code>
+text(), html(), val()
+</code>
+
+<div class="example">
+<input id="input" type="text">
+<button id="get">Get Value</button>
+
+<script>
+$("#get").click(function(){
+  alert($("#input").val());
+});
+</script>
+</div>
+
+<h2>Add / Remove Elements</h2>
+<code>
+append(), prepend(), remove(), empty()
+</code>
+
+<h2>CSS Manipulation</h2>
+<code>
+css("color", "red")
+</code>
+
+<div class="nav">
+  <a href="effects.html">◀ Back</a>
+  <a href="ajax.html">Next ▶</a>
+</div>
+
+</body>
+</html>

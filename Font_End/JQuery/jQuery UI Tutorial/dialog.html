@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Dialog</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Dialog</h1>
+
+<p>
+The <b>Dialog</b> widget is used to display content in a popup window.
+It can be modal or non-modal and supports custom buttons and events.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Dialog (Auto Open)</h2>
+
+<p>
+This dialog opens automatically when the page loads.
+</p>
+
+<code>
+$("#dialog1").dialog();
+</code>
+
+<div id="dialog1" title="Basic Dialog">
+  This is a simple dialog box.
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Modal Dialog</h2>
+
+<p>
+A modal dialog disables the background until the dialog is closed.
+</p>
+
+<code>
+$("#dialog2").dialog({
+  modal: true
+});
+</code>
+
+<div id="dialog2" title="Modal Dialog">
+  You must close this dialog to interact with the page.
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Dialog with Custom Buttons</h2>
+
+<p>
+Dialogs can contain multiple custom buttons with actions.
+</p>
+
+<code>
+$("#dialog3").dialog({
+  buttons: {
+    Ok: function () {
+      alert("You clicked OK");
+      $(this).dialog("close");
+    },
+    Cancel: function () {
+      $(this).dialog("close");
+    }
+  }
+});
+</code>
+
+<div id="dialog3" title="Confirmation">
+  Are you sure you want to continue?
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Open & Close Dialog Programmatically</h2>
+
+<p>
+Dialogs can be opened and closed using buttons and methods.
+</p>
+
+<code>
+$("#dialog4").dialog({ autoOpen: false });
+$("#openBtn").click(function(){
+  $("#dialog4").dialog("open");
+});
+</code>
+
+<div class="demo">
+  <button id="openBtn">Open Dialog</button>
+</div>
+
+<div id="dialog4" title="Controlled Dialog">
+  This dialog is opened and closed using buttons.
+</div>
+
+<hr>
+
+<h2>📌 Important Dialog Options (Exam Friendly)</h2>
+<ul>
+  <li><b>modal</b> → Disable background</li>
+  <li><b>autoOpen</b> → Open on page load</li>
+  <li><b>buttons</b> → Add custom buttons</li>
+  <li><b>width / height</b> → Dialog size</li>
+</ul>
+
+<h2>📌 Common Dialog Methods</h2>
+<ul>
+  <li><code>.dialog("open")</code></li>
+  <li><code>.dialog("close")</code></li>
+  <li><code>.dialog("destroy")</code></li>
+</ul>
+
+<div class="nav">
+  <a href="datepicker.html">⬅ Back</a>
+  <a href="draggable.html">Next ➡</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+
+  $("#dialog1").dialog({
+    width: 350
+  });
+
+  $("#dialog2").dialog({
+    modal: true,
+    width: 350
+  });
+
+  $("#dialog3").dialog({
+    autoOpen: true,
+    modal: true,
+    width: 350,
+    buttons: {
+      Ok: function () {
+        alert("You clicked OK");
+        $(this).dialog("close");
+      },
+      Cancel: function () {
+        $(this).dialog("close");
+      }
+    }
+  });
+
+  $("#dialog4").dialog({
+    autoOpen: false,
+    width: 350
+  });
+
+  $("#openBtn").click(function () {
+    $("#dialog4").dialog("open");
+  });
+
+});
+</script>
+
+</body>
+</html>

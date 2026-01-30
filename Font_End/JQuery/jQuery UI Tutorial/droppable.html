@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Droppable</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    /* Page-specific visuals */
+    .drop-area {
+      width: 200px;
+      height: 200px;
+      border: 3px dashed #555;
+      text-align: center;
+      line-height: 200px;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .hovered {
+      background: #2ecc71;
+      color: white;
+      border-color: #27ae60;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Droppable</h1>
+
+<p>
+The <b>Droppable</b> widget allows elements to be dropped onto a target.
+It is commonly used with <b>Draggable</b> for drag-and-drop functionality.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Droppable</h2>
+
+<p>
+Any draggable element can be dropped into the target.
+</p>
+
+<code>
+$("#drag1").draggable();
+$("#drop1").droppable({
+  drop: function () {
+    $(this).text("Dropped!");
+  }
+});
+</code>
+
+<div class="demo">
+  <div id="drag1" class="box">Drag Me</div>
+  <div id="drop1" class="drop-area">Drop Here</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Accept Specific Elements</h2>
+
+<p>
+Using <code>accept</code>, only selected elements are allowed to be dropped.
+</p>
+
+<code>
+$("#drop2").droppable({
+  accept: ".allowed"
+});
+</code>
+
+<div class="demo">
+  <div class="box allowed" id="drag2">Allowed</div>
+  <div class="box" id="drag3" style="background:#e74c3c;">Not Allowed</div>
+  <div id="drop2" class="drop-area">Accepts Only Green Box</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Hover Effect</h2>
+
+<p>
+<code>hoverClass</code> adds a CSS class when a draggable is over the target.
+</p>
+
+<code>
+$("#drop3").droppable({
+  hoverClass: "hovered"
+});
+</code>
+
+<div class="demo">
+  <div id="drag4" class="box">Hover Me</div>
+  <div id="drop3" class="drop-area">Hover Area</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Drop Event with Action</h2>
+
+<p>
+The <code>drop</code> event executes custom logic when an element is dropped.
+</p>
+
+<code>
+$("#drop4").droppable({
+  drop: function (event, ui) {
+    $(this).text("Dropped: " + ui.draggable.text());
+  }
+});
+</code>
+
+<div class="demo">
+  <div id="drag5" class="box">Box A</div>
+  <div id="drop4" class="drop-area">Drop Any Box</div>
+</div>
+
+<hr>
+
+<h2>📌 Important Droppable Options (Exam Friendly)</h2>
+<ul>
+  <li><b>accept</b> → Specify allowed draggable elements</li>
+  <li><b>hoverClass</b> → Apply CSS on hover</li>
+  <li><b>tolerance</b> → Define drop sensitivity</li>
+</ul>
+
+<h2>📌 Droppable Events</h2>
+<ul>
+  <li><b>drop</b> → Fired when draggable is dropped</li>
+  <li><b>over</b> → Fired when draggable enters</li>
+  <li><b>out</b> → Fired when draggable leaves</li>
+</ul>
+
+<div class="nav">
+  <a href="draggable.html">⬅ Back</a>
+  <a href="resizable.html">Next ➡</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+
+  $("#drag1, #drag2, #drag3, #drag4, #drag5").draggable();
+
+  $("#drop1").droppable({
+    drop: function () {
+      $(this).text("Dropped!");
+    }
+  });
+
+  $("#drop2").droppable({
+    accept: ".allowed",
+    drop: function () {
+      $(this).text("Correct Element Dropped");
+    }
+  });
+
+  $("#drop3").droppable({
+    hoverClass: "hovered"
+  });
+
+  $("#drop4").droppable({
+    drop: function (event, ui) {
+      $(this).text("Dropped: " + ui.draggable.text());
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

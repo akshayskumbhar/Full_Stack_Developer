@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Sortable</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    /* Page specific styling */
+    ul.sort-list {
+      list-style: none;
+      padding: 0;
+      width: 250px;
+    }
+
+    ul.sort-list li {
+      padding: 12px;
+      margin-bottom: 6px;
+      background: #1abc9c;
+      color: white;
+      cursor: move;
+      border-radius: 4px;
+    }
+
+    .placeholder {
+      border: 2px dashed #999;
+      height: 40px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Sortable</h1>
+
+<p>
+The <b>Sortable</b> widget allows users to reorder list items using drag and drop.
+It supports axis control, events, and connected lists.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Vertical Sortable</h2>
+
+<p>
+This is the default sortable list.
+Items can be reordered vertically.
+</p>
+
+<code>
+$("#list1").sortable();
+</code>
+
+<div class="demo">
+  <ul id="list1" class="sort-list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Axis Restricted Sorting</h2>
+
+<p>
+Using <code>axis: "y"</code>, items can only be moved vertically.
+</p>
+
+<code>
+$("#list2").sortable({
+  axis: "y"
+});
+</code>
+
+<div class="demo">
+  <ul id="list2" class="sort-list">
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Update Event</h2>
+
+<p>
+The <code>update</code> event fires when the order of items changes.
+This is useful for saving order to a database.
+</p>
+
+<code>
+$("#list3").sortable({
+  update: function () {
+    $("#order").text($(this).sortable("toArray").join(", "));
+  }
+});
+</code>
+
+<div class="demo">
+  <ul id="list3" class="sort-list">
+    <li id="a">Apple</li>
+    <li id="b">Banana</li>
+    <li id="c">Cherry</li>
+  </ul>
+
+  <p><b>Current Order:</b> <span id="order">a, b, c</span></p>
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Connected Sortable Lists</h2>
+
+<p>
+Items can be moved between multiple sortable lists.
+</p>
+
+<code>
+$(".connected").sortable({
+  connectWith: ".connected"
+});
+</code>
+
+<div class="demo">
+  <ul class="sort-list connected">
+    <li>Task 1</li>
+    <li>Task 2</li>
+  </ul>
+
+  <ul class="sort-list connected">
+    <li>Task 3</li>
+    <li>Task 4</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>📌 Important Sortable Options (Exam Friendly)</h2>
+<ul>
+  <li><b>axis</b> → Restrict movement direction</li>
+  <li><b>placeholder</b> → Visual placeholder</li>
+  <li><b>connectWith</b> → Connect multiple lists</li>
+</ul>
+
+<h2>📌 Sortable Events</h2>
+<ul>
+  <li><b>update</b> → Order changed</li>
+  <li><b>start</b> → Drag start</li>
+  <li><b>stop</b> → Drag stop</li>
+</ul>
+
+<div class="nav">
+  <a href="resizable.html">⬅ Back</a>
+  <a href="slider.html">Next ➡</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+
+  $("#list1").sortable();
+
+  $("#list2").sortable({
+    axis: "y",
+    placeholder: "placeholder"
+  });
+
+  $("#list3").sortable({
+    update: function () {
+      $("#order").text($(this).sortable("toArray").join(", "));
+    }
+  });
+
+  $(".connected").sortable({
+    connectWith: ".connected",
+    placeholder: "placeholder"
+  });
+
+});
+</script>
+
+</body>
+</html>

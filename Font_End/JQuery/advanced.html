@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced jQuery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Advanced jQuery</h1>
+
+<h2>Chaining</h2>
+<code>
+$("#p").css("color","red").slideUp().slideDown();
+</code>
+
+<h2>Callback Functions</h2>
+<code>
+hide(1000, function(){ alert("Hidden"); });
+</code>
+
+<h2>each()</h2>
+<code>
+$("p").each(function(){
+  console.log($(this).text());
+});
+</code>
+
+<h2>Best Practices</h2>
+<ul>
+  <li>Use $(document).ready()</li>
+  <li>Cache selectors</li>
+  <li>Avoid inline JS</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>
+jQuery is simple, powerful, and beginner-friendly.
+Once basics are clear, advanced features become very easy.
+</p>
+
+<div class="nav">
+  <a href="ajax.html">◀ Back</a>
+</div>
+
+</body>
+</html>

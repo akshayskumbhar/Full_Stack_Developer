@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Slider</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    /* Page specific styling */
+    .slider-box {
+      margin-top: 15px;
+      width: 300px;
+    }
+
+    .value-display {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #2c3e50;
+    }
+
+    .range-values {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Slider</h1>
+
+<p>
+The <b>Slider</b> widget allows users to select a value or range
+by dragging a handle along a track.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Slider with Value Display</h2>
+
+<p>
+This is a simple slider that displays the current value in real time.
+</p>
+
+<code>
+$("#slider1").slider({
+  slide: function(event, ui) {
+    $("#val1").text(ui.value);
+  }
+});
+</code>
+
+<div class="demo">
+  <div id="slider1" class="slider-box"></div>
+  <div class="value-display">
+    Value: <span id="val1">0</span>
+  </div>
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Slider with Step Control</h2>
+
+<p>
+The <code>step</code> option allows movement in fixed increments.
+</p>
+
+<code>
+$("#slider2").slider({
+  min: 0,
+  max: 100,
+  step: 10
+});
+</code>
+
+<div class="demo">
+  <div id="slider2" class="slider-box"></div>
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Slider with Default Value</h2>
+
+<p>
+You can set a default starting value using <code>value</code>.
+</p>
+
+<code>
+$("#slider3").slider({
+  value: 50
+});
+</code>
+
+<div class="demo">
+  <div id="slider3" class="slider-box"></div>
+  <div class="value-display">
+    Default Value: 50
+  </div>
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Range Slider (Min & Max Selection)</h2>
+
+<p>
+A range slider allows users to select a value range instead of a single value.
+</p>
+
+<code>
+$("#slider4").slider({
+  range: true,
+  min: 0,
+  max: 500,
+  values: [100, 300],
+  slide: function(event, ui) {
+    $("#range").text(ui.values[0] + " - " + ui.values[1]);
+  }
+});
+</code>
+
+<div class="demo">
+  <div id="slider4" class="slider-box"></div>
+  <div class="range-values">
+    Selected Range: <span id="range">100 - 300</span>
+  </div>
+</div>
+
+<hr>
+
+<h2>📌 Important Slider Options (Exam Friendly)</h2>
+<ul>
+  <li><b>min</b> → Minimum value</li>
+  <li><b>max</b> → Maximum value</li>
+  <li><b>value</b> → Default slider value</li>
+  <li><b>step</b> → Step interval</li>
+  <li><b>range</b> → Enable range selection</li>
+</ul>
+
+<h2>📌 Slider Events</h2>
+<ul>
+  <li><b>slide</b> → Fires during sliding</li>
+  <li><b>change</b> → Fires when value changes</li>
+</ul>
+
+<div class="nav">
+  <a href="tabs.html">⬅ Back</a>
+  <a href="index.html">🏠 Home</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+
+  $("#slider1").slider({
+    min: 0,
+    max: 100,
+    slide: function(event, ui) {
+      $("#val1").text(ui.value);
+    }
+  });
+
+  $("#slider2").slider({
+    min: 0,
+    max: 100,
+    step: 10
+  });
+
+  $("#slider3").slider({
+    min: 0,
+    max: 100,
+    value: 50
+  });
+
+  $("#slider4").slider({
+    range: true,
+    min: 0,
+    max: 500,
+    values: [100, 300],
+    slide: function(event, ui) {
+      $("#range").text(ui.values[0] + " - " + ui.values[1]);
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

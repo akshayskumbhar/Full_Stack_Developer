@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Effects</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h1>jQuery Effects</h1>
+
+<h2>Hide / Show</h2>
+<code>
+hide(), show(), toggle()
+</code>
+
+<div class="example">
+<button id="toggle">Toggle</button>
+<p id="box">This is a paragraph</p>
+
+<script>
+$("#toggle").click(function(){
+  $("#box").toggle();
+});
+</script>
+</div>
+
+<h2>Fade Effects</h2>
+<code>
+fadeIn(), fadeOut(), fadeToggle()
+</code>
+
+<h2>Slide Effects</h2>
+<code>
+slideUp(), slideDown(), slideToggle()
+</code>
+
+<div class="nav">
+  <a href="basics.html">◀ Back</a>
+  <a href="dom.html">Next ▶</a>
+</div>
+
+</body>
+</html>

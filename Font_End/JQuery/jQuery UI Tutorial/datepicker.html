@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Datepicker</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Datepicker</h1>
+
+<p>
+The <b>Datepicker</b> widget provides a popup calendar that allows users
+to select a date easily instead of typing it manually.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Datepicker</h2>
+
+<p>
+This is the default Datepicker with no options.
+Click inside the input field to open the calendar.
+</p>
+
+<code>
+$("#date1").datepicker();
+</code>
+
+<div class="demo">
+  <input type="text" id="date1" placeholder="Select date">
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Date Format Customization</h2>
+
+<p>
+Using <code>dateFormat</code>, we can control how the selected date is displayed.
+</p>
+
+<code>
+$("#date2").datepicker({
+  dateFormat: "dd-mm-yy"
+});
+</code>
+
+<div class="demo">
+  <input type="text" id="date2" placeholder="dd-mm-yyyy">
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Disable Past Dates</h2>
+
+<p>
+<code>minDate: 0</code> disables all past dates.
+This is commonly used in booking forms.
+</p>
+
+<code>
+$("#date3").datepicker({
+  minDate: 0
+});
+</code>
+
+<div class="demo">
+  <input type="text" id="date3" placeholder="Future dates only">
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Month & Year Dropdown + Range</h2>
+
+<p>
+This example allows users to change month and year,
+and restricts date selection within a range.
+</p>
+
+<code>
+$("#date4").datepicker({
+  changeMonth: true,
+  changeYear: true,
+  minDate: "-1y",
+  maxDate: "+1y"
+});
+</code>
+
+<div class="demo">
+  <input type="text" id="date4" placeholder="Select within range">
+</div>
+
+<hr>
+
+<h2>📌 Important Datepicker Options (Exam Friendly)</h2>
+<ul>
+  <li><b>dateFormat</b> → Controls date display format</li>
+  <li><b>minDate</b> → Disable previous dates</li>
+  <li><b>maxDate</b> → Restrict future dates</li>
+  <li><b>changeMonth</b> → Month dropdown</li>
+  <li><b>changeYear</b> → Year dropdown</li>
+</ul>
+
+<div class="nav">
+  <a href="index.html">⬅ Home</a>
+  <a href="dialog.html">Next ➡</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+  $("#date1").datepicker();
+  $("#date2").datepicker({ dateFormat: "dd-mm-yy" });
+  $("#date3").datepicker({ minDate: 0 });
+  $("#date4").datepicker({
+    changeMonth: true,
+    changeYear: true,
+    minDate: "-1y",
+    maxDate: "+1y"
+  });
+});
+</script>
+
+</body>
+</html>

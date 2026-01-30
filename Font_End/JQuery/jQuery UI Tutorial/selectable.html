@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Selectable</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    /* Page specific styling */
+    ul.select-list {
+      list-style: none;
+      padding: 0;
+      width: 300px;
+    }
+
+    ul.select-list li {
+      padding: 12px;
+      margin-bottom: 6px;
+      background: #ecf0f1;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .ui-selected {
+      background: #3498db !important;
+      color: white;
+    }
+
+    .ui-selecting {
+      background: #95a5a6;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Selectable</h1>
+
+<p>
+The <b>Selectable</b> widget allows users to select one or more elements
+by dragging the mouse over them.
+It is commonly used in lists and grids.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Selectable</h2>
+
+<p>
+Click or drag to select multiple list items.
+</p>
+
+<code>
+$("#select1").selectable();
+</code>
+
+<div class="demo">
+  <ul id="select1" class="select-list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Selecting Multiple Items</h2>
+
+<p>
+You can select multiple items by dragging across them.
+</p>
+
+<code>
+$("#select2").selectable();
+</code>
+
+<div class="demo">
+  <ul id="select2" class="select-list">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Orange</li>
+    <li>Mango</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Filter Option</h2>
+
+<p>
+The <code>filter</code> option allows selection of specific elements only.
+</p>
+
+<code>
+$("#select3").selectable({
+  filter: "li"
+});
+</code>
+
+<div class="demo">
+  <ul id="select3" class="select-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Select & Unselect Events</h2>
+
+<p>
+Selectable supports <b>selected</b> and <b>unselected</b> events.
+</p>
+
+<code>
+$("#select4").selectable({
+  selected: function () {
+    $("#status").text("Item selected");
+  },
+  unselected: function () {
+    $("#status").text("Item unselected");
+  }
+});
+</code>
+
+<div class="demo">
+  <ul id="select4" class="select-list">
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+  </ul>
+
+  <p id="status"><b>Status:</b> No selection</p>
+</div>
+
+<hr>
+
+<h2>📌 Important Selectable Options (Exam Friendly)</h2>
+<ul>
+  <li><b>filter</b> → Restrict selectable elements</li>
+  <li><b>cancel</b> → Prevent selection on specific elements</li>
+  <li><b>distance</b> → Minimum drag distance</li>
+</ul>
+
+<h2>📌 Selectable Events</h2>
+<ul>
+  <li><b>start</b> → Selection starts</li>
+  <li><b>selected</b> → Item selected</li>
+  <li><b>unselected</b> → Item unselected</li>
+  <li><b>stop</b> → Selection stops</li>
+</ul>
+
+<div class="nav">
+  <a href="slider.html">⬅ Back</a>
+  <a href="index.html">🏠 Home</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+
+  $("#select1").selectable();
+
+  $("#select2").selectable();
+
+  $("#select3").selectable({
+    filter: "li"
+  });
+
+  $("#select4").selectable({
+    selected: function () {
+      $("#status").text("Item selected");
+    },
+    unselected: function () {
+      $("#status").text("Item unselected");
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

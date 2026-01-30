@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Draggable</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Draggable</h1>
+
+<p>
+The <b>Draggable</b> widget allows elements to be moved using the mouse.
+It supports axis control, containment, and drag events.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Draggable</h2>
+
+<p>
+This is the default draggable behavior with no restrictions.
+</p>
+
+<code>
+$("#drag1").draggable();
+</code>
+
+<div class="demo">
+  <div id="drag1" class="box">Drag Me</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Axis Restriction</h2>
+
+<p>
+Using <code>axis</code>, movement can be restricted to X or Y direction.
+</p>
+
+<code>
+$("#drag2").draggable({
+  axis: "x"
+});
+</code>
+
+<div class="demo">
+  <div id="drag2" class="box">X Axis</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Containment</h2>
+
+<p>
+<code>containment</code> restricts dragging within a parent element.
+</p>
+
+<code>
+$("#drag3").draggable({
+  containment: "parent"
+});
+</code>
+
+<div class="demo" style="height:200px; position:relative;">
+  <div id="drag3" class="box">Inside Box</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Draggable Events</h2>
+
+<p>
+Draggable supports <b>start</b>, <b>drag</b>, and <b>stop</b> events.
+</p>
+
+<code>
+$("#drag4").draggable({
+  start: function () {
+    $("#status").text("Dragging started");
+  },
+  drag: function () {
+    $("#status").text("Dragging...");
+  },
+  stop: function () {
+    $("#status").text("Dragging stopped");
+  }
+});
+</code>
+
+<div class="demo">
+  <div id="drag4" class="box">Drag Events</div>
+  <p id="status"><b>Status:</b> Not dragging</p>
+</div>
+
+<hr>
+
+<h2>📌 Important Draggable Options (Exam Friendly)</h2>
+<ul>
+  <li><b>axis</b> → Restrict movement direction</li>
+  <li><b>containment</b> → Limit draggable area</li>
+  <li><b>cursor</b> → Change cursor style</li>
+  <li><b>grid</b> → Move element in grid steps</li>
+</ul>
+
+<h2>📌 Draggable Events</h2>
+<ul>
+  <li><b>start</b> → Fired when dragging begins</li>
+  <li><b>drag</b> → Fired while dragging</li>
+  <li><b>stop</b> → Fired when dragging ends</li>
+</ul>
+
+<div class="nav">
+  <a href="dialog.html">⬅ Back</a>
+  <a href="droppable.html">Next ➡</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+
+  $("#drag1").draggable();
+
+  $("#drag2").draggable({
+    axis: "x"
+  });
+
+  $("#drag3").draggable({
+    containment: "parent"
+  });
+
+  $("#drag4").draggable({
+    start: function () {
+      $("#status").text("Dragging started");
+    },
+    drag: function () {
+      $("#status").text("Dragging...");
+    },
+    stop: function () {
+      $("#status").text("Dragging stopped");
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

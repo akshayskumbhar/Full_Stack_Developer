@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Tabs</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    /* Page specific styling */
+    .tab-content {
+      padding: 15px;
+      line-height: 1.6;
+    }
+
+    .control-btn {
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Tabs</h1>
+
+<p>
+The <b>Tabs</b> widget divides content into multiple panels,
+allowing users to switch between sections easily.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Tabs</h2>
+
+<p>
+This is the default tabs behavior.
+Click on the tab headers to switch content.
+</p>
+
+<code>
+$("#tabs1").tabs();
+</code>
+
+<div class="demo">
+  <div id="tabs1">
+    <ul>
+      <li><a href="#t1">HTML</a></li>
+      <li><a href="#t2">CSS</a></li>
+      <li><a href="#t3">JavaScript</a></li>
+    </ul>
+
+    <div id="t1" class="tab-content">
+      HTML is used to structure web pages.
+    </div>
+
+    <div id="t2" class="tab-content">
+      CSS styles the web pages.
+    </div>
+
+    <div id="t3" class="tab-content">
+      JavaScript adds interactivity.
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Set Active Tab</h2>
+
+<p>
+Using <code>active</code>, you can define which tab opens by default.
+Index starts from 0.
+</p>
+
+<code>
+$("#tabs2").tabs({
+  active: 1
+});
+</code>
+
+<div class="demo">
+  <div id="tabs2">
+    <ul>
+      <li><a href="#a1">Tab One</a></li>
+      <li><a href="#a2">Tab Two</a></li>
+      <li><a href="#a3">Tab Three</a></li>
+    </ul>
+
+    <div id="a1" class="tab-content">Content One</div>
+    <div id="a2" class="tab-content">Content Two (Default)</div>
+    <div id="a3" class="tab-content">Content Three</div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Collapsible Tabs</h2>
+
+<p>
+With <code>collapsible: true</code>, the active tab can be closed.
+</p>
+
+<code>
+$("#tabs3").tabs({
+  collapsible: true
+});
+</code>
+
+<div class="demo">
+  <div id="tabs3">
+    <ul>
+      <li><a href="#c1">Info</a></li>
+      <li><a href="#c2">Details</a></li>
+    </ul>
+
+    <div id="c1" class="tab-content">
+      Click the active tab again to collapse it.
+    </div>
+
+    <div id="c2" class="tab-content">
+      This tab can also be collapsed.
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Programmatic Tab Control</h2>
+
+<p>
+Tabs can be controlled using buttons and methods.
+</p>
+
+<code>
+$("#tabs4").tabs();
+$("#openTab").click(function(){
+  $("#tabs4").tabs("option", "active", 2);
+});
+</code>
+
+<div class="demo">
+  <button id="openTab" class="control-btn">
+    Open Third Tab
+  </button>
+
+  <div id="tabs4" style="margin-top:15px;">
+    <ul>
+      <li><a href="#p1">Home</a></li>
+      <li><a href="#p2">About</a></li>
+      <li><a href="#p3">Contact</a></li>
+    </ul>
+
+    <div id="p1" class="tab-content">Home Content</div>
+    <div id="p2" class="tab-content">About Content</div>
+    <div id="p3" class="tab-content">Contact Content</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>📌 Important Tabs Options (Exam Friendly)</h2>
+<ul>
+  <li><b>active</b> → Set default open tab</li>
+  <li><b>collapsible</b> → Allow closing tabs</li>
+  <li><b>disabled</b> → Disable specific tabs</li>
+</ul>
+
+<h2>📌 Common Tabs Methods</h2>
+<ul>
+  <li><code>.tabs("option", "active", index)</code></li>
+  <li><code>.tabs("disable", index)</code></li>
+  <li><code>.tabs("enable", index)</code></li>
+</ul>
+
+<div class="nav">
+  <a href="sortable.html">⬅ Back</a>
+  <a href="slider.html">Next ➡</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+
+  $("#tabs1").tabs();
+
+  $("#tabs2").tabs({
+    active: 1
+  });
+
+  $("#tabs3").tabs({
+    collapsible: true,
+    active: 0
+  });
+
+  $("#tabs4").tabs();
+
+  $("#openTab").click(function () {
+    $("#tabs4").tabs("option", "active", 2);
+  });
+
+});
+</script>
+
+</body>
+</html>

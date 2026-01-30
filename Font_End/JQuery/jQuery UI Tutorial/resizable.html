@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Resizable</title>
+
+  <!-- Common Style -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <style>
+    /* Page specific styling */
+    .resize-box {
+      width: 180px;
+      height: 180px;
+      background: #9b59b6;
+      color: white;
+      text-align: center;
+      line-height: 180px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Resizable</h1>
+
+<p>
+The <b>Resizable</b> widget allows users to resize elements using the mouse.
+It supports resize handles, size restrictions, and events.
+</p>
+
+<hr>
+
+<!-- ================== Example 1 ================== -->
+<h2>1️⃣ Basic Resizable</h2>
+
+<p>
+This is the default resizable behavior.
+Resize the box using corner handles.
+</p>
+
+<code>
+$("#resize1").resizable();
+</code>
+
+<div class="demo">
+  <div id="resize1" class="resize-box">Resize Me</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 2 ================== -->
+<h2>2️⃣ Custom Resize Handles</h2>
+
+<p>
+Using <code>handles</code>, you can control which sides are resizable.
+</p>
+
+<code>
+$("#resize2").resizable({
+  handles: "e, s, se"
+});
+</code>
+
+<div class="demo">
+  <div id="resize2" class="resize-box">East & South</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 3 ================== -->
+<h2>3️⃣ Min & Max Size</h2>
+
+<p>
+<code>minWidth</code>, <code>maxWidth</code>, <code>minHeight</code>,
+and <code>maxHeight</code> control resize limits.
+</p>
+
+<code>
+$("#resize3").resizable({
+  minWidth: 120,
+  maxWidth: 300,
+  minHeight: 120,
+  maxHeight: 300
+});
+</code>
+
+<div class="demo">
+  <div id="resize3" class="resize-box">Size Limits</div>
+</div>
+
+<hr>
+
+<!-- ================== Example 4 ================== -->
+<h2>4️⃣ Maintain Aspect Ratio + Events</h2>
+
+<p>
+<code>aspectRatio: true</code> keeps width and height proportional.
+Resize events track resizing actions.
+</p>
+
+<code>
+$("#resize4").resizable({
+  aspectRatio: true,
+  start: function () {
+    $("#status").text("Resizing started");
+  },
+  resize: function () {
+    $("#status").text("Resizing...");
+  },
+  stop: function () {
+    $("#status").text("Resizing stopped");
+  }
+});
+</code>
+
+<div class="demo">
+  <div id="resize4" class="resize-box">Aspect Ratio</div>
+  <p id="status"><b>Status:</b> Not resizing</p>
+</div>
+
+<hr>
+
+<h2>📌 Important Resizable Options (Exam Friendly)</h2>
+<ul>
+  <li><b>handles</b> → Control resize direction</li>
+  <li><b>minWidth / minHeight</b> → Minimum size</li>
+  <li><b>maxWidth / maxHeight</b> → Maximum size</li>
+  <li><b>aspectRatio</b> → Maintain ratio</li>
+</ul>
+
+<h2>📌 Resizable Events</h2>
+<ul>
+  <li><b>start</b> → Resize starts</li>
+  <li><b>resize</b> → During resize</li>
+  <li><b>stop</b> → Resize ends</li>
+</ul>
+
+<div class="nav">
+  <a href="droppable.html">⬅ Back</a>
+  <a href="sortable.html">Next ➡</a>
+</div>
+
+</div>
+
+<!-- jQuery UI Initialization -->
+<script>
+$(function () {
+
+  $("#resize1").resizable();
+
+  $("#resize2").resizable({
+    handles: "e, s, se"
+  });
+
+  $("#resize3").resizable({
+    minWidth: 120,
+    maxWidth: 300,
+    minHeight: 120,
+    maxHeight: 300
+  });
+
+  $("#resize4").resizable({
+    aspectRatio: true,
+    start: function () {
+      $("#status").text("Resizing started");
+    },
+    resize: function () {
+      $("#status").text("Resizing...");
+    },
+    stop: function () {
+      $("#status").text("Resizing stopped");
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

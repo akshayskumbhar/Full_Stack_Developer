@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery UI Accordion</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>jQuery UI Accordion</h1>
+
+<p>
+The <b>Accordion</b> widget is used to display content in collapsible panels.
+Only one section is open at a time.
+</p>
+
+<hr>
+
+<h2>1️⃣ Basic Accordion</h2>
+
+<p>
+This is the default accordion with no options.
+</p>
+
+<code>
+$("#accordion1").accordion();
+</code>
+
+<div class="demo">
+  <div id="accordion1">
+    <h3>HTML</h3>
+    <div>HTML is used to structure web pages.</div>
+
+    <h3>CSS</h3>
+    <div>CSS styles the web pages.</div>
+
+    <h3>JavaScript</h3>
+    <div>JavaScript adds behavior.</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>2️⃣ Collapsible Accordion</h2>
+
+<p>
+Using <code>collapsible: true</code>, all panels can be closed.
+</p>
+
+<code>
+$("#accordion2").accordion({
+  collapsible: true,
+  active: false
+});
+</code>
+
+<div class="demo">
+  <div id="accordion2">
+    <h3>Section 1</h3>
+    <div>Content 1</div>
+
+    <h3>Section 2</h3>
+    <div>Content 2</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>3️⃣ Height Style = Content</h2>
+
+<p>
+<code>heightStyle: "content"</code> adjusts height based on content.
+</p>
+
+<code>
+$("#accordion3").accordion({
+  heightStyle: "content"
+});
+</code>
+
+<div class="demo">
+  <div id="accordion3">
+    <h3>Short</h3>
+    <div>Short content</div>
+
+    <h3>Long</h3>
+    <div>
+      This section has more content so height increases automatically.
+      This improves readability.
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<h2>4️⃣ Accordion Events</h2>
+
+<p>
+The <b>activate</b> event fires when panel changes.
+</p>
+
+<code>
+$("#accordion4").accordion({
+  activate: function () {
+    alert("Panel Changed");
+  }
+});
+</code>
+
+<div class="demo">
+  <div id="accordion4">
+    <h3>A</h3>
+    <div>First panel</div>
+
+    <h3>B</h3>
+    <div>Second panel</div>
+  </div>
+</div>
+
+<hr>
+
+<h2>Summary</h2>
+<ul>
+  <li><code>collapsible</code> → allows closing all panels</li>
+  <li><code>active</code> → controls open panel</li>
+  <li><code>heightStyle</code> → controls height</li>
+  <li><code>activate</code> → event handling</li>
+</ul>
+
+<div class="nav">
+  <a href="index.html">⬅ Home</a>
+  <a href="autocomplete.html">Next ➡</a>
+</div>
+
+</div>
+
+<script>
+$(function () {
+  $("#accordion1").accordion();
+  $("#accordion2").accordion({ collapsible: true, active: false });
+  $("#accordion3").accordion({ heightStyle: "content" });
+  $("#accordion4").accordion({
+    activate: function () {
+      alert("Panel Changed");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
