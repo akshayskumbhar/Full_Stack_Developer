@@ -13,7 +13,6 @@ All concepts are demonstrated using **working web pages**, so learners can
 
 - 🌐 Frontend Development (HTML, CSS, JavaScript)
 - ⚙️ Backend Development
-- 🔗 API Integration
 - 🗄️ Database Connectivity
 - 📱 Responsive Web Pages
 - 🧠 Logic Building with Practical Examples
